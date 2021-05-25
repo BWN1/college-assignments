@@ -9,7 +9,7 @@ namespace sdds {
         char* desc;
         unsigned int eventStart;
     public:
-        Event() {};
+        Event();
         Event(const Event& right);
         Event& operator=(const Event& right);
         ~Event();

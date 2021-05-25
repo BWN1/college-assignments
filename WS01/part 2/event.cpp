@@ -8,6 +8,11 @@
 unsigned int g_sysClock;
 
 namespace sdds {
+    Event::Event() {
+        desc = nullptr;
+        eventStart = 0;
+    }
+
     Event::Event(const Event& right) {
         operator=(right);
     }
