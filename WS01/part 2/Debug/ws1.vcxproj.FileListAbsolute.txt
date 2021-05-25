@@ -1,2 +1,0 @@
-C:\Users\Brody\Documents\Seneca\OOP\OOP-Workshops\WS01\part 2\Debug\ws1.exe
-C:\Users\Brody\Documents\Seneca\OOP\OOP-Workshops\WS01\part 2\Debug\ws1.pdb
