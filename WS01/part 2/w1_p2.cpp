@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
 {
 	std::cout << "Command Line:\n";
 	for (int i = 0; i < argc; i++) {
-		std::cout << i << ": " << argv[i] << std::endl;
+		std::cout << i + 1 << ": " << argv[i] << std::endl;
 	}
 
 	std::cout << std::endl;
