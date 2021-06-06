@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body> 
+    <header>
+        <div class="promo-banner">
+            <p>LIMITED TIME OFFER!!</p>
+        </div>
+        
+        <div id="header-main">
+            <div id="site-logo">
+                <img src="images/logo.svg" alt="Icon">
+                <span>AIRBNB</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/listings">Book a Room</a></li>
+                </ul>
+            </nav>
+            <div id="account-info">
+                <a href="/register">Sign Up</a>
+            </div>
+        </div>
+        <div id="booking-search">
+            <!--TODO: Add functionality to the form-->
+            <form action="/">
+                <div class="booking-search-input">
+                    <label for="location">Location</label>
+                    <select name="location" id="booking-search-form-location">
+                        <option value="toronto">Toronto, ON</option>
+                        <option value="vancouver">Vancouver, BC</option>
+                        <option value="edmonton">Edmonton, AB</option>
+                        <option value="montreal">Montreal, QC</option>
+                    </select>
+                </div>
+                <div class="booking-search-input">
+                    <label for="checkin">Check in</label>
+                    <input name="checkin" type="date">
+                </div>
+                <div class="booking-search-input">
+                    <label for="checkout">Check out</label>
+                    <input name="checkout" type="date">
+                </div>
+                <div class="booking-search-input">
+                    <label for="guests">Guests</label>
+                    <input name="guests" type="text" placeholder="No. of guests">
+                </div>
+                <div class="booking-search-input">
+                    <input type="submit" value="Search">
+                </div>
+            </form>
+        </div>
+    </header>
+    
+    <main>
+    </main>
+
+    <footer></footer>
+</body>
+</html>

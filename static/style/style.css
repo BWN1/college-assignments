@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/*TODO: Style this to be better*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header > * {
+    margin-bottom: 1em;
+}
+
+#header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1em;
+    padding: 1em 0;
+}
+
+/** Site logo*/
+#site-logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+#site-logo > img {
+    margin-right: 1em;
+}
+
+/** Header hyperlinks */
+#header-main a {
+    color: black;
+    text-decoration: none;
+}
+
+#header-main a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#header-main a:hover {
+    text-decoration: underline;
+}
+
+/** Nav links */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+#account-info {
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+/** Booking search form */
+#booking-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#booking-search form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(189, 189, 189);
+    padding: 0.5em 1em;
+    border-radius: 5em;
+}
+
+#booking-search form > * {
+    padding: 0.5em 1em;
+}
+
+/** Book search form inputs*/
+.booking-search-input {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1em;
+    font-size: 0.8em;
+    font-weight: 700;
+    border-right: 1px solid black;
+}
+
+.booking-search-input:nth-last-child(2),
+.booking-search-input:last-child {
+    border-right: none;
+}
+
+.booking-search-input > label {
+    margin-bottom: 0.25em;
+}
+
+.booking-search-input :is(select, input) {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.booking-search-input :is(select, input):focus {
+    outline: none;
+}
+
+.booking-search-input input[submit] {
+    /*TODO: Add styling for submit button*/
+}
+
+/** PROMO Banner*/
+.promo-banner {
+    display: flex;
+    justify-content: center;
+    background-color: lightgreen;
+    font-weight: 700;
+    padding: 1em 0;
+}
+
+.promo-banner p {
+    margin: 0;
+    padding: 0;
+}
