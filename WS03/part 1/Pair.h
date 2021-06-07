@@ -3,13 +3,14 @@
 // Brody Neumann - June 7, 2021
 #ifndef PAIR_H
 #define PAIR_H
+#include <iostream>
 namespace sdds {
 	template<typename V, typename K>
 	class Pair {
 		V m_value;
 		K m_key;
 	public:
-		Pair();
+		Pair() {}
 		Pair(const K& key, const V& value) {
 			m_value = value;
 			m_key = key;
@@ -19,10 +20,12 @@ namespace sdds {
 		void display(std::ostream& os) const {
 			os << m_key << " : " << m_value << std::endl;
 		}
-		friend std::ostream& operator<<(std::ostream& os, const Pair<V, K>& pair) {
-			pair.display(os);
-			return os;
-		}
 	};
+
+	template<typename V, typename K>
+	std::ostream& operator<<(std::ostream& os, const Pair<V, K>& pair) {
+		pair.display(os);
+		return os;
+	}
 }
 #endif

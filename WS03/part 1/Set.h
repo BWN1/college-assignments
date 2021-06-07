@@ -13,7 +13,7 @@ namespace sdds {
 		size_t size() const { return numElems; }
 		const T& get(size_t idx) const { return arr[idx]; }
 		void operator+=(const T& item) { 
-			if (numElems < capacity - 1) {
+			if (numElems < capacity) {
 				arr[numElems] = item;
 				numElems++;
 			}
