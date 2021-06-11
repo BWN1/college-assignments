@@ -1,6 +1,7 @@
 //I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 // Workshop 3 - Templates
 // Brody Neumann - June 7, 2021
+// Brody Neumann - June 11, 2021
 #ifndef PARISUMMABLE_H
 #define PARISUMMABLE_H
 #include <iostream>
@@ -26,8 +27,8 @@ namespace sdds {
 			return *this;
 		}
 		template<>
-		PairSummable<std::string, std::string>& operator+=(const PairSummable<V, K>& b) {
-			this->initValue() = b->initValue() + ", " + this->initValue();
+		PairSummable<std::string, std::string>& operator+=(const PairSummable& item) {
+			this->initValue() = item.initValue() + ", " + this->initValue();
 			return *this;
 		}
 		
