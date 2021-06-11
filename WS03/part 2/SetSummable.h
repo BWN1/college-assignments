@@ -10,27 +10,24 @@ namespace sdds {
 		std::string m_filter;
 	public:
 		SetSummable() {}
-
-		template<unsigned int N, typename T>
-		SetSummable(std::string filter) : Set<N, T>{
+		SetSummable(std::string filter) {
 			m_filter = filter;
 		}
 
 		template<typename T>
-		bool isCompatibleWith(T obj) {
-			return m_filter == obj.key() ? true : false;
+		bool isCompatibleWith(const T& obj) const {
+			return m_filter == obj.key();
 		}
 
-		void operator+=(T obj) {
-			if (isCompatibleWith(obj)) {
-
-			}
+		T& operator+=(const T& obj) {
+			*this += obj;
+			return this;
 		}
 
 		T accumulate(const std::string& filter) const {
 			T accumulator(filter);
 			for (size_t i = 0; i < Set::size(); i++) {
-				if (isCompatibleWith(accumulator)) {
+				if (accumulator.isCompatibleWith(accumulator)) {
 
 				}
 			}

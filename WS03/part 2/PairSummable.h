@@ -8,31 +8,29 @@
 namespace sdds {
 	template<typename V, typename K>
 	class PairSummable : public Pair<V, K> {
-		V value;
-		size_t minWidth = 0;
+		static V initValue;
+		static size_t minWidth;
 	public:
 		PairSummable() {};
-
-		PairSummable(const K& key, const V& value = initial) : Pair(key, value) {
+		PairSummable(const K& key, const V& value = initValue) : Pair<V, K>(key, value) {
+			minWidth = 0;
 			if (key.size() != minWidth) minWidth = key.size();
 		}
-
 		bool isCompatibleWith(const PairSummable<V, K>& b) const {
-			return b.key() == this->key() ? true : false;
+			return b.key() == Pair<V, K>::key();
 		}
 
 		template <typename V, typename K>
 		PairSummable<V, K>& operator+=(const PairSummable& item) {
-			value = value + item.value;
+			initValue = initValue + item.initValue;
 			return *this;
 		}
-
 		template<>
 		PairSummable<std::string, std::string>& operator+=(const PairSummable<V, K>& b) {
-			this->value() = b->value() + ", " + this->value();
+			this->initValue() = b->initValue() + ", " + this->initValue();
 			return *this;
 		}
-
+		
 		void display(std::ostream& os) const {
 			os.setf(std::ios::left);
 			os.width(minWidth);
