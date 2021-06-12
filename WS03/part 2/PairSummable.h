@@ -2,6 +2,7 @@
 // Workshop 3 - Templates
 // Brody Neumann - June 7, 2021
 // Brody Neumann - June 11, 2021
+// Brody Neumann - June 12, 2021
 #ifndef PARISUMMABLE_H
 #define PARISUMMABLE_H
 #include <iostream>
@@ -12,32 +13,41 @@ namespace sdds {
 		static V initValue;
 		static size_t minWidth;
 	public:
-		PairSummable() {};
+		PairSummable() {}
 		PairSummable(const K& key, const V& value = initValue) : Pair<V, K>(key, value) {
-			minWidth = 0;
-			if (key.size() != minWidth) minWidth = key.size();
+			if (key.size() > minWidth) minWidth = key.size();
 		}
 		bool isCompatibleWith(const PairSummable<V, K>& b) const {
-			return b.key() == Pair<V, K>::key();
+			return b.key() == this->key();
 		}
 
-		template <typename V, typename K>
 		PairSummable<V, K>& operator+=(const PairSummable& item) {
-			initValue = initValue + item.initValue;
+			*this = PairSummable<V, K>(item.key(), this->value() + item.value());
 			return *this;
 		}
-		template<>
-		PairSummable<std::string, std::string>& operator+=(const PairSummable& item) {
-			this->initValue() = item.initValue() + ", " + this->initValue();
-			return *this;
-		}
-		
 		void display(std::ostream& os) const {
+			os.unsetf(std::ios::right);
 			os.setf(std::ios::left);
 			os.width(minWidth);
-			Pair::display(os);
+			os.fill(' ');
+			Pair<V, K>::display(os);
 			os.setf(std::ios::right);
 		}
 	};
+	
+	template <>
+	PairSummable<std::string, std::string>& PairSummable<std::string, std::string>::operator+=(const PairSummable<std::string, std::string>& item) {
+		if (this->value() != "") {
+			*this = PairSummable<std::string, std::string>(item.key(), this->value() + ", " + item.value());
+		}
+		else {
+			*this = PairSummable<std::string, std::string>(item.key(), item.value());
+		}
+		return *this;
+	}
+
+	//Delcare static member variables
+	template<typename V, typename K> V PairSummable<V, K>::initValue;
+	template<typename V, typename K> size_t PairSummable<V, K>::minWidth;
 }
 #endif
