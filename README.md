@@ -4,17 +4,18 @@
 This project is a recreation of the AirBnB website and is used to get us familiar with Express, NodeJS, Handlebars and server side programming
 
 # Homepage TODO
-- [ ] Style header
-- [ ] Add functionality to search form
+- [X] Style header
+- [ ] Add functionality to search form (assignment 2)
 - [ ] Add content to the homepage
   - Must provide content, images and a video explaining why “Airbnb” is to the visitors/customers.
-- [ ] Add footer to homepage
+- [X] Add footer to homepage
 
 # Part 1 Requirements
 We must set up:
 - [X] Express Web Server 
-- [ ] Set up of Routes and implementation of route handlers
+- [X] Set up of Routes and implementation of route handlers
 - [ ] Creation of the following views
-  - [ ] Home Page
+  - [X] Home Page
   - [ ] Room Listing Page
-  - [ ] Registration Page
+  - [X] Registration Page
+  - [X] Login Page

@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title>Airbnb - Turning Your Vacation Into A Staycation</title>
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
-<body> 
+<body>
     <header>
-        <div class="promo-banner">
-            <p>LIMITED TIME OFFER!!</p>
-        </div>
-        
-        <div id="header-main">
-            <div id="site-logo">
-                <img src="images/logo.svg" alt="Icon">
-                <span>AIRBNB</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/listings">Book a Room</a></li>
-                </ul>
-            </nav>
-            <div id="account-info">
-                <a href="/register">Sign Up</a>
-            </div>
+        <a href="/" id="site-logo">
+            <img src="images/logo.svg" alt="Icon">
+            <span>AIRBNB</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/listings">Book a Room</a></li>
+            </ul>
+        </nav>
+        <div id="user-account-actions">
+            <a href="/login" id="login">Login</a>
+            <a href="/register" id="signup">Sign Up</a>
         </div>
     </header>
-    
+
+    <div class="promo-banner">
+        <p>SUMMER SALE: Get 10% off with code <span class="discount-code">SUMMER10</span></p>
+    </div>
+
     <main>
-        <div>
-            <h1>What is AIRBNB?</h1>
+        <div id="hero-image">
+            <h1>Turning your vacation <br> into a staycation</h1>
         </div>
 
+        <div>
+            <h1>What is Airbnb?</h1>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XWUeChVZqgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+
+
         <div id="booking-search">
-            <!--TODO: Add functionality to the form-->
             <h1>Find a booking</h1>
 
             <form action="/">
-                <div class="booking-search-input" id="booking-search-location">
+                <div class="form-input" id="booking-search-location">
                     <label for="location">Location</label>
                     <select name="location" id="booking-search-form-location">
                         <option value="toronto">Toronto, ON</option>
@@ -48,19 +55,19 @@
                         <option value="montreal">Montreal, QC</option>
                     </select>
                 </div>
-                <div class="booking-search-input">
+                <div class="form-input">
                     <label for="checkin">Check in</label>
                     <input name="checkin" type="date">
                 </div>
-                <div class="booking-search-input">
+                <div class="form-input">
                     <label for="checkout">Check out</label>
                     <input name="checkout" type="date">
                 </div>
-                <div class="booking-search-input" id="booking-search-guests">
+                <div class="form-input" id="booking-search-guests">
                     <label for="guests">Guests</label>
                     <input name="guests" type="text" placeholder="No. of guests">
                 </div>
-                <div class="booking-search-input" id="booking-search-submit">
+                <div class="form-input" id="booking-search-submit">
                     <input type="submit" value="Search">
                 </div>
             </form>
@@ -68,27 +75,27 @@
     </main>
 
     <footer>
-        <nav>
-            <div class="footer-nav-section">
-                <p class="footer-nav-section-header">About</p>
+        <div class="footer-main">
+            <section class="footer-section">
+                <h4 class="footer-section-header">About</h4>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/">Book a Room</a></li>
                 </ul>
-            </div>
-            <div class="footer-nav-section">
-                <p class="footer-nav-section-header">Account</p>
+            </section>
+            <section class="footer-section">
+                <h4 class="footer-section-header">Account</h4>
                 <ul>
                     <li><a href="/">Sign Up</a></li>
                     <li><a href="/">Login</a></li>
                 </ul>
-            </div>
-        </nav>
-        <div id="footer-bottom">
-            <!--Social links-->
-            <a href=""><img src="" alt="Insta"></a>
-            <a href=""><img src="" alt="Twitter"></a>
-            <a href=""><img src="" alt="Facebook"></a>
+            </section>
+        </div>
+        
+        <div id="footer-socials">
+            <a href=""><img src="images/icons/instagram.svg" alt="Instagram"></a>
+            <a href=""><img src="images/icons/twitter.svg" alt="Twitter"></a>
+            <a href=""><img src="images/icons/facebook.svg" alt="Facebook"></a>
         </div>
     </footer>
 </body>

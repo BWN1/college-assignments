@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register - Airbnb</title>
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/register.css">
 </head>
 <body>
-    
-</body>
+    <main>
+        <div id="airbnb-logo">
+            <a href="/" id="site-logo">
+                <img src="images/logo.svg" alt="Icon">
+                <span>AIRBNB</span>
+            </a>
+        </div>
+        
+        <div id="form-card">
+            <h1>Register</h1>
+            <form action="/">
+                <div class="user-details">
+                    <div class="form-input" id="register-fname">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" placeholder="First Name">
+                    </div>
+                    <div class="form-input" id="register-lname">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname"  placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="user-account">
+                    <div class="form-input" id="register-email">
+                        <label for="email">Email Address</label>
+                        <input type="text" name="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-input" id="register-password">
+                        <label for="password">Password</label>
+                        <input type="password" name="password"  placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="user-birthday-wrapper">
+                    <div class="user-birthday-header">
+                        <h2>Birthday</h2>
+                        <p>You must be at least 18 or older to sign up. Other Airbnb users won't see your birthday</p>
+                    </div>
+                    <div class="user-birthday">
+                        <div class="form-input" id="register-birthday-day">
+                            <label for="day">Day</label>
+                            <!--type="text" for custom validation and it looks better without the incrementor/decrementor-->
+                            <input type="text" name="day" placeholder="DD" maxlength="2">
+                        </div>
+                        <div class="form-input" id="register-birthday-month">
+                            <label for="month">Month</label>
+                            <input type="text" name="month" placeholder="MM" maxlength="2">
+                        </div>
+                        <div class="form-input" id="register-birthday-year">
+                            <label for="year">Year</label>
+                            <input type="text" name="year" placeholder="YYYY" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-input" id="register-submit">
+                    <input type="submit" value="Sign up">
+                </div>
+            </form>
+        </div>
+        
+        <div id="register-account">
+            <p>Have an account? <span><a href="/login">Login</a></span></p>
+        </div>
+    </main>
 </html>

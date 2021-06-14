@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: clamp(450px, 450px, 750px);
+}
+
+#airbnb-logo a{
+    text-decoration: none;
+    color: black;
+}
+
+#site-logo {
+    font-size: 1.1em;
+}
+
+#site-logo > img {
+    width: 55px;
+    margin-right: 0.5em;
+}
+
+#register-account p {
+    text-align: center;
+}
+
+#register-account a {
+    color: #3434ff;
+    text-decoration: none;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+/** FORM user details (name) */
+.user-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-details > * {
+    overflow: hidden;
+}
+
+.user-details > *:first-child {
+    margin-right: 1em;
+}
+
+/**  FORM user birthday */
+.user-birthday-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-birthday-wrapper .user-birthday-header {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.user-birthday-header > * {
+    margin: 0.5em 0;
+}
+
+.user-birthday-header h2 {
+    font-size: 1.25rem;
+    margin-top: 1em;
+}
+
+.user-birthday {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-birthday > * {
+    width: auto;
+    overflow: hidden;
+}
+
+.user-birthday > *:first-child {
+    margin-right: 0.5em;
+}
+
+.user-birthday > *:last-child {
+    margin-left: 0.5em;
+}

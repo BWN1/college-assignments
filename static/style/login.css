@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: clamp(450px, 450px, 750px);
+}
+
+#airbnb-logo a{
+    text-decoration: none;
+    color: black;
+}
+
+#site-logo {
+    font-size: 1.1em;
+}
+
+#site-logo > img {
+    width: 55px;
+    margin-right: 0.5em;
+}
+
+#register-account p {
+    text-align: center;
+}
+
+#register-account a {
+    color: #3434ff;
+    text-decoration: none;
+    margin: 0 auto;
+    font-weight: 700;
+}
