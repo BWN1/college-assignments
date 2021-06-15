@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airbnb - Turning Your Vacation Into A Staycation</title>
+    <title>Room Listings - Airbnb</title>
     <link rel="stylesheet" href="style/common.css">
-    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/listings.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 <body>
@@ -17,7 +17,7 @@
         </a>
         <nav>
             <ul>
-                <li><a href="/listings">Book a Room</a></li>
+                <li><a href="/listings">Room Listings</a></li>
             </ul>
         </nav>
         <div id="user-account-actions">
@@ -30,7 +30,102 @@
         <p>SUMMER SALE: Get 10% off with code <span class="discount-code">SUMMER10</span></p>
     </div>
     
-    <main></main>
+    <main>
+        <h1>Room listings</h1>
+
+        <div id="room-listings">
+            <div class="room-card">
+                <img src="images/rooms/room1.jpg" alt="Room 1" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">Apartment</span>
+                    &#8226;
+                    <span class="room-location">Toronto</span>
+                </h4>
+                <h3 class="room-title">Downtown Toronto Apartment - FREE WIFI</h3>
+                <p class="room-price">$130 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.67</span>
+                    <span class="room-num-ratings">(121)</span>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="images/rooms/room2.jpg" alt="Room 2" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">House</span>
+                    &#8226;
+                    <span class="room-location">Toronto</span>
+                </h4>
+                <h3 class="room-title">Downtown Toronto 2 Story House</h3>
+                <p class="room-price">$340 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.71</span>
+                    <span class="room-num-ratings">(98)</span>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="images/rooms/room3.jpg" alt="Room 3" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">Apartment</span>
+                    &#8226;
+                    <span class="room-location">Edmonton</span>
+                </h4>
+                <h3 class="room-title">Apartment with city skyline view</h3>
+                <p class="room-price">$190 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.56</span>
+                    <span class="room-num-ratings">(154)</span>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="images/rooms/room4.jpg" alt="Room 4" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">Apartment</span>
+                    &#8226;
+                    <span class="room-location">Vancouver</span>
+                </h4>
+                <h3 class="room-title">Vancouver Apartment (close to public transport)</h3>
+                <p class="room-price">$270 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.81</span>
+                    <span class="room-num-ratings">(59)</span>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="images/rooms/room5.jpg" alt="Room 5" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">House</span>
+                    &#8226;
+                    <span class="room-location">Montreal</span>
+                </h4>
+                <h3 class="room-title">Downtown Montreal House with Balcony</h3>
+                <p class="room-price">$200 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.76</span>
+                    <span class="room-num-ratings">(192)</span>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="images/rooms/room6.jpg" alt="Room 6" loading="lazy" class="room-image">
+                <p class="room-header">
+                    <span class="room-type">House</span>
+                    &#8226;
+                    <span class="room-location">Vancouver</span>
+                </h4>
+                <h3 class="room-title">2 Story House On The Outskirts Of Vancouver</h3>
+                <p class="room-price">$320 CAD/night</p>
+                <div class="room-ratings-section">
+                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
+                    <span class="room-rating">4.92</span>
+                    <span class="room-num-ratings">(21)</span>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-main">
@@ -38,22 +133,22 @@
                 <h4 class="footer-section-header">About</h4>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Book a Room</a></li>
+                    <li><a href="/listings">Room Listings</a></li>
                 </ul>
             </section>
             <section class="footer-section">
                 <h4 class="footer-section-header">Account</h4>
                 <ul>
-                    <li><a href="/">Sign Up</a></li>
-                    <li><a href="/">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                    <li><a href="/login">Login</a></li>
                 </ul>
             </section>
         </div>
         
         <div id="footer-socials">
-            <a href=""><img src="images/icons/instagram.svg" alt="Instagram"></a>
-            <a href=""><img src="images/icons/twitter.svg" alt="Twitter"></a>
-            <a href=""><img src="images/icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://instagram.com/airbnb"><img src="images/icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://twitter.com/airbnb"><img src="images/icons/twitter.svg" alt="Twitter"></a>
+            <a href="https://facebook.com/airbnb"><img src="images/icons/facebook.svg" alt="Facebook"></a>
         </div>
     </footer>
 </body>

@@ -1,25 +1,3 @@
-/** PROMO Banner*/
-.promo-banner {
-    display: flex;
-    justify-content: center;
-    background-color: #ff385c;
-    color: white;
-    font-weight: 700;
-    padding: 1em 0;
-}
-
-.promo-banner p {
-    margin: 0;
-    padding: 0;
-}
-
-.discount-code {
-    background-color: black;
-    border-radius: 5px;
-    padding: 0.5em;
-    margin-left: 0.1em;
-}
-
 /** Hero image */
 #hero-image {
     background-image: linear-gradient(0deg, rgba(58, 58, 58, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hero.jpg);
@@ -33,10 +11,11 @@
 }
 
 #hero-image > h1 {
-    font-size: 6rem;
+    font-size: clamp(2rem, 5vw, 6rem);
     font-weight: 700;
     color: white;
-    margin-right: 1.5em;
+    margin: auto;
+    text-align: center;
 }
 
 /** Booking search form */

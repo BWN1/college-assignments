@@ -10,13 +10,33 @@ html, body {
     box-sizing: content-box;
 }
 
+/** PROMO Banner*/
+.promo-banner {
+    display: flex;
+    justify-content: center;
+    background-color: #ff385c;
+    color: white;
+    font-weight: 700;
+    padding: 1em 0;
+}
+
+.promo-banner p {
+    margin: 0;
+    padding: 0;
+}
+
+.discount-code {
+    background-color: black;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-left: 0.1em;
+}
+
 /** Header */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 0;
     padding: 1em 0;
     background-color: white;
 }
@@ -84,6 +104,12 @@ header nav ul li {
     border: 1px solid black;
     border-radius: 0.5em;
     text-align: center;
+}
+
+#signup:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
 }
 
 /** GENERAL Form card */

@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    margin: 1em 0;
+}
+
+#room-listings {
+    margin: 0 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-card {
+    flex: 25%;
+    margin: 1em;
+    max-width: 33.33%;
+}
+
+.room-image {
+    width: 100%;
+}
+
+.room-header {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #464646;
+    margin-bottom: 0.5em;
+}
+
+.room-title {
+    margin: 0.3em 0;
+}
+
+.room-price {
+    margin: 0.5em 0;
+}
+
+.room-ratings-section {
+    display: flex;
+    font-size: 0.9em;
+}
+
+.room-num-ratings {
+    color: #464646;
+    margin-left: 0.4em;
+}
+
+.star-icon {
+    width: 15px;
+    margin-right: 0.5em;
+}

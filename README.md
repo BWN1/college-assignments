@@ -3,6 +3,10 @@
 
 This project is a recreation of the AirBnB website and is used to get us familiar with Express, NodeJS, Handlebars and server side programming
 
+# General TODO
+- [ ] clamp() font sizes
+- [ ] adjust design for mobile 
+
 # Homepage TODO
 - [X] Style header
 - [ ] Add functionality to search form (assignment 2)
@@ -14,8 +18,8 @@ This project is a recreation of the AirBnB website and is used to get us familia
 We must set up:
 - [X] Express Web Server 
 - [X] Set up of Routes and implementation of route handlers
-- [ ] Creation of the following views
+- [X] Creation of the following views
   - [X] Home Page
-  - [ ] Room Listing Page
+  - [X] Room Listing Page
   - [X] Registration Page
   - [X] Login Page

@@ -1,14 +1,15 @@
 body {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    height: auto;
+    margin: 2em 0;
 }
 
-main {
+#form-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: clamp(450px, 450px, 750px);
+    width: 450px;
 }
 
 #airbnb-logo a{
@@ -44,10 +45,6 @@ main {
 
 .user-details > * {
     overflow: hidden;
-}
-
-.user-details > *:first-child {
-    margin-right: 1em;
 }
 
 /**  FORM user birthday */
