@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
     margin: 2em 0;
 }
 
@@ -18,7 +17,7 @@ body {
 }
 
 #site-logo {
-    font-size: 1.1em;
+    font-size: clamp(1.1em, 1.1vw, 5.1vw);
 }
 
 #site-logo > img {
@@ -63,7 +62,7 @@ body {
 }
 
 .user-birthday-header h2 {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 1.25vw, 5.25vw);
     margin-top: 1em;
 }
 

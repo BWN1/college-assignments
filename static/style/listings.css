@@ -22,7 +22,7 @@ h1 {
 .room-header {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 0.8vw, 4.8vw);
     color: #464646;
     margin-bottom: 0.5em;
 }
@@ -37,7 +37,7 @@ h1 {
 
 .room-ratings-section {
     display: flex;
-    font-size: 0.9em;
+    font-size: clamp(0.9em, 0.9vw, 4.9vw);
 }
 
 .room-num-ratings {
