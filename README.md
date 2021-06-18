@@ -4,9 +4,8 @@
 This project is a recreation of the AirBnB website and is used to get us familiar with Express, NodeJS, Handlebars and server side programming
 
 # General TODO
-- [X] clamp() font sizes
 - [ ] adjust design for mobile 
-- [ ] make register and login card grow from min-width of 450px. **It is very inconsistent right now**
+- [X] make register and login card grow from min-width of 450px. **It is very inconsistent right now**
 
 # Homepage TODO
 - [X] Style header

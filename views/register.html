@@ -18,59 +18,66 @@
             </a>
         </div>
         
-        <div id="form-card">
-            <h1>Register</h1>
+        <div class="form-card">
+            <h1 class="form-title">Register</h1>
             <form action="/">
-                <div class="user-details">
-                    <div class="form-input" id="register-fname">
-                        <label for="fname">First Name</label>
-                        <input type="text" name="fname" placeholder="First Name">
-                    </div>
-                    <div class="form-input" id="register-lname">
-                        <label for="lname">Last Name</label>
-                        <input type="text" name="lname"  placeholder="Last Name">
+                <div class="form-row">
+                    <div class="user-name">
+                        <div class="form-input" id="register-fname">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="fname" class="input-box" placeholder="First Name">
+                        </div>
+                        <div class="form-input" id="register-lname">
+                            <label for="lname">Last Name</label>
+                            <input type="text" name="lname" class="input-box"  placeholder="Last Name">
+                        </div>
                     </div>
                 </div>
-                <div class="user-account">
+                <div class="form-row">
                     <div class="form-input" id="register-email">
                         <label for="email">Email Address</label>
-                        <input type="text" name="email" placeholder="Email Address">
-                    </div>
-                    <div class="form-input" id="register-password">
-                        <label for="password">Password</label>
-                        <input type="password" name="password"  placeholder="Password">
+                        <input type="text" name="email" class="input-box" placeholder="Email Address">
                     </div>
                 </div>
-
-                <div class="user-birthday-wrapper">
+                <div class="form-row">
+                    <div class="form-input" id="register-password">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="input-box" placeholder="Password">
+                    </div>
+                </div>
+    
+                <div class="form-row">
                     <div class="user-birthday-header">
                         <h2>Birthday</h2>
                         <p>You must be at least 18 or older to sign up</p>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="user-birthday">
                         <div class="form-input" id="register-birthday-day">
                             <label for="day">Day</label>
-                            <!--type="text" for custom validation and it looks better without the incrementor/decrementor-->
-                            <input type="text" name="day" placeholder="DD" maxlength="2">
+                            <input id="user-birthday-day" type="text" name="day" placeholder="DD" maxlength="2">
                         </div>
                         <div class="form-input" id="register-birthday-month">
                             <label for="month">Month</label>
-                            <input type="text" name="month" placeholder="MM" maxlength="2">
+                            <input id="user-birthday-month" type="text" name="month" placeholder="MM" maxlength="2">
                         </div>
                         <div class="form-input" id="register-birthday-year">
                             <label for="year">Year</label>
-                            <input type="text" name="year" placeholder="YYYY" maxlength="4">
+                            <input id="user-birthday-year" type="text" name="year" placeholder="YYYY" maxlength="4">
                         </div>
                     </div>
                 </div>
-
-                <div class="form-input" id="register-submit">
-                    <input type="submit" value="Sign up">
+    
+                <div class="form-row">
+                    <div class="form-input">
+                        <input type="submit" value="Sign up" class="submit-form">
+                    </div>
                 </div>
             </form>
         </div>
         
-        <div id="register-account">
+        <div id="login-account">
             <p>Have an account? <span><a href="/login">Login</a></span></p>
         </div>
     </main>

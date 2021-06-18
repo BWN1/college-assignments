@@ -1,24 +1,24 @@
 body {
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 0;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 450px;
+    max-width: 475px;
+    width: 100%;
 }
 
+/** LOGO */
 #airbnb-logo a{
     text-decoration: none;
     color: black;
 }
 
 #site-logo {
-    font-size: clamp(1.1em, 1.1vw, 5.1vw);
+    font-size: 1.2rem;
 }
 
 #site-logo > img {
@@ -26,6 +26,7 @@ main {
     margin-right: 0.5em;
 }
 
+/** REGISTER ACCOUNT ACTION */
 #register-account p {
     text-align: center;
 }

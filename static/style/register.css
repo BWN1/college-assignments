@@ -1,23 +1,24 @@
 body {
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    margin: 2em 0;
+    margin: 0;
 }
 
-#form-card {
-    display: flex;
-    flex-direction: column;
-    width: 450px;
+main {
+    max-width: 475px;
+    width: 100%;
 }
 
+/** LOGO */
 #airbnb-logo a{
     text-decoration: none;
     color: black;
 }
 
 #site-logo {
-    font-size: clamp(1.1em, 1.1vw, 5.1vw);
+    font-size: 1.2rem;
 }
 
 #site-logo > img {
@@ -25,55 +26,32 @@ body {
     margin-right: 0.5em;
 }
 
-#register-account p {
-    text-align: center;
-}
-
-#register-account a {
-    color: #3434ff;
-    text-decoration: none;
-    margin: 0 auto;
-    font-weight: 700;
-}
-
-/** FORM user details (name) */
-.user-details {
+/** USER NAME */
+.user-name {
     display: flex;
-    justify-content: space-between;
 }
 
-.user-details > * {
-    overflow: hidden;
+.user-name .form-input {
+    width: 100%;
 }
 
-/**  FORM user birthday */
-.user-birthday-wrapper {
-    display: flex;
-    flex-direction: column;
+/** USER BIRTHDAY */
+.user-name .form-input:first-child {
+    margin-right: 0.5em;
 }
 
-.user-birthday-wrapper .user-birthday-header {
+.user-birthday-header * {
     margin: 0;
-    margin-bottom: 0.4em;
-}
-
-.user-birthday-header > * {
-    margin: 0.5em 0;
 }
 
 .user-birthday-header h2 {
-    font-size: clamp(1.25rem, 1.25vw, 5.25vw);
+    font-size: 1.25rem;
     margin-top: 1em;
+    margin-bottom: 0.25em;
 }
 
 .user-birthday {
     display: flex;
-    justify-content: space-between;
-}
-
-.user-birthday > * {
-    width: auto;
-    overflow: hidden;
 }
 
 .user-birthday > *:first-child {
@@ -82,4 +60,16 @@ body {
 
 .user-birthday > *:last-child {
     margin-left: 0.5em;
+}
+
+/** USER LOGIN ACTION */
+#login-account p {
+    text-align: center;
+}
+
+#login-account a {
+    color: #3434ff;
+    text-decoration: none;
+    margin: 0 auto;
+    font-weight: 700;
 }
