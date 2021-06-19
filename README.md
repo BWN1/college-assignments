@@ -1,18 +1,5 @@
 # WEB322 Project Assignment
-**Make sure to change the git repo to a HEROKU one.** Need to initialize heroku in this project first. [Guide here](https://web322.ca/getting-started-with-heroku)
-
-This project is a recreation of the AirBnB website and is used to get us familiar with Express, NodeJS, Handlebars and server side programming
-
-# General TODO
-- [X] adjust design for mobile (need to adjust header and promo banner with JS to remove some HTML elements)
-- [X] make register and login card grow from min-width of 450px. **It is very inconsistent right now**
-
-# Homepage TODO
-- [X] Style header
-- [ ] Add functionality to search form (assignment 2)
-- [X] Add content to the homepage
-  - Must provide content, images and a video explaining why “Airbnb” is to the visitors/customers.
-- [X] Add footer to homepage
+**This project is linked to both my personal repo and one on heroku.**
 
 # Part 1 Requirements
 We must set up:
