@@ -1,22 +1,3 @@
-/** LOGO */
-.airbnb-logo {
-    display: block;
-}
-
-.airbnb-logo a {
-    text-decoration: none;
-    color: black;
-}
-
-.site-logo {
-    font-size: 1.2rem;
-}
-
-.site-logo > img {
-    width: 55px;
-    margin-right: 0.5em;
-}
-
 /** USER NAME */
 .user-name {
     display: flex;
@@ -51,12 +32,4 @@
 
 .user-birthday > *:last-child {
     margin-left: 0.5em;
-}
-
-@media only screen and (max-width: 700px) {
-    .airbnb-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 }

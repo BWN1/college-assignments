@@ -112,15 +112,16 @@ header nav ul li {
 }
 
 /** FORMS CARDS */
-.user-form-page-body {
+.user-form-page-main {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     margin: 3em 0;
+    font-size: 1.1rem;
 }
 
-.user-form-page-main {
+.user-form-page-form-wrapper {
     max-width: 475px;
     width: 100%;
     margin: auto 0;
@@ -236,19 +237,16 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
-    .airbnb-logo {
-        display: flex;
-        justify-content: center;
-    }
-    
     .user-form-page-body {
-        margin: 0 0.5em;
+        min-height: 100vh;
+    }
+
+    .user-form-page-main {
+        min-height: auto;
     }
     
-    .user-form-page-main {
-        max-width: 475px;
-        width: 100%;
-        margin: auto 0;
+    .user-form-page-form-wrapper {
+        margin: 0 auto;
     }
     
     .form-card {
