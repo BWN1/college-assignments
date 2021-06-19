@@ -4,13 +4,13 @@
 This project is a recreation of the AirBnB website and is used to get us familiar with Express, NodeJS, Handlebars and server side programming
 
 # General TODO
-- [ ] adjust design for mobile 
+- [X] adjust design for mobile (need to adjust header and promo banner with JS to remove some HTML elements)
 - [X] make register and login card grow from min-width of 450px. **It is very inconsistent right now**
 
 # Homepage TODO
 - [X] Style header
 - [ ] Add functionality to search form (assignment 2)
-- [ ] Add content to the homepage
+- [X] Add content to the homepage
   - Must provide content, images and a video explaining why “Airbnb” is to the visitors/customers.
 - [X] Add footer to homepage
 

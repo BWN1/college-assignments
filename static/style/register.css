@@ -1,27 +1,18 @@
-body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-main {
-    max-width: 475px;
-    width: 100%;
-}
-
 /** LOGO */
-#airbnb-logo a{
+.airbnb-logo {
+    display: block;
+}
+
+.airbnb-logo a {
     text-decoration: none;
     color: black;
 }
 
-#site-logo {
+.site-logo {
     font-size: 1.2rem;
 }
 
-#site-logo > img {
+.site-logo > img {
     width: 55px;
     margin-right: 0.5em;
 }
@@ -62,14 +53,10 @@ main {
     margin-left: 0.5em;
 }
 
-/** USER LOGIN ACTION */
-#login-account p {
-    text-align: center;
-}
-
-#login-account a {
-    color: #3434ff;
-    text-decoration: none;
-    margin: 0 auto;
-    font-weight: 700;
+@media only screen and (max-width: 700px) {
+    .airbnb-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

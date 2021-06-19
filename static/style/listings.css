@@ -56,3 +56,23 @@ h1 {
     width: 15px;
     margin-right: 0.5em;
 }
+
+@media only screen and (max-width: 1024px) { 
+    #room-listings {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    h1 {
+        padding: 1.5em 0;
+    }
+    
+    #room-listings {
+        padding: 0 1em;
+    }
+    
+    .room-card {
+        flex-basis: 100%;
+    }
+}
