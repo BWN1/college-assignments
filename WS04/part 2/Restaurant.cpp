@@ -5,6 +5,12 @@
 static int callCnt;
 
 namespace sdds {
+	Restaurant::Restaurant()
+	{
+		m_reservations = nullptr;
+		m_numReservations = 0;
+	}
+
 	Restaurant::Restaurant(const Reservation* reservations[], size_t cnt)
 	{
 		m_numReservations = cnt;
@@ -17,11 +23,13 @@ namespace sdds {
 	Restaurant::Restaurant(const Restaurant& res)
 	{
 		if (this != &res)
-		m_numReservations = res.m_numReservations;
-		m_reservations = new Reservation[m_numReservations];
+		{
+			m_numReservations = res.m_numReservations;
+			m_reservations = new Reservation[m_numReservations];
 
-		for (size_t i = 0; i < m_numReservations; i++) {
-			m_reservations[i] = res.m_reservations[i];
+			for (size_t i = 0; i < m_numReservations; i++) {
+				m_reservations[i] = res.m_reservations[i];
+			}
 		}
 	}
 	

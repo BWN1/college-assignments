@@ -8,7 +8,7 @@ namespace sdds {
 		Reservation* m_reservations;
 		size_t m_numReservations;
 	public:
-		Restaurant() {};
+		Restaurant();
 		Restaurant(const Reservation* reservations[], size_t cnt);
 		Restaurant(const Restaurant& res);
 		Restaurant(Restaurant&& res) noexcept;

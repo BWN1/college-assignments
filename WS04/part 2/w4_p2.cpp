@@ -128,49 +128,49 @@ int main(int argc, char** argv)
 		std::cout << res2;  // 12
 		std::cout << res3;  // 13
 		std::cout << "==========================\n\n";
-	//}
+	}
 
 
-	//// Confirmation Sender
-	//{
-	//	std::cout << "CS: Testing Constructor\n";
-	//	std::cout << "==========================\n";
-	//	sdds::ConfirmationSender sender1;
-	//	std::cout << sender1;
-	//	std::cout << "==========================\n\n";
+	// Confirmation Sender
+	{
+		std::cout << "CS: Testing Constructor\n";
+		std::cout << "==========================\n";
+		sdds::ConfirmationSender sender1;
+		std::cout << sender1;
+		std::cout << "==========================\n\n";
 
-	//	std::cout << "CS: Testing Operators\n";
-	//	std::cout << "==========================\n";
-	//	sender1 += *ppReservations[5];
-	//	sender1 += *ppReservations[16];
-	//	sender1 += *ppReservations[16];
-	//	sender1 += *ppReservations[8];
-	//	sender1 += *ppReservations[10];
-	//	sender1 += *ppReservations[9];
-	//	std::cout << sender1;
-	//	sender1 -= *ppReservations[8];
-	//	sender1 -= *ppReservations[9];
-	//	sender1 -= *ppReservations[7];
-	//	std::cout << sender1;
-	//	std::cout << "==========================\n\n";
+		std::cout << "CS: Testing Operators\n";
+		std::cout << "==========================\n";
+		sender1 += *ppReservations[5];
+		sender1 += *ppReservations[16];
+		sender1 += *ppReservations[16];
+		sender1 += *ppReservations[8];
+		sender1 += *ppReservations[10];
+		sender1 += *ppReservations[9];
+		std::cout << sender1;
+		sender1 -= *ppReservations[8];
+		sender1 -= *ppReservations[9];
+		sender1 -= *ppReservations[7];
+		std::cout << sender1;
+		std::cout << "==========================\n\n";
 
-	//	std::cout << "CS: Testing Copy Constructor\n";
-	//	std::cout << "==========================\n";
-	//	sdds::ConfirmationSender sender2(sender1);
-	//	std::cout << sender1;
-	//	std::cout << sender2;
-	//	std::cout << "==========================\n\n";
+		std::cout << "CS: Testing Copy Constructor\n";
+		std::cout << "==========================\n";
+		sdds::ConfirmationSender sender2(sender1);
+		std::cout << sender1;
+		std::cout << sender2;
+		std::cout << "==========================\n\n";
 
-	//	sender2 = sender2;
+		sender2 = sender2;
 
-	//	std::cout << "CS: Testing Move Constructor\n";
-	//	std::cout << "==========================\n";
-	//	sdds::ConfirmationSender sender3(std::move(sender1));
-	//	std::cout << sender1;
-	//	std::cout << sender3;
-	//	std::cout << "==========================\n\n";
+		std::cout << "CS: Testing Move Constructor\n";
+		std::cout << "==========================\n";
+		sdds::ConfirmationSender sender3(std::move(sender1));
+		std::cout << sender1;
+		std::cout << sender3;
+		std::cout << "==========================\n\n";
 
-	//	sender3 = std::move(sender3);
+		sender3 = std::move(sender3);
 	}
 	// cleanup
 	for (auto i = 0u; i < cnt; ++i)
