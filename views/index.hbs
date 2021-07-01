@@ -1,0 +1,91 @@
+<main>
+    <div id="hero-image">
+        <div id="hero-image-content-wrapper">
+            <div id="hero-content">
+                <h1>Come Home</h1>
+                <p>Find unique places to stay across Canada</p>
+            </div>
+            <div id="hero-action">
+                <a href="#about" class="hyperlink action-link">What is Airbnb?</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <section class="about-spotlight">
+            <div class="about-media">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XWUeChVZqgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+        </section>
+        <div id="about-main">
+            <section class="about-section">
+                <div class="about-media">
+                    <img src="images/homepage/about-home-away.jpg" alt="Family cooking">
+                </div>
+                <div class="about-content">
+                    <h2 class="about-content-title">Your home away from home</h2>
+                    <p class="about-content-text">Connect with hosts and live in unique places. Book rooms from  across Canada and vacation like you live there.</p>
+                    <a href="/listings" class=" hyperlink action-link">Room listings</a>
+                </div>
+            </section>
+            <section class="about-section">
+                <div class="about-media">
+                    <img src="images/homepage/about-home-earn.jpg" alt="People on a bed">
+                </div>
+                <div class="about-content">
+                    <h2 class="about-content-title">Earn while you're away</h2>
+                    <p class="about-content-text">List your room on Airbnb and earn while you're not home. List on your own terms. Set your price, rules and safety features, and Airbnb will connect you with a guest.</p>
+                    <a href="/register" class=" hyperlink action-link">Sign up today</a>
+                </div>
+            </section>
+            <section class="about-section" id="booking-search">
+                <div class="about-content" id="booking-search-blurb">
+                    <h2 class="about-content-title">Search from dozens of rooms</h2>
+                    <p class="about-content-text">Find dozens of unique rooms across Canada. Select the location, enter in the duration of your stay and the number of guests, and we'll find you what's available!</p>
+                </div>
+                <div class="about-media">
+                    <div class="form-card">
+                        <h1 class="form-title">Find a booking</h1>
+                        <form action="/">
+                            <div class="form-row">
+                                <div class="form-input">
+                                    <label for="location">Location</label>
+                                    <select name="location" class="input-box">
+                                        <option value="toronto">Toronto, ON</option>
+                                        <option value="vancouver">Vancouver, BC</option>
+                                        <option value="edmonton">Edmonton, AB</option>
+                                        <option value="montreal">Montreal, QC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="booking-dates">
+                                    <div class="form-input">
+                                        <label for="checkin">Check in</label>
+                                        <input name="checkin" type="date" class="input-box">
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="checkout">Check out</label>
+                                        <input name="checkout" type="date" class="input-box">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-input">
+                                    <label for="guests">Guests</label>
+                                    <input name="guests" type="text" placeholder="No. of guests" class="input-box">    
+                                </div>
+                            </div>
+                
+                            <div class="form-row">
+                                <div class="form-input">
+                                    <input type="submit" value="Search" class="submit-form">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

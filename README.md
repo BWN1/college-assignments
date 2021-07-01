@@ -1,5 +1,4 @@
-# WEB322 Project Assignment
-**This project is linked to both my personal repo and one on heroku.**
+# WEB322 Airbnb Project Assignment
 
 # Part 1 Requirements
 We must set up:
@@ -10,3 +9,16 @@ We must set up:
   - [X] Room Listing Page
   - [X] Registration Page
   - [X] Login Page
+
+# Part 2 Requirements
+- [ ] Responsive Design for all screen sizes
+- [X] Update HTML to Handlebars *Partially - I think I could do more*
+- [X] Git, GitHub & Heroku
+- [ ] Server-side validation for login and register forms
+  - Login - only check for nulls
+  - Register:
+    - Check for nulls
+    - At least 2 complex validation criteria using regular expressions (eg. password with numbers, letters and min/max length)
+- [ ] Dashboard page after registration
+- [ ] User Registration Form (Sending Emails)
+  - Need to send a welcome message and direct them to dashboard
