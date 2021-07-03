@@ -11,8 +11,8 @@ We must set up:
   - [X] Login Page
 
 # Part 2 Requirements
-- [ ] Responsive Design for all screen sizes
-- [X] Update HTML to Handlebars *Partially - I think I could do more*
+- [X] Responsive Design for all screen sizes
+- [X] Update HTML to Handlebars
 - [X] Git, GitHub & Heroku
 - [ ] Server-side validation for login and register forms
   - Login - only check for nulls

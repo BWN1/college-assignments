@@ -9,10 +9,10 @@ h1 {
 }
 
 #room-listings {
-    margin: 0 5em;
-    padding: 0 2em;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    max-width: 1140px;
 }
 
 .room-card {
@@ -60,6 +60,7 @@ h1 {
 @media only screen and (max-width: 1024px) { 
     #room-listings {
         margin: 0;
+        padding: 0 2em;
     }
 }
 
