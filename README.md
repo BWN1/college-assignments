@@ -19,6 +19,6 @@ We must set up:
   - Register:
     - Check for nulls
     - At least 2 complex validation criteria using regular expressions (eg. password with numbers, letters and min/max length)
-- [ ] Dashboard page after registration
+- [X] Dashboard page after registration
 - [ ] User Registration Form (Sending Emails)
   - Need to send a welcome message and direct them to dashboard

@@ -119,9 +119,12 @@ app.get("/register", function(req,res){
     errMessage = null;
 });
 
+var regFormData = null;
 app.get("/dashboard", function(req, res){
     res.render('dashboard', {
-        title: 'Dashboard - Airbnb'
+        title: 'Dashboard - Airbnb',
+        style: 'dashboard',
+        user: regFormData
     });
 });
 
@@ -138,6 +141,7 @@ app.post("/login-submit", function(req, res){
 app.post("/register-submit", function(req, res){
     let dateString = `${req.body.month}/${req.body.day}/${req.body.year}`
     let currDate = new Date();
+    regFormData = req.body;
 
     if (req.body.fname === '' || req.body.lname === ''||
         req.body.email === '' || req.body.password === '' ||

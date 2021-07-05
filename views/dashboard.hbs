@@ -1,0 +1,16 @@
+<main>
+    <div class="content-wrapper">
+        <div class="welcome">
+            <h1>Welcome {{user.fname}} {{user.lname}}!</h1>
+            <p>An email has been sent to {{user.email}} to confirm your registration!</p>
+            <p>This page is pretty empty as there is more to come!</p>
+        </div>
+        <div class="collected-info">
+            <h2>Here is what you submitted:</h2>
+            <p><b>First Name: </b> {{user.fname}}</p>
+            <p><b>Last Name: </b> {{user.lname}}</p>
+            <p><b>Email: </b> {{user.email}}</p>
+            <p><b>Birthday: </b> {{user.month}}/{{user.day}}/{{user.year}}</p>
+        </div>
+    </div>
+</main>
