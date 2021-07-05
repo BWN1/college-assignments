@@ -2,8 +2,18 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const nodemailer = require('nodemailer');
 const { nextTick } = require('process');
 const app = express();
+const mail = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'bneumannairbnb@gmail.com',
+        pass: 'Seneca41rbnb!!'
+    }
+});
 
 var HTTP_PORT = process.env.PORT || 8080;
 
@@ -167,6 +177,18 @@ app.post("/register-submit", function(req, res){
     }
     else {
         res.redirect('/dashboard');
+        mail.sendMail({
+            from: '"Airbnb" <bneumannairbnb@gmail.com>',
+            to: req.body.email,
+            subject: "Welcome to Airbnb!",
+            html: `<h1>Hey ${req.body.fname}! Welcome to Airbnb!</h1> 
+                   <h2>This is an email to confirm that you are registered!</h2>
+                   <p>Here is what you submitted:</p>
+                   <p>First Name: ${req.body.fname}</p>
+                   <p>Last Name: ${req.body.lname}</p>
+                   <p>Email: ${req.body.email}</p>
+                   <p>Birthday: ${req.body.month}/${req.body.day}/${req.body.year}</p>`
+        });
     }
 });
 
