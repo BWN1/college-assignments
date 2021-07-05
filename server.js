@@ -1,19 +1,21 @@
+//const validate = require('./static/js/validate');
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const { nextTick } = require('process');
 const app = express();
 
 var HTTP_PORT = process.env.PORT || 8080;
 
+app.use(express.urlencoded({ extended: true }));
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
-
 app.use(express.static('static'));
 
 app.get("/", function(req,res){
     res.render('index', {
         title: 'Airbnb - Come Home',
-        style: 'home.css',
+        style: 'home',
         promo: {
             description: 'SUMMER SALE: Get 10% off with code',
             code: 'SUMMER10'
@@ -24,7 +26,7 @@ app.get("/", function(req,res){
 app.get("/listings", function(req,res){
     res.render('listings', {
         title: 'Room Listings - Airbnb',
-        style: 'listings.css',
+        style: 'listings',
         promo: {
             description: 'SUMMER SALE: Get 10% off with code',
             code: 'SUMMER10'
@@ -88,26 +90,80 @@ app.get("/listings", function(req,res){
     });
 });
 
+var errMessage = null;
 app.get("/login", function(req,res){
     res.render('login', {
         title: 'Login - Airbnb',
-        style: 'login.css',
+        style: 'login',
+        script: 'loginValidate',
         promo: {
             description: 'SUMMER SALE: Get 10% off with code',
             code: 'SUMMER10'
-        }
+        },
+        message: errMessage
     });
+    errMessage = null;
 });
 
 app.get("/register", function(req,res){
     res.render('register', {
         title: 'Register - Airbnb',
-        style: 'register.css',
+        style: 'register',
+        script: 'registerValidate',
         promo: {
             description: 'SUMMER SALE: Get 10% off with code',
             code: 'SUMMER10'
-        }
+        },
+        message: errMessage
     });
+    errMessage = null;
+});
+
+app.get("/dashboard", function(req, res){
+    res.render('dashboard', {
+        title: 'Dashboard - Airbnb'
+    });
+});
+
+app.post("/login-submit", function(req, res){
+    if (req.body.email === '' || req.body.password === '') {
+        errMessage = 'Invalid email or password';
+        res.redirect('/login');
+    }
+    else {
+        res.redirect('/dashboard');
+    }  
+});
+
+app.post("/register-submit", function(req, res){
+    let dateString = `${req.body.month}/${req.body.day}/${req.body.year}`
+    let currDate = new Date();
+
+    if (req.body.fname === '' || req.body.lname === ''||
+        req.body.email === '' || req.body.password === '' ||
+        req.body.day === '' || req.body.month === '' || req.body.year === '') {
+            errMessage = 'Required field is missing';
+            res.redirect('/register');
+        }
+    else if (!req.body.email.match(/[a-zA-z]+[\@][a-zA-z]+[\.][a-zA-z]+$/)) {
+        errMessage = 'Invalid email';
+        res.redirect('/register');
+    }
+    else if (!req.body.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[0-9a-zA-Z!@#$%^&*(),.?":{}|<>]{6,15}$/)) {
+        errMessage = 'Invalid password';
+        res.redirect('/register');
+    }
+    else if (isNaN(Date.parse(dateString))) {
+        errMessage = 'Invalid birthday';
+        res.redirect('/register');
+    }
+    else if ((currDate.getFullYear() - req.body.year) < 18) {
+        errMessage = 'You must be 18 or older to sign up';
+        res.redirect('/register');
+    }
+    else {
+        res.redirect('/dashboard');
+    }
 });
 
 app.use((req, res) => {

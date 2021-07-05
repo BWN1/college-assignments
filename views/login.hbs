@@ -1,19 +1,25 @@
 <main class="user-form-page-main">
     <div class="user-form-page-form-wrapper">
+        {{#if message}}
+            {{> errorMessage}}
+        {{/if}}
+
         <div class="form-card">
             <h1 class="form-title">Sign In</h1>
-            <form action="/">
+            <form action="/login-submit" method="POST">
                 <div class="form-row">
                     <div class="form-input">
                         <label for="email">Email Address</label>
                         <input type="text" name="email" class="input-box" placeholder="Email Address">
                     </div>
+                    {{> warning id="login-email"}}
                 </div>
                 <div class="form-row">
                     <div class="form-input">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="input-box" placeholder="Password">
                     </div>
+                    {{> warning id="login-password"}}
                 </div>
     
                 <div class="form-row">

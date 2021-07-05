@@ -14,7 +14,7 @@ We must set up:
 - [X] Responsive Design for all screen sizes
 - [X] Update HTML to Handlebars
 - [X] Git, GitHub & Heroku
-- [ ] Server-side validation for login and register forms
+- [X] Server-side validation for login and register forms
   - Login - only check for nulls
   - Register:
     - Check for nulls
