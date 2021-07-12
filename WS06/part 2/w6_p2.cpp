@@ -1,3 +1,6 @@
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+//Workshop 6 - STL Containers
+//July 12, 2021 - Brody Neumann
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -17,16 +20,14 @@ void loadData(const char* filename, sdds::Autoshop& as)
 	}
 	while (file)
 	{
-		// TODO: This code can throw errors to signal that something went wrong while
-		//         extracting data. Write code to catch and handle the following errors:
-		//       - the type of vehicle is not recognized: the first non-empty character
-		//           on the line is not 'c', 'C', 'r', or 'R'. In this case print
-		//           "Unrecognized record type: [TAG]<endl>"
-		//       - one of the fields in the record contains invalid data. In this case print
-		//           "Invalid record!<endl>"
-		sdds::Vehicle* aVehicle = sdds::createInstance(file);
-		if (aVehicle)
-			as += aVehicle;
+		try {
+			sdds::Vehicle* aVehicle = sdds::createInstance(file);
+			if (aVehicle)
+				as += aVehicle;
+		}
+		catch (std::string err) {
+			std::cout << err << std::endl;
+		}
 	}
 }
 
@@ -49,9 +50,9 @@ int main(int argc, char** argv)
 	std::cout << std::endl;
 	std::list<const sdds::Vehicle*> vehicles;
 	{
-		// TODO: Create a lambda expression that receives as parameter `const sdds::Vehicle*`
-		//         and returns true if the vehicle has a top speed >300km/h
-		auto fastVehicles = ...
+		auto fastVehicles = [](const sdds::Vehicle* v){
+			return v->topSpeed() > 300 ? true : false;
+		};
 		as.select(fastVehicles, vehicles);
 		std::cout << "--------------------------------\n";
 		std::cout << "|       Fast Vehicles          |\n";
@@ -67,9 +68,9 @@ int main(int argc, char** argv)
 	vehicles.clear();
 	std::cout << std::endl;
 	{
-		// TODO: Create a lambda expression that receives as parameter `const sdds::Vehicle*`
-		//         and returns true if the vehicle is broken and needs repairs.
-		auto brokenVehicles = ...
+		auto brokenVehicles = [](const sdds::Vehicle* v) {
+			return v->condition() == "broken" ? true : false;
+		};
 		as.select(brokenVehicles, vehicles);
 		std::cout << "--------------------------------\n";
 		std::cout << "| Vehicles in need of repair   |\n";
