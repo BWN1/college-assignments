@@ -59,10 +59,16 @@ namespace sdds {
 	void Station::display(std::ostream& os, bool full) const
 	{
 		if (!full) {
-			os << "[" << std::setw(3) << std::setfill('0') << std::right << m_id << "] Item: " << std::setw(m_widthField) << std::setfill(' ') << std::left << m_itemName << " [" << std::setw(6) << std::setfill('0') << std::right << m_serialNumber << "]" << std::endl;
-		} //[ID] Item: NAME [SERIAL]
+			os << "[" << std::setw(3) << std::setfill('0') << std::right << m_id << "] Item: " 
+			   << std::setw(m_widthField) << std::setfill(' ') << std::left << m_itemName 
+			   << " [" << std::setw(6) << std::setfill('0') << std::right << m_serialNumber << "]" << std::endl;
+		} 
 		else {
-			os << "[" << std::setw(3) << std::setfill('0') << std::right << m_id << "] Item: " << std::setw(m_widthField) << std::setfill(' ') << std::left << m_itemName << " [" << std::setw(6) << std::setfill('0') << std::right << m_serialNumber << "] Quantity: " << std::setw(m_widthField) << std::setfill(' ') << std::left << m_quantity << " Description: " << m_desc << std::endl;
-		} //[ID] Item NAME [SERIAL] Quantity: QTY Description: DESCRIPTION
+			os << "[" << std::setw(3) << std::setfill('0') << std::right << m_id << "] Item: " 
+			   << std::setw(m_widthField) << std::setfill(' ') << std::left << m_itemName 
+			   << " [" << std::setw(6) << std::setfill('0') << std::right << m_serialNumber << "] Quantity: " 
+			   << std::setw(m_widthField) << std::setfill(' ') << std::left << m_quantity << " Description: " 
+			   << m_desc << std::endl;
+		}
 	}
 }
