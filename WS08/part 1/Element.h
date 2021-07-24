@@ -1,5 +1,7 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 // Workshop 8 - Smart Pointers
 // 2019/11 - Cornel
+// July 24, 2021 - Brody Neumann
 
 #ifndef SDDS_ELEMENT_H
 #define SDDS_ELEMENT_H
@@ -81,7 +83,9 @@ namespace sdds {
 				std::cout << "    ~D [" << m_id << "]" << std::endl;
 		}
 
-		// TODO: add a function here to validate the price
+		void validate() {
+			if (m_price < 0) throw std::string("*** Negative prices are invalid ***");
+		}
 
 		void display(std::ostream& os) const {
 			os << std::setw(FWD) << m_desc
