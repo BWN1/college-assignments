@@ -1,5 +1,8 @@
+// I have done all the coding by myself and only copied the code
+// that my professor provided to complete my workshops and assignments.
 // Workshop 9 - Multi-Threading
 // SecureData.cpp
+// July 28, 2021 - Brody Neumann
 
 #include <iostream>
 #include <fstream>
@@ -63,11 +66,17 @@ namespace w9 {
 
 	void SecureData::code(char key)
 	{
-		// TODO (at-home): rewrite this function to use at least two threads
-		//         to encrypt/decrypt the text.
-		converter(text, key, nbytes, Cryptor());
+		const int numThreads = 4;
+		const int partSize = nbytes / numThreads;
+		std::thread threads[numThreads];
 
-
+		for (int i = 0; i < numThreads; i++) {
+			if (i + 1 < numThreads) {
+				threads[i] = std::thread(std::bind(converter, text + (i * partSize), key, partSize, Cryptor()));
+			}
+			else threads[i] = std::thread(std::bind(converter, text + (i * partSize), key, nbytes - (i * partSize), Cryptor()));
+		}
+		for (int i = 0; i < numThreads; i++) threads[i].join();
 
 		encoded = !encoded;
 	}
@@ -79,23 +88,30 @@ namespace w9 {
 			throw std::string("\n***Data is not encoded***\n");
 		else
 		{
-			// TODO: open a binary file for writing
+			std::ofstream ofile(file, std::ios::binary);
+			if (!ofile) throw std::string("Could not open write file");
 
-
-			// TODO: write data into the binary file
-			//         and close the file
+			ofile.write(text, nbytes);
+			ofile.close();
 		}
 	}
 
 	void SecureData::restore(const char* file, char key) {
-		// TODO: open binary file for reading
+		std::ifstream ifile(file, std::ios::binary);
+		if (!ifile) throw std::string("Could not open reading file");
 
+		ifile.seekg(0, ifile.end);
+		nbytes = ifile.tellg();
+		ifile.seekg(0, ifile.beg);
 
-		// TODO: - allocate memory here for the file content
+		if (text) {
+			delete[] text;
+			text = nullptr;
+		}
 
+		text = new char[nbytes];
 
-		// TODO: - read the content of the binary file
-
+		ifile.read(text, nbytes);
 
 		*ofs << "\n" << nbytes << " bytes copied from binary file "
 			<< file << " into memory.\n";
