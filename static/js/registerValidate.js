@@ -24,7 +24,7 @@ function inputIsNonNumeric(elem) {
 
 function registerValidate(form) {
     const inputs = form.elements;
-    const emailRegEx = /[a-zA-z]+[\@][a-zA-z]+[\.][a-zA-z]+$/;
+    const emailRegEx = /[a-zA-z0-9]+[\@][a-zA-z]+[\.][a-zA-z]+$/;
 
     //Check for blank fields
     for (let i = 0; i < inputs.length; i++) {

@@ -22,3 +22,12 @@ We must set up:
 - [X] Dashboard page after registration
 - [X] User Registration Form (Sending Emails)
   - Need to send a welcome message and direct them to dashboard
+
+# Part 3 Requirements
+- [X] Connect and store users in MongoDB database
+- [X] Create sessions
+- [X] Successfully authenticate users
+- [ ] Setup different authorization for users and dashboard
+- [ ] Update dashboard for administrators and normal users
+- [ ] Update header for logout functionality
+  - [ ] Destroy session on logout
