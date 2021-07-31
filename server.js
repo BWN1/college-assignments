@@ -2,7 +2,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
-const path = require('path');
 const app = express();
 var HTTP_PORT = process.env.PORT || 8080;
 
@@ -17,6 +16,7 @@ var Schema = mongoose.Schema;
 
 //Nodemailer
 const nodemailer = require('nodemailer');
+const { ExpressHandlebars } = require('express-handlebars');
 const mail = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -44,25 +44,50 @@ const store = new MongoDBSession({
 
 //Add user schema to MongoDB
 let userSchema = new Schema({
-    "fname": String,
-    "lname": String,
+    "fname": {
+        type: String,
+        required: true
+    },
+    "lname": {
+        type: String,
+        required: true
+    },
     "email": {
         type: String,
-        unique: true
+        unique: true,
+        required: true
     },
-    "password": String,
-    "birthday": Date
+    "password": {
+        type: String,
+        required: true
+    },
+    "birthday": {
+        type: String,
+        required: true
+    },
+    "role": {
+        type: String,
+        required: true
+    }
 });
 
 let User = db.model("users", userSchema);
 
 //Set up engine and static folder
 app.use(express.urlencoded({ extended: true }));
-app.engine('.hbs', exphbs({ extname: '.hbs' }));
+app.engine('.hbs', exphbs({ 
+    extname: '.hbs',
+    helpers: {
+        roleIs: function(arg1, arg2, options) {
+            if (arg1 === arg2) return options.fn(this);
+            return options.inverse(this);
+        }
+    }
+}));
 app.set('view engine', '.hbs');
 app.use(express.static('static'));
 app.use(session({
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -70,6 +95,10 @@ app.use(session({
     },
     store: store
 }));
+app.use(function(req, res, next) {
+    res.locals.session = req.session.authenticated;
+    next();
+});
 
 //User is authenticated middleware
 function authenticated (req, res, next) {
@@ -77,7 +106,7 @@ function authenticated (req, res, next) {
     else res.redirect('/login');
 }
 
-//Login and register validation
+//Login and registration validation
 let errMessage = null;
 function loginValidate(req, res, next) {
     let { email, password } = req.body;
@@ -98,7 +127,7 @@ function registerValidate(req, res, next) {
     //Empty field
     if (fname === '' || lname === '' || email === '' || password === '' ||
         day === '' || month === '' || year === '') {
-        errMessage = 'Required field is missing';
+            errMessage = 'Required field is missing';
         res.redirect('/register');
     }
     //Inavlid email
@@ -245,6 +274,11 @@ app.post("/login", loginValidate, function(req, res){
                 if (!match) res.redirect('/login');
                 else {
                     req.session.authenticated = true;
+                    req.session.user = {
+                        name: `${user.fname} ${user.lname}`,
+                        email: user.email,
+                        role: user.role
+                    };
                     res.redirect('/dashboard');
                 }
             });
@@ -279,7 +313,8 @@ app.post("/register", registerValidate, function(req, res){
             lname: lname,
             email: email,
             password: hash,
-            birthday: new Date(birthday)
+            birthday: new Date(birthday),
+            role: "user" //Regular user will be created upon registration
         });
     
         //Add new user to database
@@ -289,24 +324,43 @@ app.post("/register", registerValidate, function(req, res){
         });
     });
 
-    //Redirect them to the login page to create new session
-    res.redirect('/login');
+    //Authenticate and redirect them to the dashboard
+    req.session.authenticated = true;
+    req.session.user = {
+        name: `${fname} ${lname}`,
+        email: email,
+        role: "user" //Default registration role is user
+    };
+    res.redirect('/dashboard');
 
-    //Send new user an email welcoming them
-    mail.sendMail({
-        from: '"Airbnb" <bneumannairbnb@gmail.com>',
-        to: email,
-        subject: "Welcome to Airbnb!",
-        html: `<h1>Hey ${fname}! Welcome to Airbnb!</h1> 
-            <h2>This is an email to confirm that you are registered!</h2>`
-    });
+    // //Send new user an email welcoming them
+    // mail.sendMail({
+    //     from: '"Airbnb" <bneumannairbnb@gmail.com>',
+    //     to: email,
+    //     subject: "Welcome to Airbnb!",
+    //     html: `<h1>Hey ${fname}! Welcome to Airbnb!</h1> 
+    //         <h2>This is an email to confirm that you are registered!</h2>`
+    // });
 });
 
 //User dashboard page
 app.get("/dashboard", authenticated, function(req, res){
+    //get authorization
     res.render('dashboard', {
         title: 'Dashboard - Airbnb',
-        style: 'dashboard'
+        style: 'dashboard',
+        session: req.session,
+        user: req.session.user
+    });
+});
+
+//Logout
+app.get("/logout", function(req, res) {
+    req.session.destroy(function (err) {
+        if (err) console.log(err);
+        res.clearCookie('connect.sid');
+        errMessage = null;
+        res.redirect("/");
     });
 });
 

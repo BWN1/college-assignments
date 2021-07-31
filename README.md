@@ -27,7 +27,7 @@ We must set up:
 - [X] Connect and store users in MongoDB database
 - [X] Create sessions
 - [X] Successfully authenticate users
-- [ ] Setup different authorization for users and dashboard
-- [ ] Update dashboard for administrators and normal users
-- [ ] Update header for logout functionality
-  - [ ] Destroy session on logout
+- [X] Setup different authorization for users and dashboard
+- [X] Update dashboard for administrators and normal users
+- [X] Update header for logout functionality
+  - [X] Destroy session on logout

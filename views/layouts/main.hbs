@@ -18,7 +18,11 @@
         </div>
     {{/if}}
 
-    {{> header}}  
+    {{#if session}}
+        {{> header session="session" }}  
+    {{else}}
+        {{> header }}  
+    {{/if}}
     {{{ body }}}
     {{> footer}}
 

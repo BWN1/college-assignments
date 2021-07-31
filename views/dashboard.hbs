@@ -1,16 +1,16 @@
 <main>
     <div class="content-wrapper">
         <div class="welcome">
-            <h1>Welcome {{user.fname}} {{user.lname}}!</h1>
-            <p>An email has been sent to {{user.email}} to confirm your registration!</p>
-            <p>This page is pretty empty as there is more to come!</p>
-        </div>
-        <div class="collected-info">
-            <h2>Here is what you submitted:</h2>
-            <p><b>First Name: </b> {{user.fname}}</p>
-            <p><b>Last Name: </b> {{user.lname}}</p>
-            <p><b>Email: </b> {{user.email}}</p>
-            <p><b>Birthday: </b> {{user.month}}/{{user.day}}/{{user.year}}</p>
+            {{#roleIs user.role "admin"}}
+                <h1><strong>You are an admin</strong></h1>
+                <h1>Welcome {{user.name}}!</h1>
+                <p>This is the admin dashboard. There is more to come for this page</p>
+            {{/roleIs}}
+            {{#roleIs user.role "user"}}
+                <h1>Welcome {{user.name}}!</h1>
+                <p>This page is empty right now, but there is more to come!</h1>
+            {{/roleIs}}
+            <p>This is your email {{user.email}}</p>
         </div>
     </div>
 </main>

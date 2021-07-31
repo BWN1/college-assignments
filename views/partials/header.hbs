@@ -14,8 +14,13 @@
         </nav>
         <div class="header-right">
             <div class="header-account-actions">
-                <a href="/login" class="hyperlink">Login</a>
-                <a href="/register" class="hyperlink action-link">Sign Up</a>
+                {{#if session}}
+                    <a href="/dashboard" class="hyperlink">Dashboard</a>
+                    <a href="/logout" class="hyperlink action-link">Logout</a>
+                {{else}}
+                    <a href="/login" class="hyperlink">Login</a>
+                    <a href="/register" class="hyperlink action-link">Sign Up</a>
+                {{/if}}
             </div>
         </div>
 </header>
