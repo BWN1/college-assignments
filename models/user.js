@@ -76,6 +76,7 @@ function authenticateUser(email, password, callback) {
                 if (match) callback(user);
             });
         }
+        else callback();
     });
 }
 

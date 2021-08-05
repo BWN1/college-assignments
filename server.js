@@ -159,7 +159,7 @@ app.get("/dashboard", authenticated, function(req, res){
 });
 
 //Logout
-app.get("/logout", function(req, res) {
+app.get("/logout", authenticated, function(req, res) {
     req.session.destroy(function (err) {
         if (err) console.log(err);
         res.clearCookie('connect.sid');
