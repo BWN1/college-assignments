@@ -8,6 +8,9 @@ var HTTP_PORT = process.env.PORT || 8080;
 //Dotenv environment variables
 require('dotenv').config();
 
+//Room model
+const roomModel = require("./models/room");
+
 //Mongoose
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -59,8 +62,10 @@ app.use(express.static('static'));
 //Routes
 let userLogin = require("./routes/userLogin");
 let userRegister = require("./routes/userRegister");
+let dashboard = require("./routes/dashboard");
 app.use('/login', userLogin);
 app.use('/register', userRegister);
+app.use('/dashboard', dashboard);
 
 //User is authenticated middleware
 function authenticated (req, res, next) {
@@ -82,79 +87,16 @@ app.get("/", function(req,res){
 
 //Listings page
 app.get("/listings", function(req,res){
-    res.render('listings', {
-        title: 'Room Listings - Airbnb',
-        style: 'listings',
-        promo: {
-            description: 'SUMMER SALE: Get 10% off with code',
-            code: 'SUMMER10'
-        },
-        room: [
-            {
-                image: 'images/rooms/room1.jpg',
-                type: 'Apartment',
-                location: 'Toronto',
-                title: 'Downtown Toronto Apartment - FREE WIFI',
-                price: 130,
-                rating: 4.67,
-                numRatings: 121
+    roomModel.getAllRooms((rooms) => {
+        res.render('listings', {
+            title: 'Room Listings - Airbnb',
+            style: 'listings',
+            promo: {
+                description: 'SUMMER SALE: Get 10% off with code',
+                code: 'SUMMER10'
             },
-            {
-                image: 'images/rooms/room2.jpg',
-                type: 'House',
-                location: 'Toronto',
-                title: 'Downtown Toronto 2 Story House',
-                price: 340,
-                rating: 4.71,
-                numRatings: 98
-            },
-            {
-                image: 'images/rooms/room3.jpg',
-                type: 'Apartment',
-                location: 'Edmonton',
-                title: 'Apartment with City Skyline View',
-                price: 190,
-                rating: 4.56,
-                numRatings: 154
-            },
-            {
-                image: 'images/rooms/room4.jpg',
-                type: 'Apartment',
-                location: 'Vancouver',
-                title: 'Vancouver Apartment (close to public transport)',
-                price: 270,
-                rating: 4.81,
-                numRatings: 59
-            },
-            {
-                image: 'images/rooms/room5.jpg',
-                type: 'House',
-                location: 'Montreal',
-                title: 'Downtown Montreal House with Balcony',
-                price: 200,
-                rating: 4.76,
-                numRatings: 192
-            },
-            {
-                image: 'images/rooms/room6.jpg',
-                type: 'House',
-                location: 'Vancouver',
-                title: '2 Story House On The Outskirts Of Vancouver',
-                price: 320,
-                rating: 4.92,
-                numRatings: 21
-            }
-        ]
-    });
-});
-
-//User dashboard page
-app.get("/dashboard", authenticated, function(req, res){
-    res.render('dashboard', {
-        title: 'Dashboard - Airbnb',
-        style: 'dashboard',
-        session: req.session,
-        user: req.session.user
+            room: rooms
+        });
     });
 });
 

@@ -291,6 +291,50 @@ header > * {
     font-weight: 700;
 }
 
+/** ROOM LISTINGS */
+.room-listings {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-card {
+    flex-basis: 30%;
+    flex-grow: 1;
+    margin: 1em;
+}
+
+.room-image {
+    width: 100%;
+    border-radius: 1em;
+}
+
+.room-location {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #464646;
+    margin-bottom: 0.5em;
+}
+
+.room-title {
+    margin: 0.3em 0;
+}
+
+.room-price {
+    margin: 0.5em 0;
+}
+
+.room-ratings-section {
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.room-num-ratings {
+    color: #464646;
+    margin-left: 0.4em;
+}
+
 /** FOOTER NAV */
 footer {
     margin-top: 2em;
@@ -381,5 +425,11 @@ footer {
     .form-card {
         box-shadow: none;
         margin-top: 1em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .room-card {
+        flex-basis: 100%;
     }
 }

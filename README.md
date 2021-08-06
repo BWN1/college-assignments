@@ -31,3 +31,12 @@ We must set up:
 - [X] Update dashboard for administrators and normal users
 - [X] Update header for logout functionality
   - [X] Destroy session on logout
+
+# Part 4 Requirements
+- [ ] Administrator module
+  - [X] Create a room
+  - [X] View all rooms
+  - [ ] Edit and change a selected room
+- [ ] Search module
+  - [ ] Search rooms by locations
+  - [ ] Create query view for searching rooms

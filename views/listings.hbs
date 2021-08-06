@@ -1,21 +1,13 @@
 <main>
     <h1>Room listings</h1>
 
-    <div id="room-listings">
+    <div class="room-listings">
         {{#each room}}
             <section class="room-card">
                 <a href=""><img src="{{image}}" alt="Room 1" loading="lazy" class="room-image"></a>
-                <p class="room-header">
-                    <span class="room-type">{{type}}</span>
-                    &#8226;
-                    <span class="room-location">{{location}}</span>
+                <p class="room-location">{{location}}</p>
                 <h3 class="room-title"><a href="" class="hyperlink">{{title}}</a></h3>
                 <p class="room-price">${{price}} CAD/night</p>
-                <div class="room-ratings-section">
-                    <img src="images/icons/star.svg" alt="Star Icon" class="star-icon">
-                    <span class="room-rating">{{rating}}</span>
-                    <span class="room-num-ratings">({{numRatings}})</span>
-                </div>
             </section>
         {{/each}}
     </div>

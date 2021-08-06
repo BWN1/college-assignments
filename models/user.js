@@ -74,6 +74,7 @@ function authenticateUser(email, password, callback) {
         if (user) {
             bcrypt.compare(password, user.password, (err, match) => {
                 if (match) callback(user);
+                else callback();
             });
         }
         else callback();
@@ -81,7 +82,6 @@ function authenticateUser(email, password, callback) {
 }
 
 module.exports = {
-    User,
     userExists,
     createUser,
     authenticateUser
