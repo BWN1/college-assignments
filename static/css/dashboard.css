@@ -1,19 +1,69 @@
+::-webkit-scrollbar { 
+    display:none
+}
+
 main { 
     margin: auto;
     padding: 1rem 2rem;
     max-width: 1140px;
+    padding-bottom: 0;
+}
+
+.welcome-user {
+    text-align: center;
+    margin: 2em 0;
 }
 
 .content-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 1px solid black;
 }
 
-.room-actions {
+.content-wrapper > * {
+    padding-top: 1em;
+}
+
+.no-room-selected {
+    color: gray;
+    text-align: center;
+}
+
+.edit-room {
     width: 33.3%;
+    min-height: 100vh;
+    overflow-y: scroll;
+    align-self: flex-start;
+    position: sticky;
+    top: 0;
+    margin-right: 2.5em;
+    scrollbar-width: none;
+    border-right: 1px solid black;
+    padding-right: 2.5em;
 }
 
 .room-listings {
     width: 66.6%;
+}
+
+.room-card {
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 1em;
+    transition: all 0.1s ease-in;
+    border-radius: 1em;
+}
+
+.room-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01, 1.01);
+}
+
+.form-input textarea {
+    max-width: 100%;
+}
+
+footer {
+    margin-top: 0;
 }
