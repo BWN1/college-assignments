@@ -88,7 +88,7 @@ app.get("/", function(req,res){
 
 //Listings page
 app.get("/listings", function(req,res){
-    roomModel.getAllRooms((rooms) => {
+    let render = (rooms) => {
         res.render('listings', {
             title: 'Room Listings - Airbnb',
             style: 'listings',
@@ -98,7 +98,18 @@ app.get("/listings", function(req,res){
             },
             room: rooms
         });
-    });
+    };
+
+    if (req.query.location) {
+        roomModel.findRoomsByLocation(req.query.location, (roomsFound) => {
+            render(roomsFound);
+        });
+    }
+    else {
+        roomModel.getAllRooms((roomsFound) => {
+            render(roomsFound);
+        });
+    }
 });
 
 //Find room

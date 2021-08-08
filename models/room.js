@@ -92,9 +92,18 @@ function findRoom(id, callback) {
     });
 }
 
+function findRoomsByLocation(location, callback) {
+    Room.find({"location": location}).lean()
+    .exec((err, rooms) => {
+        if (err) console.log(err);
+        callback(rooms);
+    });
+}
+
 module.exports = {
     createRoom,
     updateRoom,
     getAllRooms,
-    findRoom
+    findRoom,
+    findRoomsByLocation
 };

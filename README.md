@@ -37,6 +37,6 @@ We must set up:
   - [X] Create a room
   - [X] View all rooms
   - [X] Edit and change a selected room
-- [ ] Search module
-  - [ ] Search rooms by locations
-  - [ ] Create query view for searching rooms
+- [X] Search module
+  - [X] Search rooms by locations
+  - [X] Create query view for searching rooms
