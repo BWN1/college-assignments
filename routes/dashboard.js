@@ -66,7 +66,7 @@ router.post("/", upload.single('image'), function(req,res){
 });
 
 //Create room get
-router.get("/create-room", authorized, function(req,res) {
+router.get("/create-room", authenticated, authorized, function(req,res) {
     res.render("createRoom", {
         title: "Create A Room - Airbnb",
         style: "dashboard",
@@ -78,7 +78,7 @@ router.get("/create-room", authorized, function(req,res) {
 });
 
 //Create room post
-router.post("/create-room", authorized, upload.single('image'), function(req,res) {
+router.post("/create-room", authenticated, authorized, upload.single('image'), function(req,res) {
     if (message) res.redirect("/dashboard/create-room");
     else {
         roomModel.createRoom(req.body, req.file);
@@ -87,7 +87,7 @@ router.post("/create-room", authorized, upload.single('image'), function(req,res
 });
 
 //Edit room
-router.post("/edit-room", authorized, upload.single('image'), function(req,res) {
+router.post("/edit-room", authenticated, authorized, upload.single('image'), function(req,res) {
     if (message) res.redirect("/dashboard");
     else {
         roomModel.updateRoom(req.body, req.file, () => {
@@ -107,7 +107,7 @@ function authenticated (req, res, next) {
 //User is authorized middleware
 function authorized (req, res, next) {
     if (req.session.user.role === "admin") next();
-    else res.redirect('/');
+    else res.redirect('/dashboard');
 }
 
 module.exports = router;
