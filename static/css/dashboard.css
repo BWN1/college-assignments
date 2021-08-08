@@ -9,6 +9,10 @@ main {
     padding-bottom: 0;
 }
 
+.form-card {
+    max-width: 600px;
+}
+
 .admin-dashboard-head {
     text-align: center;
     margin: 2em 0;
