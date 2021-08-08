@@ -4,6 +4,7 @@ const multer = require("multer");
 const express = require("express");
 let router = express.Router();
 
+//Multer storage
 const storage = multer.diskStorage({
     destination: "./static/public/room_photos/",
     filename: function(req, file, cb) {
@@ -11,19 +12,22 @@ const storage = multer.diskStorage({
     }
 });
 
+//Multer
 const upload = multer({
     storage: storage,
     fileFilter: function(req, file, cb) {
         if (!/(.png|.jpg|.jpeg)$/i.test(path.extname(file.originalname))) {
-            errMessage = "Invalid file type";
+            message = "Invalid file type";
+            messageType = "invalid";
             return cb(null, false);
         }
         else cb(null, true);
     }
 });
 
-//Error message when creating/editing a room
-let errMessage = null;
+//Error/success message when creating/editing a room
+let message = null;
+let messageType = null;
 
 //Dashboard get
 router.get("/", authenticated, function(req, res){
@@ -36,10 +40,14 @@ router.get("/", authenticated, function(req, res){
             res.render('adminDashboard', {
                 title: title,
                 style: style,
-                script: "roomValidate",
+                script: "editRoom",
                 user: user,
-                rooms: rooms
+                rooms: rooms,
+                message: message,
+                messageType: messageType
             });
+
+            message = null;
         });
     }
     else {
@@ -48,7 +56,7 @@ router.get("/", authenticated, function(req, res){
             style: style,
             user: user
         });
-    }    
+    }
 });
 
 //Dashboard post
@@ -62,18 +70,31 @@ router.get("/create-room", authorized, function(req,res) {
     res.render("createRoom", {
         title: "Create A Room - Airbnb",
         style: "dashboard",
-        script: "roomValidate",
-        message: errMessage
+        script: "createRoom",
+        message: message,
+        messageType: messageType
     });
-    errMessage = null;
+    message = null;
 });
 
 //Create room post
 router.post("/create-room", authorized, upload.single('image'), function(req,res) {
-    if (errMessage) res.redirect("/dashboard/create-room");
+    if (message) res.redirect("/dashboard/create-room");
     else {
         roomModel.createRoom(req.body, req.file);
         res.redirect("/dashboard");
+    }
+});
+
+//Edit room
+router.post("/edit-room", authorized, upload.single('image'), function(req,res) {
+    if (message) res.redirect("/dashboard");
+    else {
+        roomModel.updateRoom(req.body, req.file, () => {
+            message = "Successfully updated room!";
+            messageType = "success";
+            res.redirect("/dashboard");
+        });
     }
 });
 
@@ -86,14 +107,7 @@ function authenticated (req, res, next) {
 //User is authorized middleware
 function authorized (req, res, next) {
     if (req.session.user.role === "admin") next();
-    else res.redirect('/login');
-}
-
-//Valid file uploaded
-function validFile(multerUpload) {
-    return (req, res, next) => {
-
-    }
+    else res.redirect('/');
 }
 
 module.exports = router;

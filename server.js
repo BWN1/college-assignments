@@ -17,7 +17,8 @@ mongoose.connect(
     process.env.DBCONNECTION, {
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
-        useCreateIndex: true
+        useCreateIndex: true,
+        useFindAndModify: false
     }
 );
 
@@ -97,6 +98,13 @@ app.get("/listings", function(req,res){
             },
             room: rooms
         });
+    });
+});
+
+//Find room
+app.post("/room/:id", function(req, res) {
+    roomModel.findRoom(req.params.id, (room) => {
+        res.send(room);
     });
 });
 
