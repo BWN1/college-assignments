@@ -1,4 +1,3 @@
-const fs = require("fs");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -92,6 +91,7 @@ function findRoom(id, callback) {
     });
 }
 
+//Find by location
 function findRoomsByLocation(location, callback) {
     Room.find({"location": location}).lean()
     .exec((err, rooms) => {
@@ -100,10 +100,21 @@ function findRoomsByLocation(location, callback) {
     });
 }
 
+//Find user booked rooms
+function findBookedRooms(roomIds, callback) {
+    Room.find({_id: {$in: roomIds}}).lean()
+    .exec((err, rooms) => {
+        if (err) console.log(err);
+        callback(rooms);
+    });
+}
+
+
 module.exports = {
     createRoom,
     updateRoom,
     getAllRooms,
     findRoom,
-    findRoomsByLocation
+    findRoomsByLocation,
+    findBookedRooms
 };

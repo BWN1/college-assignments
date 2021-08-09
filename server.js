@@ -8,7 +8,8 @@ var HTTP_PORT = process.env.PORT || 8080;
 //Dotenv environment variables
 require('dotenv').config();
 
-//Room model
+//Models
+const userModel = require("./models/user");
 const roomModel = require("./models/room");
 
 //Mongoose
@@ -137,8 +138,9 @@ app.post("/room/:id", function(req, res) {
 });
 
 //Book room
-app.post("/book-room/:id", function(req, res) {
-
+app.post("/book-room/:id", authenticated, function(req, res) {
+    userModel.addRoomBooking(req.session.user, req.params.id, req.body);
+    res.redirect('/dashboard');
 });
 
 //Logout

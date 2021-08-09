@@ -1,4 +1,5 @@
 const roomModel = require("../models/room");
+const userModel = require("../models/user");
 const path = require("path");
 const multer = require("multer");
 const express = require("express");
@@ -39,7 +40,7 @@ router.get("/", authenticated, function(req, res){
         roomModel.getAllRooms((rooms) => {
             res.render('adminDashboard', {
                 title: title,
-                style: style,
+                style: "adminDashboard",
                 script: "editRoom",
                 user: user,
                 rooms: rooms,
@@ -51,10 +52,17 @@ router.get("/", authenticated, function(req, res){
         });
     }
     else {
-        res.render('dashboard', {
-            title: title,
-            style: style,
-            user: user
+        //Get user's booked rooms
+        userModel.getBookedRooms(user.email, (roomIds) => {
+            //Pull all data for those rooms
+            roomModel.findBookedRooms(roomIds, (rooms) => {
+                res.render('userDashboard', {
+                    title: title,
+                    style: "userDashboard",
+                    user: user,
+                    rooms: rooms
+                });
+            });
         });
     }
 });

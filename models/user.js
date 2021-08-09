@@ -1,5 +1,8 @@
 //Mail user
-const { mailUser } = require("../static/js/mailUser");
+const { welcomeMailUser, roomBookedMailUser } = require("../static/js/mailUser");
+
+//Room model
+const roomModel = require("./room");
 
 //Database
 const mongoose = require("mongoose");
@@ -33,9 +36,24 @@ let userSchema = new Schema({
         type: String,
         required: true
     },
-    "rooms-booked": {
-        
-    }
+    "roomsBooked": [{
+        "roomId": {
+            type: String,
+            required: true
+        },
+        "checkInDate": {
+            type: String,
+            required: true
+        },
+        "checkOutDate": {
+            type: String,
+            required: true
+        },
+        "total": {
+            type: String,
+            required: true
+        }
+    }]
 });
 
 let User = mongoose.model("users", userSchema);
@@ -66,7 +84,7 @@ function createUser(data) {
         //Add new user to database
         user.save((err) => {
             if (err) console.log(`There was an error saving the user ${err}`);
-            else mailUser(email, fname);
+            else welcomeMailUser(email, fname);
         });
     });
 }
@@ -84,8 +102,47 @@ function authenticateUser(email, password, callback) {
     });
 }
 
+function addRoomBooking(user, roomId, data) {
+    let { checkIn, checkOut, total } = data;
+    let room = {
+        roomId,
+        checkInDate: checkIn,
+        checkOutDate: checkOut,
+        total
+    };
+
+    User.findOne({"email": user.email})
+    .exec((err, user) => {
+        if (err) console.log(err);
+        user.roomsBooked.push(room);
+        user.save((err) => {
+            if (err) console.log(err);
+            else roomBookedMailUser(user.email, user.fname, data);
+        });
+
+    });
+}
+
+function getBookedRooms(email, callback) {
+    User.findOne({"email": email}).lean()
+    .exec((err, user) => {
+        if (err) console.log(err);
+        //Get room ids to search for
+        let roomIds = [];
+        if (user.roomsBooked) {
+            user.roomsBooked.forEach((room) => {
+                roomIds.push(room.roomId);
+            });
+            callback(roomIds);
+        }
+        else callback(null);
+    });
+}
+
 module.exports = {
     userExists,
     createUser,
-    authenticateUser
+    authenticateUser,
+    addRoomBooking,
+    getBookedRooms
 };
