@@ -33,7 +33,7 @@ function roomBookedMailUser (email, fname, roomDetails) {
         html: `<h1>Hey ${fname}! You have successfully booked a room!</h1> 
             <p>You booked the <strong>${roomDetails.title}</strong> room 
             between the period of ${checkInDate.toLocaleDateString("en-CA", dateOptions)} and ${checkOutDate.toLocaleDateString("en-CA", dateOptions)}. 
-            Your total is ${roomDetails.total}</p>`
+            Your total is $${roomDetails.total}</p>`
     });
 }
 

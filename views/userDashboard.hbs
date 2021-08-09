@@ -2,8 +2,23 @@
     <div class="content-wrapper">
         <div class="welcome">
             <h1>Welcome {{user.name}}!</h1>
-            <p>These are the rooms you have booked</p>
-            {{> roomListings}}
+        </div>
+        <h2>Your Booking History</h2>
+        <div class="rooms-booked">
+            {{#if rooms}}
+                {{#each rooms}}
+                    <section class="room-card">
+                        <a href="/room/{{_id}}"><img src="{{image}}" alt="Room 1" loading="lazy" class="room-image"></a>
+                        <div class="room-booking-details">
+                            <h3 class="room-title"><a href="/room/{{_id}}" class="hyperlink">{{title}}</a></h3>
+                            <p class="room-check-in"><b>From: </b>{{bookingDetails.checkInDate}} - {{bookingDetails.checkOutDate}}</p>
+                            <p class="room-total"><b>Your total: </b>${{bookingDetails.total}} CAD</p>
+                        </div>
+                    </section>
+                {{/each}}
+            {{else}}
+                <p>You have no booked rooms</p>
+            {{/if}}
         </div>
     </div>
 </main>

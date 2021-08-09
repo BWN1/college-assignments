@@ -133,9 +133,9 @@ function getBookedRooms(email, callback) {
             user.roomsBooked.forEach((room) => {
                 roomIds.push(room.roomId);
             });
-            callback(roomIds);
+            callback(roomIds, user.roomsBooked);
         }
-        else callback(null);
+        else callback(null, null);
     });
 }
 

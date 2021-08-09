@@ -33,7 +33,6 @@ let messageType = null;
 //Dashboard get
 router.get("/", authenticated, function(req, res){
     let title = 'Dashboard - Airbnb';
-    let style = 'dashboard';
     let user = req.session.user;
 
     if (user.role === "admin") {
@@ -53,14 +52,30 @@ router.get("/", authenticated, function(req, res){
     }
     else {
         //Get user's booked rooms
-        userModel.getBookedRooms(user.email, (roomIds) => {
+        userModel.getBookedRooms(user.email, (roomIds, bookingDetails) => {
+            //Convert date to local date string to be displayed to user
+            let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            bookingDetails.forEach((room) => {
+                let checkInDate = new Date(room.checkInDate);
+                let checkOutDate = new Date(room.checkOutDate);
+
+                room.checkInDate = checkInDate.toLocaleDateString("en-CA", dateOptions);
+                room.checkOutDate = checkOutDate.toLocaleDateString("en-CA", dateOptions)
+            });
+
             //Pull all data for those rooms
             roomModel.findBookedRooms(roomIds, (rooms) => {
+                //Add booking details to each room
+                for (let i = 0; i < rooms.length; i++) {
+                    rooms[i].bookingDetails = bookingDetails[i];
+                }
+
                 res.render('userDashboard', {
                     title: title,
                     style: "userDashboard",
                     user: user,
-                    rooms: rooms
+                    rooms: rooms,
+                    bookingDetails: bookingDetails
                 });
             });
         });
@@ -77,7 +92,7 @@ router.post("/", upload.single('image'), function(req,res){
 router.get("/create-room", authenticated, authorized, function(req,res) {
     res.render("createRoom", {
         title: "Create A Room - Airbnb",
-        style: "dashboard",
+        style: "adminDashboard",
         script: "createRoom",
         message: message,
         messageType: messageType

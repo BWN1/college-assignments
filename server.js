@@ -75,6 +75,12 @@ function authenticated (req, res, next) {
     else res.redirect('/login');
 }
 
+//User is authorized middleware
+function authorized (req, res, next) {
+    if (req.session.user.role === "admin") next();
+    else res.redirect('/dashboard');
+}
+
 //Main page
 app.get("/", function(req,res){
     res.render('index', {
@@ -131,7 +137,7 @@ app.get("/room/:id", function(req, res) {
 });
 
 //Find room
-app.post("/room/:id", function(req, res) {
+app.post("/room/:id", authorized, function(req, res) {
     roomModel.findRoom(req.params.id, (room) => {
         res.send(room);
     });
@@ -139,8 +145,14 @@ app.post("/room/:id", function(req, res) {
 
 //Book room
 app.post("/book-room/:id", authenticated, function(req, res) {
-    userModel.addRoomBooking(req.session.user, req.params.id, req.body);
-    res.redirect('/dashboard');
+    //Validate input
+    if (req.body.checkIn === "" || req.body.checkOut === "") {
+        res.redirect(`/room/${req.params.id}`);
+    }
+    else {
+        userModel.addRoomBooking(req.session.user, req.params.id, req.body);
+        res.redirect('/dashboard');
+    }
 });
 
 //Logout

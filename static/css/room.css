@@ -12,6 +12,10 @@ main {
     height: auto;
 }
 
+.room-description {
+    white-space: pre-wrap;
+}
+
 .book-room-form {
     position: sticky;
     top: 3.5em;

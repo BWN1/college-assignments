@@ -40,3 +40,9 @@ We must set up:
 - [X] Search module
   - [X] Search rooms by locations
   - [X] Create query view for searching rooms
+
+# Part 5 Requirements
+- [X] User can book room
+- [X] Book room validation
+- [X] Display booked rooms on dashboard
+- [X] Send email confirming booked room
