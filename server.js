@@ -96,10 +96,11 @@ app.get("/listings", function(req,res){
                 description: 'SUMMER SALE: Get 10% off with code',
                 code: 'SUMMER10'
             },
-            room: rooms
+            rooms: rooms
         });
     };
 
+    //Check for location query
     if (req.query.location) {
         roomModel.findRoomsByLocation(req.query.location, (roomsFound) => {
             render(roomsFound);
@@ -112,11 +113,32 @@ app.get("/listings", function(req,res){
     }
 });
 
+//Room details get
+app.get("/room/:id", function(req, res) {
+    roomModel.findRoom(req.params.id, (room) => {
+        res.render('room', {
+            title: `${room.title} - Airbnb`,
+            style: 'room',
+            script: 'room',
+            promo: {
+                description: 'SUMMER SALE: Get 10% off with code',
+                code: 'SUMMER10'
+            },
+            room: room
+        });
+    });
+});
+
 //Find room
 app.post("/room/:id", function(req, res) {
     roomModel.findRoom(req.params.id, (room) => {
         res.send(room);
     });
+});
+
+//Book room
+app.post("/book-room/:id", function(req, res) {
+
 });
 
 //Logout

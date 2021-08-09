@@ -2,11 +2,11 @@
     <h1>Room listings</h1>
 
     <div class="room-listings">
-        {{#each room}}
+        {{#each rooms}}
             <section class="room-card">
-                <a href=""><img src="{{image}}" alt="Room 1" loading="lazy" class="room-image"></a>
+                <a href="/room/{{_id}}"><img src="{{image}}" alt="Room 1" loading="lazy" class="room-image"></a>
                 <p class="room-location">{{location}}</p>
-                <h3 class="room-title"><a href="" class="hyperlink">{{title}}</a></h3>
+                <h3 class="room-title"><a href="/room/{{_id}}" class="hyperlink">{{title}}</a></h3>
                 <p class="room-price">${{price}} CAD/night</p>
             </section>
         {{/each}}

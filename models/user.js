@@ -32,6 +32,9 @@ let userSchema = new Schema({
     "role": {
         type: String,
         required: true
+    },
+    "rooms-booked": {
+        
     }
 });
 

@@ -1,0 +1,53 @@
+<main>
+    <div class="room-info">
+        <img src="../{{room.image}}" class="room-image">
+
+        <h2 class="room-title">{{room.title}}</h2>
+        <hr>
+        <h3>About this space</h3>
+        <p>{{room.description}}</p>
+    </div>
+    <div class="form-card book-room-form">
+        <h3 class="room-price">$<span class="booking-price">{{room.price}}</span> CAD/night</h3>
+        <form action="/book-room/{{room._id}}" method="POST">
+            <div class="form-row">
+                <div class="booking-dates">
+                    <div class="form-input">
+                        <label for="checkin">Check in</label>
+                        <input name="checkin" type="date" class="input-box">
+                        {{> warning id="checkin"}}
+                    </div>
+                    <div class="form-input">
+                        <label for="checkout">Check out</label>
+                        <input name="checkout" type="date" class="input-box">
+                        {{> warning id="checkout"}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-input">
+                    <input type="submit" value="Book room" class="submit-form">
+                </div>
+            </div>
+        </form>
+
+        <div class="booking-total-section-wrapper toggle-hide">
+            <div class="booking-total-wrapper">
+                <div class="booking-total">
+                    <div class="fee-names">
+                        <p>Accommodation</p>
+                    </div>
+                    <div class="fee-totals">
+                        <p class="accommodation-total">$<span class="accommodation-total-price"></span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="fees-total">
+                    <p>Total</p>
+                    <p class="fees-total">$<span class="fees-total-price"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

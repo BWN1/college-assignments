@@ -1,0 +1,47 @@
+main {
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 3em;
+    margin: auto;
+    padding: 2em;
+}
+
+.room-image {
+    width: 100%;
+    height: auto;
+}
+
+.book-room-form {
+    position: sticky;
+    top: 3.5em;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.room-title {
+    margin: 1em 0;
+}
+
+.booking-total-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.booking-total-wrapper hr {
+    grid-column: 1 / 2;
+    margin: 0;
+}
+
+.booking-total-wrapper > * {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.booking-total-wrapper > * > *:last-child {
+    text-align: right;
+}
+
+.warning {
+    margin: 1em 0;
+}
