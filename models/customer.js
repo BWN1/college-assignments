@@ -1,5 +1,5 @@
 const { Customer } = require('./schemas/customerSchema');
-const bcrypt = require('bcryptjs');
+const { validEmail, encryptPassword } = require('./utils/customerUtils');
 
 const getCustomer = async (id) => await Customer.findById(id).exec();
 const registerCustomer = async (customer) => {
@@ -7,19 +7,19 @@ const registerCustomer = async (customer) => {
 
   // Check for required fields
   if (fname && lname && email && password) {
-    // Encrypt password and create customer
-    const hashed = await bcrypt.hash(password, 10);
+    if (!validEmail(email)) return Promise.reject('Invalid email');
+
     const customer = new Customer({
       fname,
       lname,
       email,
-      password: hashed,
+      password: await encryptPassword(password),
       phoneNumbers: phoneNumbers || [],
     });
     return await customer.save();
   }
 
-  return Promise.reject('Error adding customer');
+  return Promise.reject('Missing required fields');
 };
 
 module.exports = {
