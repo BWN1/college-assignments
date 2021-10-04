@@ -26,22 +26,15 @@ router.get('/:id', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  updateProduct(req.body)
-    .then((product) => res.json({ product }))
-    .catch(() =>
-      res
-        .status(500)
-        .json({ error: `Could not find product with id: ${req.params.id}` })
-    );
+  const product = await updateProduct(req.params.id, req.body);
+  if (!!product) res.json({ message: 'Updated product!' });
+  else res.status(500).json({ message: null });
 });
 
 router.delete('/:id', async (req, res) => {
-  const product = await deleteProduct(req.body);
-  if (product) res.json({ product });
-  else
-    res
-      .status(500)
-      .json({ error: `Could not find product with id: ${req.params.id}` });
+  const product = await deleteProduct(req.params.id);
+  if (!!product) res.json({ message: 'Deleted product!' });
+  else res.status(500).json({ message: null });
 });
 
 module.exports = router;

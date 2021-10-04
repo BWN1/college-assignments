@@ -24,7 +24,9 @@ const updateProduct = async (productId, product) => {
   return Products.findOneAndUpdate({ productId }, { ...rest });
 };
 
-const deleteProduct = async (id) => Products.findByIdAndDelete(id).exec();
+const deleteProduct = async (productId) =>
+  Products.findOneAndDelete({ productId }).exec();
+
 const addProduct = async (product) => {
   if (allRequiredFieldsIncluded(product)) {
     const { price, bestSeller, photoURL } = product;
