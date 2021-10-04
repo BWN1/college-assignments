@@ -6,13 +6,16 @@ const router = express.Router();
 const { getCustomer, registerCustomer } = require('../../models/customer');
 
 router.get('/:id', (req, res) => {
-  getCustomer(req.params.id);
-  res.json({ message: 'api/customer' });
+  getCustomer(req.params.id).then((customer) => {
+    if (customer) res.json({ customer });
+    else res.status(500).json({ message: 'Unable to find customer' });
+  });
 });
 
 router.post('/', (req, res) => {
-  registerCustomer(req.body);
-  res.json({ message: 'added customer!' });
+  registerCustomer(req.body)
+    .then(() => res.json({ message: 'Added customer!' }))
+    .catch((error) => res.status(500).json({ message: `${error}` }));
 });
 
 module.exports = router;
