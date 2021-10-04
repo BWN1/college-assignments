@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // Router files
-const customerRoute = require('./api/customer');
-const productsRoute = require('./api/products');
+const customerRoute = require('./customer');
+const productsRoute = require('./products');
 
 // Routes
 router.use('/customer', customerRoute);
