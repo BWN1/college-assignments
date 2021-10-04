@@ -11,7 +11,15 @@ const allRequiredFieldsIncluded = ({
   category,
   bestSeller,
   photoURL,
-}) => !!!(name && price && description && category && bestSeller && photoURL);
+}) =>
+  !!(
+    name &&
+    String(price) &&
+    description &&
+    category &&
+    String(bestSeller) &&
+    photoURL
+  );
 
 const priceIsNumber = (price) => priceRegEx.test(price);
 const photoURLIsValid = (url) => photoURLRegEx.test(url);
