@@ -14,8 +14,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   registerCustomer(req.body)
-    .then(() => res.json({ message: 'Added customer!' }))
-    .catch((error) => res.status(500).json({ message: `${error}` }));
+    .then((message) => res.json({ message }))
+    .catch((error) => res.status(500).json({ error }));
 });
 
 module.exports = router;

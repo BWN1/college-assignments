@@ -1,22 +1,24 @@
 const { Customer } = require('./schemas/customerSchema');
-const { validEmail, encryptPassword } = require('./utils/customerUtils');
+const {
+  allRequiredFieldsIncluded,
+  validEmail,
+  encryptPassword,
+} = require('./utils/customerUtils');
 
-const getCustomer = async (id) => await Customer.findById(id).exec();
+const getCustomer = async (id) => Customer.findById(id).lean().exec();
 const registerCustomer = async (customer) => {
-  const { fname, lname, email, password, phoneNumbers } = customer;
-
-  // Check for required fields
-  if (fname && lname && email && password) {
+  if (allRequiredFieldsIncluded(customer)) {
+    const { fname, lname, email, password, phoneNumbers } = customer;
     if (!validEmail(email)) return Promise.reject('Invalid email');
 
-    const customer = new Customer({
+    Customer({
       fname,
       lname,
       email,
       password: await encryptPassword(password),
       phoneNumbers: phoneNumbers || [],
-    });
-    return await customer.save();
+    }).save();
+    return Promise.resolve('Added customer!');
   }
 
   return Promise.reject('Missing required fields');
