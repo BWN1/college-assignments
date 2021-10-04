@@ -23,7 +23,6 @@ const productsSchema = new Schema({
   quantity: {
     type: Number,
     required: false,
-    default: 0,
   },
   bestSeller: {
     type: Boolean,
