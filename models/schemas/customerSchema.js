@@ -3,7 +3,7 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 const { Schema } = mongoose;
 
 const customerSchema = new Schema({
-  _id: Number,
+  customerId: Number,
   fname: {
     type: String,
     required: true,
@@ -27,5 +27,5 @@ const customerSchema = new Schema({
   },
 });
 
-customerSchema.plugin(AutoIncrement);
+customerSchema.plugin(AutoIncrement, { inc_field: 'customerId' });
 module.exports.Customer = mongoose.model('customers', customerSchema);
