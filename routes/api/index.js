@@ -3,11 +3,15 @@ const router = express.Router();
 
 // Router files
 const customerRoute = require('./customer');
-const productsRoute = require('./products');
+const productsRoute = require('./products/products');
+const categoriesRoute = require('./products/categories');
+const bestSellersRoute = require('./products/bestSellers');
 
 // Routes
 router.use('/customer', customerRoute);
 router.use('/products', productsRoute);
+router.use('/categories', categoriesRoute);
+router.use('/best-sellers', bestSellersRoute);
 
 // Send all available endpoints as JSON object
 router.get('/', (req, res) => {

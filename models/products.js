@@ -16,9 +16,13 @@ const getAllProductsInCategory = async (category) =>
 const getAllBestSellers = async () =>
   Products.find({ bestSeller: true }).lean().exec();
 
-const getProduct = async (id) => Products.findById(id).lean().exec();
-const updateProduct = async (id, product) =>
-  Products.findByIdAndUpdate(id, { ...product });
+const getProduct = async (productId) =>
+  Products.findOne({ productId }).lean().exec();
+
+const updateProduct = async (productId, product) => {
+  const { _id, productId: id, ...rest } = { ...product };
+  return Products.findOneAndUpdate({ productId }, { ...rest });
+};
 
 const deleteProduct = async (id) => Products.findByIdAndDelete(id).exec();
 const addProduct = async (product) => {
