@@ -5,7 +5,8 @@ const {
   encryptPassword,
 } = require('./utils/customerUtils');
 
-const getCustomer = async (id) => Customer.findById(id).lean().exec();
+const getCustomer = async (customerId) =>
+  Customer.findOne({ customerId }).lean().exec();
 const registerCustomer = async (customer) => {
   if (allRequiredFieldsIncluded(customer)) {
     const { fname, lname, email, password, phoneNumbers } = customer;
