@@ -4,15 +4,18 @@ const router = express.Router();
 
 // Customer database functions
 const { getCustomer, registerCustomer } = require('../../models/customer');
+const { handleValidResponse, handleErrorResponse } = require('./utils');
 
 router.get('/:id', async (req, res) => {
-  res.json({ customer: await getCustomer(req.params.id) });
+  const customer = await getCustomer(req.params.id);
+  if (!!customer) handleValidResponse(res, customer);
+  else handleErrorResponse(req, res, 404, error);
 });
 
 router.post('/', (req, res) => {
   registerCustomer(req.body)
-    .then((message) => res.json({ message }))
-    .catch((error) => res.status(500).json({ error }));
+    .then((message) => handleValidResponse(res, message))
+    .catch((error) => handleErrorResponse(req, res, 500, error));
 });
 
 module.exports = router;
