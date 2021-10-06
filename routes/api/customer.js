@@ -9,7 +9,7 @@ const { handleValidResponse, handleErrorResponse } = require('./utils');
 router.get('/:id', async (req, res) => {
   const customer = await getCustomer(req.params.id);
   if (!!customer) handleValidResponse(res, customer);
-  else handleErrorResponse(req, res, 404, error);
+  else handleErrorResponse(req, res, 404, 'Customer does not exist');
 });
 
 router.post('/', (req, res) => {
