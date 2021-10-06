@@ -11,6 +11,7 @@ const {
   categoriesRouter,
   bestSellersRouter,
 } = require('./products');
+const { handleUnsupportedEndpoints } = require('./utils');
 
 // Routes
 router.use('/customer', customerRouter);
@@ -46,5 +47,7 @@ router.get('/', (req, res) => {
     },
   });
 });
+
+router.use(handleUnsupportedEndpoints);
 
 module.exports = router;
