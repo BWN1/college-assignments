@@ -13,11 +13,8 @@ mongoose.connect(process.env.DATABASE_URI, {
   useUnifiedTopology: true,
 });
 
-// Parse responses to JSON
-app.use(express.json());
-
 // API Routes
-const apiRoute = require('./routes/api');
-app.use('/api', apiRoute);
+const apiRouter = require('./routes/api');
+app.use('/api', apiRouter);
 
 app.listen(PORT);

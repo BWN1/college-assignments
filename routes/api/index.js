@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
+// Parse responses to JSON
+router.use(express.json());
+
 // Router files
-const customerRoute = require('./customer');
-const productsRoute = require('./products/products');
-const categoriesRoute = require('./products/categories');
-const bestSellersRoute = require('./products/bestSellers');
+const customerRouter = require('./customer');
+const {
+  productsRouter,
+  categoriesRouter,
+  bestSellersRouter,
+} = require('./products');
 
 // Routes
-router.use('/customer', customerRoute);
-router.use('/products', productsRoute);
-router.use('/categories', categoriesRoute);
-router.use('/best-sellers', bestSellersRoute);
+router.use('/customer', customerRouter);
+router.use('/products', productsRouter);
+router.use('/categories', categoriesRouter);
+router.use('/best-sellers', bestSellersRouter);
 
 // Send all available endpoints as JSON object
 router.get('/', (req, res) => {
