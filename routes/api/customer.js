@@ -6,7 +6,7 @@ const router = express.Router();
 const { getCustomer, registerCustomer } = require('../../models/customer');
 const { handleValidResponse, handleErrorResponse } = require('./utils');
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', isIdValid, async (req, res) => {
   const customer = await getCustomer(req.params.id);
   if (!!customer) handleValidResponse(res, customer);
   else handleErrorResponse(req, res, 404, 'Customer does not exist');

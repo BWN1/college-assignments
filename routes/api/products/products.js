@@ -24,13 +24,13 @@ router.post('/', async (req, res) => {
     .catch((error) => handleErrorResponse(req, res, 500, error));
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', isIdValid, async (req, res) => {
   const product = await getProduct(req.params.id);
   if (!!product) handleValidResponse(res, product);
   else handleErrorResponse(req, res, 404, 'Product does not exist');
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', isIdValid, async (req, res) => {
   const product = await updateProduct(req.params.id, req.body);
   if (!!product) handleValidResponse(res, 'Updated product!');
   else if (product === null)
@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
   else handleErrorResponse(req, res, 500, 'Could not update product');
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isIdValid, async (req, res) => {
   const product = await deleteProduct(req.params.id);
   if (!!product) handleValidResponse(res, 'Deleted product!');
   else handleErrorResponse(req, res, 404, 'Product does not exist');
