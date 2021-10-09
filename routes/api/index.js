@@ -7,7 +7,7 @@ router.use(express.json());
 // Router files
 const customerRouter = require('./customer');
 const productsRouter = require('./products');
-const categoriesRouter = require('./products');
+const categoriesRouter = require('./categories');
 const bestSellersRouter = require('./bestSellers');
 const { handleUnsupportedEndpoints } = require('./utils');
 
