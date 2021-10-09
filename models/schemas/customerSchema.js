@@ -25,6 +25,10 @@ const customerSchema = new Schema({
     default: undefined,
     required: false,
   },
+  dateCreated: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 customerSchema.plugin(AutoIncrement, { inc_field: 'customerId' });

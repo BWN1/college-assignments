@@ -32,6 +32,10 @@ const productsSchema = new Schema({
     type: String,
     required: true,
   },
+  dateCreated: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 productsSchema.plugin(AutoIncrement, { inc_field: 'productId' });
