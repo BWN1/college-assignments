@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // Customer database functions
-const { getCustomer, registerCustomer } = require('../../models/customer');
+const { getCustomer, registerCustomer } = require('../../models');
 const { handleValidResponse, handleErrorResponse } = require('./utils');
 const { isIdValid } = require('./middlewares/');
 

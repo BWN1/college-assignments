@@ -9,9 +9,9 @@ const {
   updateProduct,
   deleteProduct,
   addProduct,
-} = require('../../../models/products');
-const { handleValidResponse, handleErrorResponse } = require('../utils');
-const { isIdValid } = require('../middlewares');
+} = require('../../models');
+const { handleValidResponse, handleErrorResponse } = require('./utils');
+const { isIdValid } = require('./middlewares');
 
 router.get('/', async (req, res) => {
   const products = await getAllProducts();

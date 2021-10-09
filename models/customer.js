@@ -1,23 +1,22 @@
-const { Customer } = require('./schemas/customerSchema');
+const { Customer } = require('./schemas');
 const {
-  allRequiredFieldsIncluded,
+  allCustomerRequiredFieldsIncluded,
   validEmail,
   encryptPassword,
-} = require('./utils/customerUtils');
+  extractCustomerValidFields,
+} = require('./utils');
 
 const getCustomer = async (customerId) =>
   Customer.findOne({ customerId }).lean().exec();
 const registerCustomer = async (customer) => {
-  if (allRequiredFieldsIncluded(customer)) {
-    const { fname, lname, email, password, phoneNumbers } = customer;
+  if (allCustomerRequiredFieldsIncluded(customer)) {
+    const { email, password, ...rest } = extractCustomerValidFields(customer);
     if (!validEmail(email)) return Promise.reject('Invalid email');
 
     Customer({
-      fname,
-      lname,
       email,
       password: await encryptPassword(password),
-      phoneNumbers: phoneNumbers || [],
+      ...rest,
     }).save();
     return Promise.resolve('Added customer!');
   }

@@ -1,10 +1,9 @@
-const { Products } = require('./schemas/productsSchema');
+const { Products } = require('./schemas');
 const {
-  allRequiredFieldsIncluded,
-  priceIsNumber,
-  photoURLIsValid,
-  bestSellerIsBoolean,
-} = require('./utils/productsUtils');
+  allProductRequiredFieldsIncluded,
+  validateProductFields,
+  extractProductValidFields,
+} = require('./utils');
 
 const getAllProducts = async () => Products.find({}).lean().exec();
 const getAllCategories = async () =>
@@ -19,25 +18,21 @@ const getAllBestSellers = async () =>
 const getProduct = async (productId) =>
   Products.findOne({ productId }).lean().exec();
 
-const updateProduct = async (productId, product) => {
-  const { _id, productId: id, ...rest } = { ...product };
-  return Products.findOneAndUpdate({ productId }, { ...rest });
-};
+const updateProduct = async (productId, product) =>
+  Products.findOneAndUpdate(
+    { productId },
+    { ...extractProductValidFields(product) }
+  );
 
 const deleteProduct = async (productId) =>
   Products.findOneAndDelete({ productId }).exec();
 
 const addProduct = async (product) => {
-  if (allRequiredFieldsIncluded(product)) {
-    const { price, bestSeller, photoURL } = product;
+  if (allProductRequiredFieldsIncluded(product)) {
+    const error = validateProductFields(product);
+    if (error) return Promise.reject(error);
 
-    if (!priceIsNumber(price)) return Promise.reject('Invalid price');
-    else if (!photoURLIsValid(photoURL))
-      return Promise.reject('Invalid photo url');
-    else if (!bestSellerIsBoolean(bestSeller))
-      return Promise.reject('Best seller must be a boolean (true/false)');
-
-    Products({ ...product }).save();
+    Products({ ...extractProductValidFields(product) }).save();
     return Promise.resolve('Product added!');
   }
 

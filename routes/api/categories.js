@@ -3,11 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 // Categories database functions
-const {
-  getAllCategories,
-  getAllProductsInCategory,
-} = require('../../../models/products');
-const { handleValidResponse, handleErrorResponse } = require('../utils');
+const { getAllCategories, getAllProductsInCategory } = require('../../models');
+const { handleValidResponse, handleErrorResponse } = require('./utils');
 
 router.get('/', async (req, res) => {
   const categories = await getAllCategories();
