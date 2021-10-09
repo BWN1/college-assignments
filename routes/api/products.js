@@ -15,7 +15,7 @@ const { isIdValid } = require('./middlewares');
 
 router.get('/', async (req, res) => {
   const products = await getAllProducts();
-  if (!!products) handleValidResponse(res, products);
+  if (products.length) handleValidResponse(res, products);
   else handleErrorResponse(req, res, 404, 'Could not find products');
 });
 

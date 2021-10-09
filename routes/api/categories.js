@@ -8,13 +8,13 @@ const { handleValidResponse, handleErrorResponse } = require('./utils');
 
 router.get('/', async (req, res) => {
   const categories = await getAllCategories();
-  if (!!categories) handleValidResponse(res, categories);
+  if (categories.length) handleValidResponse(res, categories);
   else handleErrorResponse(req, res, 404, 'Could not find categories');
 });
 
 router.get('/:category', async (req, res) => {
   const category = await getAllProductsInCategory(req.params.category);
-  if (!!category) handleValidResponse(res, category);
+  if (category.length) handleValidResponse(res, category);
   else handleErrorResponse(req, res, 404, 'Category does not exist');
 });
 
