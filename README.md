@@ -2,8 +2,6 @@
 
 [https://web422-bneumann.herokuapp.com/](https://web422-bneumann.herokuapp.com/)
 
-This is the repo for the project being worked on through out the semester in WEB422
-
 ### Setup
 
 To run this application locally, copy the `.env.template` file and assign the following environment variables with your own
