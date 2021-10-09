@@ -1,6 +1,6 @@
 # Models
 
-The models have a file for their schema and a file for the model functions. The model schemas can be found in the `models/schemas` folder while the model functions can be found in the `models` folder.
+The models have a file for their schema and a file for the model functions. The model schemas can be found in the `models/schemas` folder while the model functions can be found in the `models` folder. All incoming documents will be sanitized of any fields not present in the Schemas below before adding it to the database
 
 When creating a new model, the name of the file must be the same for both the schema and the functions file to avoid ambiguity
 
