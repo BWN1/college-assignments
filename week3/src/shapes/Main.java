@@ -4,17 +4,34 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/** This is the main class to run the program */
 public class Main {	
 	public static void main(String[] args) {
+		
+		/** The name of the file to be read */
 		String file = "shapes.txt";
+		
+		/** Array to hold the created shapes */
 		Shape[] shapes = new Shape[50];
 		int count = 0;
 		
+		/**
+		 * Task 1
+		 * Sanitize and create shapes from the file "shapes.txt".
+		 * Print out the perimeters of the shapes
+		 * */
+		System.out.println("------->JAC 444 Assignment 1<-------");
+		System.out.println("------->Task 1 ... <-------");
+		
+		/** Read the file line by line */
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {  
+			/** String that holds the current line*/
 			String s;
-			while ((s = br.readLine()) != null) { 
+			while ((s = br.readLine()) != null) {
+				/** Array that holds the split string */
 				String[] tokens = s.split(","); 
 				
+				/** Create shape and validate values */
 				switch (tokens[0]) {
 				case "Parallelogram":
 					if (tokens.length == 3) {
@@ -78,10 +95,11 @@ public class Main {
 			System.out.println(e.getMessage()); 
 		}	
 		
+		/** Print out the shapes */
 		System.out.println();
 		System.out.println(count + " shapes were created:");
 		for (int i = 0; i < count; i++) { 
-			System.out.println(shapes[i].toString());
+			System.out.println(shapes[i]);
 			System.out.println();
 		}
 	}
