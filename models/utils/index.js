@@ -1,6 +1,6 @@
 const {
   allCustomerRequiredFieldsIncluded,
-  validEmail,
+  validateFields,
   encryptPassword,
   extractCustomerValidFields,
 } = require('./customerUtils');
@@ -13,7 +13,7 @@ const {
 
 module.exports = {
   allCustomerRequiredFieldsIncluded,
-  validEmail,
+  validateFields,
   encryptPassword,
   extractCustomerValidFields,
   allProductRequiredFieldsIncluded,
