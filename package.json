@@ -1,10 +1,11 @@
 {
   "name": "web422",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "This is the repo for the WEB422 project at Seneca College",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js",
+    "postinstall": "npm install --prefix server && npm install --prefix client"
   },
   "repository": {
     "type": "git",
@@ -17,22 +18,6 @@
     "url": "https://github.com/BWN1/WEB422/issues"
   },
   "homepage": "https://github.com/BWN1/WEB422#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
-    "express": "^4.17.1",
-    "mongoose": "^6.0.8",
-    "mongoose-sequence": "^5.3.1"
-  },
-  "devDependencies": {
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "nodemon": "^2.0.13",
-    "prettier": "2.4.0"
-  },
   "engines": {
     "node": "16.x"
   }
