@@ -41,8 +41,13 @@ const extractProductValidFields = ({
   photoURL,
 }) => ({ name, price, description, category, quantity, bestSeller, photoURL });
 
+const extractAndSanitizeProductFields = (product) =>
+  Object.keys(extractProductValidFields(product))
+    .filter((key) => !!product[key])
+    .reduce((obj, key) => ((obj[key] = product[key]), obj), {});
+
 module.exports = {
   allProductRequiredFieldsIncluded,
   validateProductFields,
-  extractProductValidFields,
+  extractAndSanitizeProductFields,
 };

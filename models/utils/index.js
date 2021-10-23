@@ -8,7 +8,7 @@ const {
 const {
   allProductRequiredFieldsIncluded,
   validateProductFields,
-  extractProductValidFields,
+  extractAndSanitizeProductFields,
 } = require('./productsUtils');
 
 module.exports = {
@@ -18,5 +18,5 @@ module.exports = {
   extractCustomerValidFields,
   allProductRequiredFieldsIncluded,
   validateProductFields,
-  extractProductValidFields,
+  extractAndSanitizeProductFields,
 };

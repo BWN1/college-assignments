@@ -2,7 +2,7 @@ const { Products } = require('./schemas');
 const {
   allProductRequiredFieldsIncluded,
   validateProductFields,
-  extractProductValidFields,
+  extractAndSanitizeProductFields,
 } = require('./utils');
 
 const getAllProducts = async () => Products.find({}).lean().exec();
@@ -21,7 +21,7 @@ const getProduct = async (productId) =>
 const updateProduct = async (productId, product) =>
   Products.findOneAndUpdate(
     { productId },
-    { ...extractProductValidFields(product) }
+    { ...extractAndSanitizeProductFields(product) }
   );
 
 const deleteProduct = async (productId) =>
