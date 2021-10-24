@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header-logo {
+    @apply h-8 w-auto;
+  }
+
+  .cta-button {
+    @apply border-2 border-blue-400 py-2 px-4 rounded-md 
+    hover:bg-blue-400 hover:text-white transition duration-100 ease-in-out;
+  }
+
+  .nav-container {
+    @apply flex justify-center w-full;
+  }
+
+  .nav-content {
+    @apply flex items-center justify-between w-full max-w-screen-xl px-8;
+  }
+
+  .nav-content > ul {
+    @apply list-none inline-block;
+  }
+
+  .nav-content > ul li {
+    @apply inline-block mr-6;
+  }
+
+  .search-form {
+    @apply flex items-center bg-gray-200 px-4 py-2 
+      border-2 focus-within:border-blue-400 w-full
+      transition duration-75 ease-in-out;
+  }
+
+  .search-form-input {
+    @apply bg-gray-200 outline-none w-full;
+  }
+
+  .product-link {
+    @apply hover:text-blue-400 transition duration-75 ease-in-out;
+  }
+}
