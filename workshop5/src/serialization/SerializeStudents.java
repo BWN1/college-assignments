@@ -91,12 +91,12 @@ public class SerializeStudents {
 		 * Serialize and write the `students` ArrayList 
 		 * to a file called "students"
 		 * */
-		FileOutputStream fos = new FileOutputStream("students");
+		FileOutputStream fos = new FileOutputStream("students.obj");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(students);
 		oos.close();
 		fos.close();
 		
-		System.out.println("Student objects saved into file \"students\"");
+		System.out.println("Student objects saved into file \"students.obj\"");
 	}
 }
