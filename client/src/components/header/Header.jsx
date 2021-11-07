@@ -1,25 +1,12 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
 import { ReactComponent as Logo } from '../../assets/icons/logo-long.svg';
-
-import { config } from '../../staticConfig';
 import { Button } from '../common';
 import SearchBar from './SearchBar';
 import MobileHeader from './MobileHeader';
+import { useIsMobile } from '../../hooks';
 
 const Header = () => {
-  const { MEDIA_BREAKPOINTS } = config;
-  const [isMobile, setIsMobile] = useState(
-    window.innerWidth <= MEDIA_BREAKPOINTS.sm
-  );
-
-  useEffect(() => {
-    const handleWindowSizeChange = () =>
-      setIsMobile(window.innerWidth <= MEDIA_BREAKPOINTS.sm);
-    window.addEventListener('resize', handleWindowSizeChange);
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
-    };
-  }, [MEDIA_BREAKPOINTS]);
+  const isMobile = useIsMobile();
 
   return (
     <header className="flex items-center justify-center">
@@ -33,7 +20,7 @@ const Header = () => {
             </Button>
             <Button
               link="/products"
-              className="text-xl ml-10 hover:text-accent-400 transition duration-75 ease-in-out"
+              className="text-xl mx-4 lg:mx-10 hover:text-accent-400 transition duration-75 ease-in-out"
             >
               Products
             </Button>
