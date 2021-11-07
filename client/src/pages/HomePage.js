@@ -1,14 +1,11 @@
 import React from 'react';
-import { Header } from '../components/header';
-import { HeroSlider } from '../components/hero';
+import { Header, HeroSlider } from '@components';
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <>
       <Header />
-      <HeroSlider></HeroSlider>
+      <HeroSlider />
     </>
   );
 };
-
-export default HomePage;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { ReactComponent as Logo } from '../../assets/icons/logo-long.svg';
-import { Button } from '../common';
-import SearchBar from './SearchBar';
-import MobileHeader from './MobileHeader';
-import { useIsMobile } from '../../hooks';
+import { ReactComponent as Logo } from '@icons/logo-long.svg';
+import { Button } from '@components';
+import { SearchBar } from './SearchBar';
+import { MobileHeader } from './MobileHeader';
+import { useIsMobile } from '@hooks';
 
-const Header = () => {
+export const Header = () => {
   const isMobile = useIsMobile();
 
   return (
@@ -36,5 +36,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

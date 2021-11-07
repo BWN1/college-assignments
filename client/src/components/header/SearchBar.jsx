@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactComponent as SearchImg } from '../../assets/icons/search.svg';
+import { ReactComponent as SearchImg } from '@icons/search.svg';
 
-const SearchBar = () => {
+export const SearchBar = () => {
   return (
     <form action="/" method="post" className="search-form">
       <input
@@ -17,5 +17,3 @@ const SearchBar = () => {
     </form>
   );
 };
-
-export default SearchBar;

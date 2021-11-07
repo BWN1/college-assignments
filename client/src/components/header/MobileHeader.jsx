@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
-import { ReactComponent as FullLogo } from '../../assets/icons/logo-long.svg';
-import { ReactComponent as HamburgerMenuImg } from '../../assets/icons/menu.svg';
-import { ReactComponent as CloseMenuImg } from '../../assets/icons/cancel.svg';
+import { ReactComponent as FullLogo } from '@icons/logo-long.svg';
+import { ReactComponent as HamburgerMenuImg } from '@icons/menu.svg';
+import { ReactComponent as CloseMenuImg } from '@icons/cancel.svg';
 
-import { Button } from '../common';
-import SearchBar from './SearchBar';
+import { Button } from '@components';
+import { SearchBar } from './SearchBar';
 
-const MobileHeader = () => {
+export const MobileHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
@@ -42,5 +42,3 @@ const MobileHeader = () => {
     </nav>
   );
 };
-
-export default MobileHeader;

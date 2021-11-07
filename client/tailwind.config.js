@@ -14,10 +14,6 @@ module.exports = {
       gridTemplateColumns: {
         'mobile-menu': 'min-content auto',
       },
-      height: {
-        hero: '50vh',
-        'hero-md': '40vh',
-      },
     },
   },
   variants: {
