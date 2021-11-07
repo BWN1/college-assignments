@@ -28,7 +28,7 @@
   }
 
   .homepage-featured-section {
-    @apply flex flex-col items-center my-16;
+    @apply flex flex-col items-center my-16 max-w-screen-lg m-auto;
   }
 
   .category-image {
