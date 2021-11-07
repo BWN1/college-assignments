@@ -15,7 +15,7 @@ module.exports = {
         'mobile-menu': 'min-content auto',
       },
       height: {
-        hero: '45vh',
+        hero: '50vh',
         'hero-md': '40vh',
       },
     },
