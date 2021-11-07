@@ -37,12 +37,14 @@ export const BestSellers = () => {
               link={`products/${item.productId}`}
               className="h-full flex flex-col hover:underline"
             >
-              <img
-                src={item.photoURL}
-                alt="best seller item"
-                loading="eager"
-                className="h-3/4"
-              />
+              <div className="h-52">
+                <img
+                  src={item.photoURL}
+                  alt="best seller item"
+                  loading="eager"
+                  className="h-full w-full"
+                />
+              </div>
               <span className="mt-2">{item.name}</span>
             </Button>
           </SwiperSlide>
