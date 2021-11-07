@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFetch } from '@hooks';
+import { useFetch, useIsMobile } from '@hooks';
 import { Button, Loading } from '@components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
@@ -10,6 +10,7 @@ SwiperCore.use([Navigation]);
 
 export const BestSellers = () => {
   const products = useFetch('best-sellers');
+  const isMobile = useIsMobile();
 
   if (!products) return <Loading className="h-80" />;
 
@@ -27,7 +28,7 @@ export const BestSellers = () => {
       <Swiper
         navigation
         className="h-full w-full"
-        slidesPerView={3}
+        slidesPerView={isMobile ? 1 : 3}
         spaceBetween={10}
       >
         {products.slice(0, 10).map((item) => (
