@@ -14,6 +14,9 @@ module.exports = {
       gridTemplateColumns: {
         'mobile-menu': 'min-content auto',
       },
+      borderRadius: {
+        circle: '50%',
+      },
     },
   },
   variants: {
