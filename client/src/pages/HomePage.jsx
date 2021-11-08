@@ -1,5 +1,11 @@
 import React from 'react';
-import { Header, HeroSlider, ShopByCategory, BestSellers } from '@components';
+import {
+  Header,
+  HeroSlider,
+  ShopByCategory,
+  BestSellers,
+  Footer,
+} from '@components';
 
 export const HomePage = () => {
   return (
@@ -8,6 +14,7 @@ export const HomePage = () => {
       <HeroSlider />
       <ShopByCategory />
       <BestSellers />
+      <Footer />
     </>
   );
 };
