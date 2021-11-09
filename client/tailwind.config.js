@@ -17,6 +17,12 @@ module.exports = {
       borderRadius: {
         circle: '50%',
       },
+      gridTemplateRows: {
+        product: 'repeat(2, auto)',
+      },
+      maxWidth: {
+        250: '250px',
+      },
     },
   },
   variants: {

@@ -40,4 +40,18 @@
   .category-image {
     @apply rounded-full w-32 h-32 md:w-36 md:h-36 lg:w-44 lg:h-44;
   }
+
+  .product-wrapper {
+    @apply py-4 px-2 flex items-center w-full border-b last:border-b-0
+          md:flex-col md:items-start md:w-1/3 lg:w-1/4 md:border-b-0;
+  }
+
+  .product-image {
+    @apply w-1/2 flex-1 md:w-full md:flex md:max-w-250;
+  }
+
+  .product-name {
+    @apply inline-block font-semibold leading-6 max-h-12 w-full 
+        overflow-hidden overflow-ellipsis;
+  }
 }

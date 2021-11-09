@@ -8,7 +8,7 @@ export const CategoriesSideBar = () => {
   if (!categories) return <Loading />;
 
   return (
-    <nav className="flex flex-col items-start px-10 text-lg">
+    <nav className="flex flex-col items-start px-10 text-lg md:mr-10">
       <h4 className="font-semibold mb-2">Categories</h4>
       {categories.map((category) => (
         <a
