@@ -1,26 +1,33 @@
 import React from 'react';
-import { useFetch } from '@hooks';
-import { Loading } from '@components';
+import { useFetch, useIsMobile } from '@hooks';
+import { Loading, Button } from '@components';
 import { FooterGroup } from './FooterGroup';
+import { ReactComponent as Logo } from '@icons/logo-long.svg';
 
 export const Footer = () => {
   const categories = useFetch('categories');
+  const isMobile = useIsMobile();
 
   if (!categories) return <Loading className="w-32" />;
 
   return (
-    <footer className="flex items-center justify-center border-t">
-      <nav className="my-8 flex">
-        <FooterGroup header="Shopmart" links={footerLinks.general} />
-        <FooterGroup
-          header="Categories"
-          links={categories.map((category) => ({
-            display: category,
-            link: `/categories/${category}`,
-          }))}
-        />
+    <footer className="flex flex-col items-center border-t mb-8">
+      <nav className="my-8 flex justify-center">
+        <FooterGroup header="Explore" links={footerLinks.general} />
+        {!isMobile && (
+          <FooterGroup
+            header="Categories"
+            links={categories.map((category) => ({
+              display: category,
+              link: `/categories/${category}`,
+            }))}
+          />
+        )}
         <FooterGroup header="Follow us" links={footerLinks.socials} />
       </nav>
+      <Button link="/">
+        <Logo />
+      </Button>
     </footer>
   );
 };

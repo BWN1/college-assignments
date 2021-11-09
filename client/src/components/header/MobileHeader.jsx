@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { ReactComponent as FullLogo } from '@icons/logo-long.svg';
 import { ReactComponent as HamburgerMenuImg } from '@icons/menu.svg';
 import { ReactComponent as CloseMenuImg } from '@icons/cancel.svg';
@@ -9,6 +9,11 @@ import { SearchBar } from './SearchBar';
 export const MobileHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  useEffect(() => {
+    const showOverflow = showMenu ? 'hidden' : 'auto';
+    document.body.style.overflow = showOverflow;
+  }, [showMenu]);
+
   return (
     <nav className="grid grid-cols-mobile-menu items-center w-full px-8 my-7 md:hidden">
       <HamburgerMenuImg onClick={() => setShowMenu(true)} />
@@ -16,7 +21,7 @@ export const MobileHeader = () => {
         <FullLogo className="header-logo" />
       </Button>
       {showMenu && (
-        <div className="fixed top-0 left-0 w-screen h-screen bg-gray-300 bg-opacity-50">
+        <div className="fixed top-0 left-0 w-screen h-screen bg-gray-300 bg-opacity-50 z-10">
           <div className="bg-white w-5/6 px-8 py-7 h-full">
             <div className="grid grid-cols-mobile-menu items-center mb-4">
               <CloseMenuImg
@@ -27,7 +32,7 @@ export const MobileHeader = () => {
                 <FullLogo />
               </Button>
             </div>
-            <div>
+            <div className="flex flex-col">
               <SearchBar />
               <Button link="/products" className="text-lg my-3">
                 Products

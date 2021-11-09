@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  PageContentContainer,
   Header,
   HeroSlider,
   ShopByCategory,
@@ -11,9 +12,11 @@ export const HomePage = () => {
   return (
     <>
       <Header />
-      <HeroSlider />
-      <ShopByCategory />
-      <BestSellers />
+      <PageContentContainer>
+        <HeroSlider />
+        <ShopByCategory />
+        <BestSellers />
+      </PageContentContainer>
       <Footer />
     </>
   );

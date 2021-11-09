@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage } from '@pages';
+import { HomePage, ProductsPage } from '@pages';
 
 export const App = () => {
   return (
@@ -7,6 +7,9 @@ export const App = () => {
       <Switch>
         <Route exact path="/">
           <HomePage />
+        </Route>
+        <Route exact path="/products">
+          <ProductsPage />
         </Route>
       </Switch>
     </Router>
