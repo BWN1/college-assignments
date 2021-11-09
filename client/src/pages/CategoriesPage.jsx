@@ -4,7 +4,7 @@ import {
   Header,
   Footer,
   Loading,
-  Product,
+  ListedProduct,
   CategoriesSideBar,
 } from '@components';
 import { useFetch, useIsMobile } from '@hooks';
@@ -28,7 +28,7 @@ export const CategoriesPage = () => {
           {!isMobile && <CategoriesSideBar currentCategory={category} />}
           <div className="md:flex md:flex-wrap w-full px-2">
             {categories.slice(0, 12).map((product) => (
-              <Product product={product} />
+              <ListedProduct product={product} />
             ))}
           </div>
         </div>

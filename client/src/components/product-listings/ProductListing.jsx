@@ -1,16 +1,14 @@
 import React from 'react';
 import { Button, ProductImage } from '@components';
-import { useResizeImage } from '@hooks';
 
-export const Product = ({ product }) => {
+export const ListedProduct = ({ product }) => {
   const { photoURL, name, price, category, bestSeller, productId } = product;
-  const resizedImage = useResizeImage(photoURL, 100);
-  const productUrl = `products/${productId}`;
+  const productUrl = `/products/${productId}`;
 
   return (
     <div className="product-wrapper">
       <Button link={productUrl} className="product-image">
-        <ProductImage url={resizedImage} alt={name} />
+        <ProductImage url={photoURL} alt={name} />
       </Button>
       <div className="ml-4 w-1/2 md:mt-4 md:ml-0 md:w-full md:flex-1">
         {bestSeller && <p className="text-accent-400 text-sm">Best Seller</p>}

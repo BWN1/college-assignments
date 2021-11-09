@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage, ProductsPage, CategoriesPage } from '@pages';
+import {
+  HomePage,
+  ProductsPage,
+  CategoriesPage,
+  ProductDescriptionPage,
+} from '@pages';
 
 export const App = () => {
   return (
@@ -10,6 +15,9 @@ export const App = () => {
         </Route>
         <Route exact path="/products">
           <ProductsPage />
+        </Route>
+        <Route path="/products/:id">
+          <ProductDescriptionPage />
         </Route>
         <Route path="/categories/:category">
           <CategoriesPage />
