@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@components';
+import { Button, ProductImage } from '@components';
 import { useResizeImage } from '@hooks';
 
 export const Product = ({ product }) => {
@@ -10,7 +10,7 @@ export const Product = ({ product }) => {
   return (
     <div className="product-wrapper">
       <Button link={productUrl} className="product-image">
-        <img src={resizedImage} alt={name} />
+        <ProductImage url={resizedImage} alt={name} />
       </Button>
       <div className="ml-4 w-1/2 md:mt-4 md:ml-0 md:w-full md:flex-1">
         {bestSeller && <p className="text-accent-400 text-sm">Best Seller</p>}

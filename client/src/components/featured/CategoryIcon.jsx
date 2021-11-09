@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFetch } from '@hooks';
-import { Loading, Button } from '@components';
+import { Loading, Button, ProductImage } from '@components';
 
 export const CategoryIcon = ({ category }) => {
   const categoryLink = `categories/${category}`;
@@ -13,8 +13,8 @@ export const CategoryIcon = ({ category }) => {
       link={categoryLink}
       className="grid grid-cols-1 gap-y-4 text-accent-500 text-center hover:underline"
     >
-      <img
-        src={product.photoURL}
+      <ProductImage
+        url={product.photoURL}
         alt="category item"
         className="category-image"
       />

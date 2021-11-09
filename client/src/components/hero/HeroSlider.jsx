@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import { Button, Loading } from '@components';
+import { Button, Loading, ProductImage } from '@components';
 import { ReactComponent as Arrow } from '@icons/arrow-right.svg';
 import { useFetch, useIsTablet, useIsLargeScreen, useIsXLScreen } from '@hooks';
 
@@ -34,10 +34,9 @@ export const HeroSlider = () => {
       </SwiperSlide>
       {products.slice(0, 10).map((item) => (
         <SwiperSlide key={item.name}>
-          <img
-            src={item.photoURL}
-            alt=""
-            loading="eager"
+          <ProductImage
+            url={item.photoURL}
+            size={500}
             className="h-full w-full"
           />
           <div className="bg-gray-800 opacity-50 w-full h-full absolute top-0 left-0 transition-all"></div>

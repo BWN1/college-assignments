@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFetch, useIsMobile } from '@hooks';
-import { Button, Loading } from '@components';
+import { Button, Loading, ProductImage } from '@components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -38,10 +38,10 @@ export const BestSellers = () => {
               className="h-full flex flex-col hover:underline"
             >
               <div className="h-52">
-                <img
-                  src={item.photoURL}
+                <ProductImage
+                  url={item.photoURL}
+                  size={500}
                   alt="best seller item"
-                  loading="eager"
                   className="h-full w-full"
                 />
               </div>
