@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Button = ({ className, link, children }) => {
   return (
-    <a href={link} className={className}>
+    <Link to={link} className={className}>
       {children}
-    </a>
+    </Link>
   );
 };
