@@ -6,7 +6,7 @@ export const ListedProduct = ({ product }) => {
   const productUrl = `/products/${productId}`;
 
   return (
-    <div className="product-wrapper">
+    <div className="product-wrapper last:border-b-0">
       <Button link={productUrl} className="product-image">
         <ProductImage url={photoURL} alt={name} />
       </Button>
