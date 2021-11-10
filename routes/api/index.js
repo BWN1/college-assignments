@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 
 // Parse responses to JSON
 router.use(express.json());
+router.use(cors({ origin: '*' }));
 
 // Router files
 const customerRouter = require('./customer');
