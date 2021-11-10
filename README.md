@@ -1,6 +1,8 @@
 # WEB422 Project
 
-[https://web422-bneumann.herokuapp.com/](https://web422-bneumann.herokuapp.com/)
+[web422-bneumann.netlify.app](web422-bneumann.netlify.app)
+
+API Link: [https://web422-bneumann.herokuapp.com/](https://web422-bneumann.herokuapp.com/)
 
 ### Setup
 
