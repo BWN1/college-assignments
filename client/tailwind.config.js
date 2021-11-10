@@ -9,6 +9,7 @@ module.exports = {
       gray: colors.gray,
       accent: colors.blue,
       white: colors.white,
+      red: colors.red,
     },
     extend: {
       gridTemplateColumns: {

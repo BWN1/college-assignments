@@ -4,6 +4,7 @@ import {
   ProductsPage,
   CategoriesPage,
   ProductDescriptionPage,
+  SignUpPage,
 } from '@pages';
 
 export const App = () => {
@@ -21,6 +22,9 @@ export const App = () => {
         </Route>
         <Route path="/categories/:category">
           <CategoriesPage />
+        </Route>
+        <Route exact path="/signup">
+          <SignUpPage />
         </Route>
       </Switch>
     </Router>

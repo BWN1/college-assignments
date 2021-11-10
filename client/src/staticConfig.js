@@ -6,3 +6,16 @@ export const MEDIA_BREAKPOINTS = {
 };
 
 export const WEBSITE_URL = 'http://localhost:3001';
+
+export const formErrorMessages = {
+  signup: {
+    fname: 'This field is required',
+    lname: 'This field is required',
+    email: 'Please enter a valid email',
+    password: 'Please enter a password',
+  },
+};
+
+export const emailRegEx = new RegExp(
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+);

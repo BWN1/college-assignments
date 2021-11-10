@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as LoadingAnimation } from '@icons/loading.svg';
 
-export const Loading = () => {
-  return <LoadingAnimation className="w-full h-full" />;
+export const Loading = ({ width, height }) => {
+  return <LoadingAnimation width={width} height={height} />;
 };
