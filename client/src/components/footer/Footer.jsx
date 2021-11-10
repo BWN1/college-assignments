@@ -36,7 +36,6 @@ const footerLinks = {
   general: [
     { display: 'home', link: '/' },
     { display: 'Products', link: '/products' },
-    { display: 'Best sellers', link: '/best-sellers' },
     { display: 'Sign up', link: '/signup' },
   ],
   socials: [
