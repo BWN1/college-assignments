@@ -5,7 +5,7 @@ export const MEDIA_BREAKPOINTS = {
   xl: 1440,
 };
 
-export const WEBSITE_URL = 'https://web422-bneumann.herokuapp.com';
+export const API_URL = 'https://web422-bneumann.herokuapp.com';
 
 export const formErrorMessages = {
   signup: {
