@@ -31,7 +31,7 @@ export const SignUpPage = () => {
     } else {
       setFormData({
         ...formData,
-        [e.target.name]: [value.split(',').map((num) => Number.parseInt(num))],
+        [e.target.name]: value.split(',').map((num) => Number.parseInt(num)),
       });
     }
   };

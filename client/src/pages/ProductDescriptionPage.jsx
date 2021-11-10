@@ -35,7 +35,8 @@ export const ProductDescriptionPage = () => {
               link={`/categories/${product.category}`}
               className="text-gray-500 text-xl font-normal"
             >
-              {product.category}
+              {product.category.charAt(0).toUpperCase() +
+                product.category.slice(1)}
             </Button>
           </div>
           <div className="divide-y">
