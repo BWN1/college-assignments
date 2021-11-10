@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Header, Footer, PageContentContainer } from '@components';
 import { Form, Input, Row, Submit } from '@components/form';
-import { WEBSITE_URL, emailRegEx } from '../staticConfig';
+import { API_URL, emailRegEx } from '../staticConfig';
 import { createPost } from '../utils/createPost';
 import { ReactComponent as Close } from '@icons/cancel.svg';
 
@@ -71,7 +71,7 @@ export const SignUpPage = () => {
 
   useEffect(() => {
     if (isSubmitting) {
-      createPost(`${WEBSITE_URL}/api/customer`, formData)
+      createPost(`${API_URL}/api/customer`, formData)
         .then(history.push('/'))
         .catch(() => {
           setSubmissionError(true);
