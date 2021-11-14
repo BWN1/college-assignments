@@ -26,6 +26,12 @@
   }
 
   @variants responsive {
+    .header-xs {
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
     .header-sm {
       font-weight: 600;
       font-size: 1.5rem;

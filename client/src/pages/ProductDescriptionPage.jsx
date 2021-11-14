@@ -20,15 +20,17 @@ export const ProductDescriptionPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer styles="flex-y-center flex-col md:flex-row p-4 my-10">
+      <PageContentContainer styles="flex-center flex-col lg:flex-row p-4 my-10">
         <ProductImage
           url={product.photoURL}
           size={512}
-          styles="w-full max-w-sm lg:max-w-lg self-start md:sticky md:top-0 md:pt-12"
+          styles="w-full max-w-xl px-4 lg:pt-12 lg:max-w-lg lg:self-start lg:sticky lg:top-0"
         />
-        <div className="mt-5 md:ml-10 space-y-10 md:w-2/5">
+        <div className="max-w-xl lg:w-2/5 mt-5 md:ml-10 space-y-10">
           <div>
-            <h2 className="header-sm md:header-md">{product.name}</h2>
+            <h2 className="header-xs md:header-sm lg:header-md">
+              {product.name}
+            </h2>
             <p className="text-2xl text-accent-400 my-1">{`$${product.price}`}</p>
             <Button
               link={`/categories/${product.category}`}
