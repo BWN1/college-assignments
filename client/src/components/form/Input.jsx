@@ -9,16 +9,17 @@ export const Input = ({
   placeholder,
   onChange,
   onBlur,
-  optional,
-  fullWidth,
   showError,
 }) => {
   return (
-    <div className={`flex flex-col${fullWidth ? ' flex-1' : ''}`}>
+    <div className="flex flex-col flex-1">
       <label htmlFor={name} className="mb-1">
         {label}
-        {required && <span className="text-red-400 ml-0.5">*</span>}
-        {optional && <span className="text-sm ml-1">(optional)</span>}
+        {required ? (
+          <span className="text-red-400 ml-0.5">*</span>
+        ) : (
+          <span className="text-sm ml-1">(optional)</span>
+        )}
       </label>
       <input
         type={type}
