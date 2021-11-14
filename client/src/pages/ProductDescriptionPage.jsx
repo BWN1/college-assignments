@@ -28,9 +28,9 @@ export const ProductDescriptionPage = () => {
         />
         <div className="mt-5 md:ml-10 space-y-5 md:w-1/3">
           <div>
-            <h4 className="text-3xl md:text-4xl font-semibold">
+            <h2 className="header-md md:header-lg">
               {product.name}
-            </h4>
+            </h2>
             <p className="text-2xl text-accent-400 my-1">{`$${product.price}`}</p>
             <Button
               link={`/categories/${product.category}`}
@@ -41,7 +41,7 @@ export const ProductDescriptionPage = () => {
             </Button>
           </div>
           <div className="divide-y">
-            <h4 className="text-lg font-semibold pb-1">Description</h4>
+            <h3 className="subheader pb-1">Description</h3>
             <p className="pt-2">{product.description}</p>
           </div>
         </div>

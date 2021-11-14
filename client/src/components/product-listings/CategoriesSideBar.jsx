@@ -10,7 +10,7 @@ export const CategoriesSideBar = ({ currentCategory }) => {
 
   return (
     <nav className="flex flex-col items-start px-10 text-lg md:mr-10">
-      <h4 className="font-semibold mb-2">Categories</h4>
+      <h3 className="subheader mb-2">Categories</h3>
       {categories.map(({ display, link }) => (
         <Button
           key={display}

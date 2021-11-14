@@ -8,11 +8,65 @@
   }
 }
 
-@layer components {
-  .center {
-    @apply flex items-center justify-center;
+@layer utilities {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  @variants responsive {
+    .header-sm {
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .header-md {
+      font-weight: 600;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .header-lg {
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .header-xl {
+      font-weight: 600;
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .header-md-bold {
+      font-weight: 700;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .header-lg-bold {
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .header-xl-bold {
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .subheader {
+      font-weight: 600;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+@layer components {
   .header-logo {
     @apply h-8 w-auto;
   }

@@ -4,7 +4,7 @@ import { ExternalLink } from '@components';
 export const SocialsGroup = () => {
   return (
     <div className="flex flex-col px-10">
-      <h4 className="font-semibold mb-1">Follow Us</h4>
+      <h3 className="subheader mb-1">Follow Us</h3>
       {socialLinks.map(({ display, link }) => (
         <ExternalLink key={display} link={link} className="my-1">
           {display}

@@ -24,7 +24,7 @@ export const CategoriesPage = () => {
     <>
       <Header />
       <PageContentContainer className="flex flex-col my-5 max-w-screen-xl m-auto">
-        <h2 className="text-3xl font-semibold text-center mb-7 md:mb-8 md:text-4xl">
+        <h2 className="header-md text-center mb-7 md:mb-8 md:header-lg">
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </h2>
         <div className="flex w-full">

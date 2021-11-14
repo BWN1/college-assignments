@@ -26,7 +26,7 @@ export const HeroSlider = () => {
         className="w-full h-full"
       >
         <SwiperSlide className="px-10 py-4 flex flex-col items-start justify-evenly bg-accent-100">
-          <h3 className="text-4xl lg:text-5xl font-bold">
+          <h3 className="header-lg-bold lg:header-xl-bold">
             Browse all of our products
           </h3>
           <Button link="/products" className="cta-button flex justify-between">
@@ -42,7 +42,7 @@ export const HeroSlider = () => {
             />
             <div className="bg-gray-800 opacity-50 w-full h-full absolute top-0 left-0 transition-all"></div>
             <div className="hero-item">
-              <h3 className="text-4xl">{item.name}</h3>
+              <h3 className="header-lg">{item.name}</h3>
               <Button
                 link={`/products/${item.productId}`}
                 className="hover:underline"

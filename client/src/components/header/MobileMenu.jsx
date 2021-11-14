@@ -34,7 +34,7 @@ export const MobileMenu = ({ showMenu, categories }) => {
           <Button link="/signup">Sign Up</Button>
           <Button link="/products">Products</Button>
           <div className="flex flex-col items-start space-y-3 pt-2">
-            <h3 className="font-bold">Categories</h3>
+            <h3 className="subheader">Categories</h3>
             {categories.map(({ display, link }) => (
               <Button key={display} link={link}>
                 {display}
