@@ -18,7 +18,7 @@ export const CategoriesPage = () => {
   );
   const isMobile = useIsMobile();
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading fullscreen />;
 
   return (
     <>

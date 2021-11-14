@@ -6,7 +6,7 @@ import { Button } from '../common/Button';
 export const CategoriesSideBar = ({ currentCategory }) => {
   const categories = useCategories();
 
-  if (!categories) return <Loading />;
+  if (!categories) return <Loading container="w-1/3 h-10" />;
 
   return (
     <nav className="flex flex-col items-start px-10 text-lg md:mr-10">

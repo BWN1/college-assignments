@@ -6,7 +6,7 @@ import { Loading } from '@components';
 export const ShopByCategory = () => {
   const categories = useCategories();
 
-  if (!categories) return <Loading />;
+  if (!categories) return <Loading container="h-80" />;
 
   return (
     <section className="homepage-featured-section">

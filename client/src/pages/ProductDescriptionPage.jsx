@@ -15,7 +15,7 @@ export const ProductDescriptionPage = () => {
   const { id } = useParams();
   const { data: product, loading } = useFetch(`${API_URL_PATHS.products}${id}`);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading fullscreen />;
 
   return (
     <>

@@ -1,6 +1,15 @@
 import React from 'react';
-import { ReactComponent as LoadingAnimation } from '@icons/loading.svg';
+import { ReactComponent as LoadingBlack } from '@icons/loading-black.svg';
+import { ReactComponent as LoadingWhite } from '@icons/loading-white.svg';
 
-export const Loading = ({ width, height, color }) => {
-  return <LoadingAnimation width={width} height={height} color={color} />;
+export const Loading = ({ size, container, fullscreen, white }) => {
+  return (
+    <div className={`center ${container || (fullscreen && 'h-screen')}`}>
+      {white ? (
+        <LoadingWhite width={size || 50} height={size || 50} />
+      ) : (
+        <LoadingBlack width={size || 50} height={size || 50} />
+      )}
+    </div>
+  );
 };

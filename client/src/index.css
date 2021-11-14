@@ -9,6 +9,10 @@
 }
 
 @layer components {
+  .center {
+    @apply flex items-center justify-center;
+  }
+
   .header-logo {
     @apply h-8 w-auto;
   }

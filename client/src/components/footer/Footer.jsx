@@ -9,7 +9,7 @@ export const Footer = () => {
   const categories = useCategories();
   const isMobile = useIsMobile();
 
-  if (!categories) return <Loading className="w-32" />;
+  if (!categories) return <Loading container="h-32" />;
 
   return (
     <footer className="flex flex-col items-center border-t mb-8">

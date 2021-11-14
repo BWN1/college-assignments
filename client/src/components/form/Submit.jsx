@@ -12,7 +12,11 @@ export const Submit = ({ form, isSubmitting, children }) => {
           : 'hover:bg-accent-500 transition-colors hover:cursor-pointer'
       }`}
     >
-      {isSubmitting ? <Loading width={'80%'} height={'80%'} /> : children}
+      {isSubmitting ? (
+        <Loading size="30" container="w-full h-full mt-1" white />
+      ) : (
+        children
+      )}
     </button>
   );
 };

@@ -10,7 +10,7 @@ export const CategoryIcon = ({ category }) => {
   );
   const [product] = data;
 
-  if (loading) return <Loading width="150" />;
+  if (loading) return <Loading size="w-1/2" container="w-20 h-20" />;
 
   return (
     <Button

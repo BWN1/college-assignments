@@ -14,7 +14,7 @@ export const ProductsPage = () => {
   const { data: products, loading } = useFetch(API_URL_PATHS.products);
   const isMobile = useIsMobile();
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading fullscreen />;
 
   return (
     <>
