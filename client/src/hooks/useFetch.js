@@ -8,7 +8,7 @@ export const useFetch = (apiRoute) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const response = await fetch(`${API_URL}/api/${apiRoute}/`);
+      const response = await fetch(`${API_URL}${apiRoute}`);
       if (response.ok) {
         const { data } = await response.json();
         setData(data);

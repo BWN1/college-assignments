@@ -1,13 +1,16 @@
 import React from 'react';
 import { useFetch } from '@hooks';
 import { Loading, Button, ProductImage } from '@components';
+import { API_URL_PATHS } from '../../staticConfig';
 
 export const CategoryIcon = ({ category }) => {
   const { display: categoryName, link: categoryLink } = category;
-  const { data, loading } = useFetch(categoryLink);
+  const { data, loading } = useFetch(
+    `${API_URL_PATHS.categories}${categoryName.toLowerCase()}`
+  );
   const [product] = data;
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading width="150" />;
 
   return (
     <Button

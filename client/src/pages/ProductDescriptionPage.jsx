@@ -9,10 +9,11 @@ import {
   PageContentContainer,
   Button,
 } from '@components';
+import { API_URL_PATHS } from '../staticConfig';
 
 export const ProductDescriptionPage = () => {
   const { id } = useParams();
-  const { data: product, loading } = useFetch(`products/${id}`);
+  const { data: product, loading } = useFetch(`${API_URL_PATHS.products}${id}`);
 
   if (loading) return <Loading />;
 

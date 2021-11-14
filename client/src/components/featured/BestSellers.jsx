@@ -5,11 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { ReactComponent as Arrow } from '@icons/arrow-right.svg';
+import { API_URL_PATHS } from '../../staticConfig';
 
 SwiperCore.use([Navigation]);
 
 export const BestSellers = () => {
-  const { data: products, loading } = useFetch('best-sellers');
+  const { data: products, loading } = useFetch(API_URL_PATHS.bestSellers);
   const isMobile = useIsMobile();
 
   if (loading) return <Loading className="h-80" />;

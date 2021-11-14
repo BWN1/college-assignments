@@ -5,11 +5,12 @@ import 'swiper/swiper-bundle.min.css';
 import { Button, Loading, ProductImage } from '@components';
 import { ReactComponent as Arrow } from '@icons/arrow-right.svg';
 import { useFetch, useIsMobile } from '@hooks';
+import { API_URL_PATHS } from '../../staticConfig';
 
 SwiperCore.use([Pagination, Autoplay]);
 
 export const HeroSlider = () => {
-  const { data: products, loading } = useFetch('products');
+  const { data: products, loading } = useFetch(API_URL_PATHS.products);
   const isMobile = useIsMobile();
   const numSlides = (isMobile && 1) || 2;
 
