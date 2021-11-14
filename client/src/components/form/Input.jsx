@@ -12,7 +12,7 @@ export const Input = ({
   showError,
 }) => {
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 self-start">
       <label htmlFor={name} className="mb-1">
         {label}
         {required ? (

@@ -9,6 +9,7 @@ module.exports = {
       accent: colors.blue,
       white: colors.white,
       red: colors.red,
+      green: colors.green,
     },
     extend: {
       gridTemplateColumns: {
@@ -24,8 +25,8 @@ module.exports = {
         250: '250px',
       },
       height: {
-        'hero-large': '28rem'
-      }
+        'hero-large': '28rem',
+      },
     },
   },
   variants: {

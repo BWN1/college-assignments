@@ -26,3 +26,10 @@ export const formErrorMessages = {
 export const emailRegEx = new RegExp(
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 );
+
+export const notificationText = {
+  registration: {
+    error: 'There was an error when registering. Please try again later',
+    success: 'You were successfully registered!',
+  },
+};

@@ -10,4 +10,6 @@ export const createPost = async (path, body) => {
   });
 
   if (!res.ok) throw new Error();
+
+  return Promise.resolve();
 };
