@@ -12,8 +12,8 @@ export const Footer = () => {
   if (!categories) return <Loading container="h-32" />;
 
   return (
-    <footer className="flex flex-col items-center pb-8 bg-gray-100">
-      <nav className="my-8 flex justify-center">
+    <footer className="flex-x-center flex-col pb-8 bg-gray-100">
+      <nav className="my-8 flex-y-center">
         <FooterGroup header="Explore" links={footerLinks.general} />
         {!isMobile && <FooterGroup header="Categories" links={categories} />}
         <SocialsGroup />

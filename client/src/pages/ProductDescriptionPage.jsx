@@ -20,7 +20,7 @@ export const ProductDescriptionPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer className="flex flex-col md:flex-row p-4 justify-center m-auto mb-2">
+      <PageContentContainer className="flex-y-center flex-col md:flex-row p-4 m-auto mb-2">
         <ProductImage
           url={product.photoURL}
           size={512}

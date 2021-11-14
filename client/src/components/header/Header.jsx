@@ -13,8 +13,8 @@ export const Header = () => {
       {isMobile ? (
         <MobileHeader />
       ) : (
-        <nav className="flex items-center justify-between w-full max-w-screen-xl px-8 my-4">
-          <div className="flex justify-center items-center">
+        <nav className="flex-x-center justify-between w-full max-w-screen-xl px-8 my-4">
+          <div className="flex-center">
             <Button link="/">
               <Logo className="header-logo" />
             </Button>
