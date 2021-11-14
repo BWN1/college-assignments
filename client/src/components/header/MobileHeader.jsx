@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { ReactComponent as FullLogo } from '@icons/logo-long.svg';
+import { ReactComponent as FullLogo } from '@images/logo-long.svg';
 import { ReactComponent as HamburgerMenuImg } from '@icons/menu.svg';
 import { ReactComponent as CloseMenuImg } from '@icons/cancel.svg';
 

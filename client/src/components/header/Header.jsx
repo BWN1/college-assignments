@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Logo } from '@icons/logo-long.svg';
+import { ReactComponent as Logo } from '@images/logo-long.svg';
 import { Button } from '@components';
 import { SearchBar } from './SearchBar';
 import { MobileHeader } from './MobileHeader';

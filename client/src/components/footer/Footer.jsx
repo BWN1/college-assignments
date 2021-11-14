@@ -3,7 +3,7 @@ import { useIsMobile, useCategories } from '@hooks';
 import { Loading, Button } from '@components';
 import { FooterGroup } from './FooterGroup';
 import { SocialsGroup } from './SocialsGroup';
-import { ReactComponent as Logo } from '@icons/logo-long.svg';
+import { ReactComponent as Logo } from '@images/logo-long.svg';
 
 export const Footer = () => {
   const categories = useCategories();
