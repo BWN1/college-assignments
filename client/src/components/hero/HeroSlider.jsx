@@ -17,7 +17,7 @@ export const HeroSlider = () => {
   if (loading) return <Loading container="h-80 lg:h-96" />;
 
   return (
-    <section className="h-80 lg:h-96">
+    <section className="h-80 md:h-96 lg:h-hero-large">
       <Swiper
         pagination={{ clickable: true }}
         autoplay={{ delay: 6500, disableOnInteraction: true }}

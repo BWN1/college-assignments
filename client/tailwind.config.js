@@ -23,6 +23,9 @@ module.exports = {
       maxWidth: {
         250: '250px',
       },
+      height: {
+        'hero-large': '28rem'
+      }
     },
   },
   variants: {

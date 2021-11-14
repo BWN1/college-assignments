@@ -9,7 +9,7 @@ export const Header = () => {
   const isMobile = useIsMobile();
 
   return (
-    <header className="flex items-center justify-center">
+    <header className="flex-center bg-gray-50">
       {isMobile ? (
         <MobileHeader />
       ) : (
