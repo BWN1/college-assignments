@@ -1,8 +1,4 @@
-export {
-  useIsMobile,
-  useIsTablet,
-  useIsLargeScreen,
-  useIsXLScreen,
-} from './useMediaQueries';
-export { useFetch } from './useFetch';
-export { useResizeImage } from './useResizeImage';
+export * from './useMediaQueries';
+export * from './useFetch';
+export * from './useResizeImage';
+export * from './useCategories';
