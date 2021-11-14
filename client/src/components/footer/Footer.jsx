@@ -1,11 +1,12 @@
 import React from 'react';
-import { useFetch, useIsMobile } from '@hooks';
+import { useIsMobile, useCategories } from '@hooks';
 import { Loading, Button } from '@components';
 import { FooterGroup } from './FooterGroup';
+import { SocialsGroup } from './SocialsGroup';
 import { ReactComponent as Logo } from '@icons/logo-long.svg';
 
 export const Footer = () => {
-  const categories = useFetch('categories');
+  const categories = useCategories();
   const isMobile = useIsMobile();
 
   if (!categories) return <Loading className="w-32" />;
@@ -14,16 +15,8 @@ export const Footer = () => {
     <footer className="flex flex-col items-center border-t mb-8">
       <nav className="my-8 flex justify-center">
         <FooterGroup header="Explore" links={footerLinks.general} />
-        {!isMobile && (
-          <FooterGroup
-            header="Categories"
-            links={categories.map((category) => ({
-              display: category,
-              link: `/categories/${category}`,
-            }))}
-          />
-        )}
-        <FooterGroup header="Follow us" links={footerLinks.socials} />
+        {!isMobile && <FooterGroup header="Categories" links={categories} />}
+        <SocialsGroup />
       </nav>
       <Button link="/">
         <Logo />
@@ -34,13 +27,8 @@ export const Footer = () => {
 
 const footerLinks = {
   general: [
-    { display: 'home', link: '/' },
+    { display: 'Home', link: '/' },
     { display: 'Products', link: '/products' },
     { display: 'Sign up', link: '/signup' },
-  ],
-  socials: [
-    { display: 'Twitter', link: 'https://www.twitter.com/shopmart' },
-    { display: 'Instagram', link: 'https://www.instagram.com/shopmart' },
-    { display: 'Facebook', link: 'https://www.facebook.com/shopmart' },
   ],
 };
