@@ -6,7 +6,7 @@ export const MEDIA_BREAKPOINTS = {
 };
 
 export const API_URL = 'https://web422-bneumann.herokuapp.com';
-export const API_URL_PATHS = {
+export const API_PATHS = {
   products: '/api/products/',
   categories: '/api/categories/',
   bestSellers: '/api/best-sellers/',

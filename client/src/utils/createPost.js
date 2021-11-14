@@ -1,5 +1,7 @@
-export const createPost = async (url, body) => {
-  const res = await fetch(url, {
+import { API_URL } from '../staticConfig';
+
+export const createPost = async (path, body) => {
+  const res = await fetch(`${API_URL}${path}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

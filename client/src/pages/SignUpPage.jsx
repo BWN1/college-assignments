@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Header, Footer, PageContentContainer } from '@components';
 import { Form, Input, Row, Submit } from '@components/form';
-import { API_URL, emailRegEx } from '../staticConfig';
+import { API_PATHS, emailRegEx } from '../staticConfig';
 import { createPost } from '../utils/createPost';
 import { ReactComponent as Close } from '@icons/cancel.svg';
 
@@ -26,7 +26,10 @@ export const SignUpPage = () => {
 
   const handlePhoneNumbersChange = (e) => {
     const value = e.target.value;
-    if (!/[0-9]/.test(value.slice(-1)) && value.slice(-1) !== ',') {
+    if (
+      (!/[0-9]/.test(value.slice(-1)) && value.slice(-1) !== ',') ||
+      value.length > 10
+    ) {
       e.target.value = value.slice(0, value.length - 1);
     } else {
       setFormData({
@@ -71,7 +74,7 @@ export const SignUpPage = () => {
 
   useEffect(() => {
     if (isSubmitting) {
-      createPost(`${API_URL}/api/customer`, formData)
+      createPost(API_PATHS.customer, formData)
         .then(history.push('/'))
         .catch(() => {
           setSubmissionError(true);

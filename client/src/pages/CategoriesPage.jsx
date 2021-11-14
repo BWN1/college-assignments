@@ -9,12 +9,12 @@ import {
 } from '@components';
 import { useFetch, useIsMobile } from '@hooks';
 import { useParams } from 'react-router';
-import { API_URL_PATHS } from '../staticConfig';
+import { API_PATHS } from '../staticConfig';
 
 export const CategoriesPage = () => {
   const { category } = useParams();
   const { data: products, loading } = useFetch(
-    `${API_URL_PATHS.categories}${category}`
+    `${API_PATHS.categories}${category}`
   );
   const isMobile = useIsMobile();
 

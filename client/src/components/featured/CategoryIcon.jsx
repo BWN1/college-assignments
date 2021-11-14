@@ -1,16 +1,16 @@
 import React from 'react';
 import { useFetch } from '@hooks';
 import { Loading, Button, ProductImage } from '@components';
-import { API_URL_PATHS } from '../../staticConfig';
+import { API_PATHS } from '../../staticConfig';
 
 export const CategoryIcon = ({ category }) => {
   const { display: categoryName, link: categoryLink } = category;
   const { data, loading } = useFetch(
-    `${API_URL_PATHS.categories}${categoryName.toLowerCase()}`
+    `${API_PATHS.categories}${categoryName.toLowerCase()}`
   );
   const [product] = data;
 
-  if (loading) return <Loading size="w-1/2" container="w-20 h-20" />;
+  if (loading) return <Loading size="50%" container="w-20 h-20" />;
 
   return (
     <Button

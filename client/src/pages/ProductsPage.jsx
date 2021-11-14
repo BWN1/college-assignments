@@ -8,10 +8,10 @@ import {
   CategoriesSideBar,
 } from '@components';
 import { useFetch, useIsMobile } from '@hooks';
-import { API_URL_PATHS } from '../staticConfig';
+import { API_PATHS } from '../staticConfig';
 
 export const ProductsPage = () => {
-  const { data: products, loading } = useFetch(API_URL_PATHS.products);
+  const { data: products, loading } = useFetch(API_PATHS.products);
   const isMobile = useIsMobile();
 
   if (loading) return <Loading fullscreen />;

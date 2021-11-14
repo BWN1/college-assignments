@@ -4,12 +4,12 @@ import { Button, Loading, ProductImage } from '@components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import { API_URL_PATHS } from '../../staticConfig';
+import { API_PATHS } from '../../staticConfig';
 
 SwiperCore.use([Navigation]);
 
 export const BestSellers = () => {
-  const { data: products, loading } = useFetch(API_URL_PATHS.bestSellers);
+  const { data: products, loading } = useFetch(API_PATHS.bestSellers);
   const isMobile = useIsMobile();
 
   if (loading) return <Loading container="h-72" />;
