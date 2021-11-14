@@ -26,7 +26,7 @@ export const ProductsPage = () => {
           {!isMobile && <CategoriesSideBar />}
           <div className="md:flex md:flex-wrap w-full px-2">
             {products.map((product) => (
-              <ListedProduct product={product} />
+              <ListedProduct key={product.name} product={product} />
             ))}
           </div>
         </div>

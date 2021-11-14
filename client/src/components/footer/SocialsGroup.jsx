@@ -6,7 +6,7 @@ export const SocialsGroup = () => {
     <div className="flex flex-col px-10">
       <h4 className="font-semibold mb-1">Follow Us</h4>
       {socialLinks.map(({ display, link }) => (
-        <ExternalLink link={link} className="my-1">
+        <ExternalLink key={display} link={link} className="my-1">
           {display}
         </ExternalLink>
       ))}

@@ -13,6 +13,7 @@ export const CategoriesSideBar = ({ currentCategory }) => {
       <h4 className="font-semibold mb-2">Categories</h4>
       {categories.map(({ display, link }) => (
         <Button
+          key={display}
           link={link}
           className={`my-1 hover:text-accent-400 ${
             display.toLowerCase() === currentCategory && 'text-accent-300'

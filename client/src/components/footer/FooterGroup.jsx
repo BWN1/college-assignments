@@ -6,7 +6,7 @@ export const FooterGroup = ({ header, links }) => {
     <div className="flex flex-col px-10">
       <h4 className="font-semibold mb-1">{header}</h4>
       {links.map(({ display, link }) => (
-        <Button link={link} className="my-1">
+        <Button key={display} link={link} className="my-1">
           {display}
         </Button>
       ))}
