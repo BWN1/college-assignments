@@ -32,8 +32,16 @@ const addProduct = async (product) => {
     const error = validateProductFields(product);
     if (error) return Promise.reject(error);
 
-    Products({ ...extractProductValidFields(product) }).save();
-    return Promise.resolve('Product added!');
+    const addedProduct = await Products({
+      ...extractAndSanitizeProductFields(product),
+    })
+      .save()
+      .catch(() => Promise.reject('Error adding product'));
+
+    return Promise.resolve({
+      message: 'Product added!',
+      id: addedProduct.productId,
+    });
   }
 
   return Promise.reject('Missing required fields');
