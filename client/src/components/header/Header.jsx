@@ -13,14 +13,14 @@ export const Header = () => {
       {isMobile ? (
         <MobileHeader />
       ) : (
-        <nav className="flex-x-center justify-between w-full max-w-screen-xl px-8 my-4">
+        <nav className="flex-x-center justify-between w-full max-w-screen-xl px-8 my-2 md:my-4 space-x-5">
           <div className="flex-center">
             <Button link="/">
               <Logo className="header-logo" />
             </Button>
             <Button
               link="/products"
-              styles="text-xl mx-4 lg:mx-10 hover:text-accent-400 transition duration-75 ease-in-out"
+              styles="text-lg md:text-xl ml-5 lg:mx-10 hover:text-accent-400 transition duration-75 ease-in-out"
             >
               Products
             </Button>

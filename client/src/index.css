@@ -84,7 +84,7 @@
 
 @layer components {
   .header-logo {
-    @apply h-8 w-auto;
+    @apply h-8 w-auto sm:h-6;
   }
 
   .cta-button {
