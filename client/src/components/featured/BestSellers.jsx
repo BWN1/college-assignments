@@ -37,7 +37,7 @@ export const BestSellers = () => {
                   styles="h-full w-full"
                 />
               </div>
-              <span className="mt-2">{item.name}</span>
+              <span className="mt-2 product-name">{item.name}</span>
             </Button>
           </SwiperSlide>
         ))}

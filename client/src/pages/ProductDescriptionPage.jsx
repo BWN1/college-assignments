@@ -40,7 +40,7 @@ export const ProductDescriptionPage = () => {
           </div>
           <div className="divide-y">
             <h3 className="subheader pb-1">Description</h3>
-            <p className="pt-2">{product.description}</p>
+            <p className="pt-2 whitespace-pre-line">{product.description}</p>
           </div>
         </div>
       </PageContentContainer>

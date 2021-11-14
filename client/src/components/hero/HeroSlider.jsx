@@ -42,7 +42,9 @@ export const HeroSlider = () => {
             />
             <div className="bg-gray-800 opacity-50 w-full h-full absolute top-0 left-0 transition-all"></div>
             <div className="hero-item">
-              <h3 className="header-lg">{item.name}</h3>
+              <h3 className="header-lg leading-6 max-h-40 w-full overflow-hidden overflow-ellipsis;">
+                {item.name}
+              </h3>
               <Button
                 link={`/products/${item.productId}`}
                 styles="hover:underline"
