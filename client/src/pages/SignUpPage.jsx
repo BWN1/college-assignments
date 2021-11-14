@@ -94,9 +94,9 @@ export const SignUpPage = () => {
           />
         </div>
       )}
-      <PageContentContainer className="w-11/12 md:w-1/2 max-w-lg p-4 my-10">
-        <h2 className="mb-8 font-bold text-3xl">Create an account</h2>
-        <Form id="signup" onSubmit={handleSubmit}>
+      <PageContentContainer className="w-11/12 md:w-1/2 max-w-lg py-4 my-10">
+        <Form id="signup" onSubmit={handleSubmit} styles="max-w-lg m-auto">
+          <h2 className="mb-8 font-bold text-3xl">Create an account</h2>
           <Row>
             <Input
               name="fname"
