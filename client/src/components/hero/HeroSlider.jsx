@@ -4,19 +4,16 @@ import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { Button, Loading, ProductImage } from '@components';
 import { ReactComponent as Arrow } from '@icons/arrow-right.svg';
-import { useFetch, useIsTablet, useIsLargeScreen, useIsXLScreen } from '@hooks';
+import { useFetch, useIsMobile } from '@hooks';
 
 SwiperCore.use([Pagination, Autoplay]);
 
 export const HeroSlider = () => {
-  const products = useFetch('products');
-  const isTablet = useIsTablet();
-  const isLargeScreen = useIsLargeScreen();
-  const isXLScreen = useIsXLScreen();
-  const numSlides =
-    (isTablet && 2) || (isLargeScreen && 3) || (isXLScreen && 4) || 1;
+  const { data: products, loading } = useFetch('products');
+  const isMobile = useIsMobile();
+  const numSlides = (isMobile && 1) || 2;
 
-  if (!products) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <Swiper
@@ -27,7 +24,9 @@ export const HeroSlider = () => {
       className="h-80 lg:h-96"
     >
       <SwiperSlide className="px-10 py-4 flex flex-col items-start justify-evenly bg-accent-100">
-        <h3 className="text-4xl font-bold">Browse all of our products</h3>
+        <h3 className="text-4xl lg:text-5xl font-bold">
+          Browse all of our products
+        </h3>
         <Button link="/products" className="cta-button flex justify-between">
           Shop Products <Arrow className="inline" />
         </Button>

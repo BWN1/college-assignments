@@ -1,10 +1,10 @@
 import React from 'react';
-import { useFetch } from '@hooks';
+import { useCategories } from '@hooks';
 import { CategoryIcon } from './CategoryIcon';
 import { Loading } from '@components';
 
 export const ShopByCategory = () => {
-  const categories = useFetch('categories');
+  const categories = useCategories();
 
   if (!categories) return <Loading />;
 

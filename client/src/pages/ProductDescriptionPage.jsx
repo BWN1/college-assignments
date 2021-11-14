@@ -12,9 +12,9 @@ import {
 
 export const ProductDescriptionPage = () => {
   const { id } = useParams();
-  const product = useFetch(`products/${id}`);
+  const { data: product, loading } = useFetch(`products/${id}`);
 
-  if (!product) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <>

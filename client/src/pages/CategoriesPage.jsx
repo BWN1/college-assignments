@@ -12,10 +12,10 @@ import { useParams } from 'react-router';
 
 export const CategoriesPage = () => {
   const { category } = useParams();
-  const categories = useFetch(`categories/${category}`);
+  const { data: products, loading } = useFetch(`categories/${category}`);
   const isMobile = useIsMobile();
 
-  if (!categories) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <>
@@ -27,7 +27,7 @@ export const CategoriesPage = () => {
         <div className="flex w-full">
           {!isMobile && <CategoriesSideBar currentCategory={category} />}
           <div className="md:flex md:flex-wrap w-full px-2">
-            {categories.slice(0, 12).map((product) => (
+            {products.map((product) => (
               <ListedProduct product={product} />
             ))}
           </div>

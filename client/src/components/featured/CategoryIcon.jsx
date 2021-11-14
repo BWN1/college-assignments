@@ -3,10 +3,11 @@ import { useFetch } from '@hooks';
 import { Loading, Button, ProductImage } from '@components';
 
 export const CategoryIcon = ({ category }) => {
-  const categoryLink = `categories/${category}`;
-  const [product] = useFetch(categoryLink);
+  const { data, loading } = useFetch(`categories/${category}`);
+  const { display: categoryName, link: categoryLink } = category;
+  const product = [data];
 
-  if (!product) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <Button
@@ -18,7 +19,7 @@ export const CategoryIcon = ({ category }) => {
         alt="category item"
         className="category-image"
       />
-      <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+      <span>{categoryName}</span>
     </Button>
   );
 };

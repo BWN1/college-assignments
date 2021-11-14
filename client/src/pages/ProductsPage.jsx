@@ -10,10 +10,10 @@ import {
 import { useFetch, useIsMobile } from '@hooks';
 
 export const ProductsPage = () => {
-  const products = useFetch('products');
+  const { data: products, loading } = useFetch('products');
   const isMobile = useIsMobile();
 
-  if (!products) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <>

@@ -9,10 +9,10 @@ import { ReactComponent as Arrow } from '@icons/arrow-right.svg';
 SwiperCore.use([Navigation]);
 
 export const BestSellers = () => {
-  const products = useFetch('best-sellers');
+  const { data: products, loading } = useFetch('best-sellers');
   const isMobile = useIsMobile();
 
-  if (!products) return <Loading className="h-80" />;
+  if (loading) return <Loading className="h-80" />;
 
   return (
     <section className="homepage-featured-section w-full px-10">
