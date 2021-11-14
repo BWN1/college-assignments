@@ -10,6 +10,7 @@ export const SignUpPage = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
   const [submissionError, setSubmissionError] = useState(false);
   const history = useHistory();
 
@@ -24,17 +25,79 @@ export const SignUpPage = () => {
     });
   };
 
-  const handlePhoneNumbersChange = (e) => {
+  const handlePasswordChange = (e) => {
     const value = e.target.value;
-    if (
-      (!/[0-9]/.test(value.slice(-1)) && value.slice(-1) !== ',') ||
-      value.length > 10
-    ) {
+    if (value.length < 6) {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: true,
+      });
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value.trim(),
+      });
+    } else {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: false,
+      });
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value.trim(),
+      });
+    }
+  };
+
+  const handlePasswordBlur = (e) => {
+    const value = e.target.value;
+    if (value.length < 6) {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: true,
+      });
+    } else {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: false,
+      });
+    }
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    const value = e.target.value;
+    if (!/[0-9]/.test(value.slice(-1)) || value.length > 10) {
       e.target.value = value.slice(0, value.length - 1);
     } else {
       setFormData({
         ...formData,
-        [e.target.name]: value.split(',').map((num) => Number.parseInt(num)),
+        phoneNumbers: [Number.parseInt(value)],
+      });
+    }
+
+    if (e.target.value.length >= 1 && e.target.value.length < 10) {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: true,
+      });
+    } else {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: false,
+      });
+    }
+  };
+
+  const handlePhoneNumberBlur = (e) => {
+    const value = e.target.value;
+    if (value.length >= 1 && value.length < 10) {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: true,
+      });
+    } else {
+      setFormErrors({
+        ...formErrors,
+        [e.target.name]: false,
       });
     }
   };
@@ -53,8 +116,6 @@ export const SignUpPage = () => {
     });
   };
 
-  useEffect(() => {}, [formData, formErrors]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -69,19 +130,27 @@ export const SignUpPage = () => {
 
     //Check if fields are empty
     if (!!!fname || !!!lname || !!!email || !!!password) setIsSubmitting(false);
-    else setIsSubmitting(true);
-  };
-
-  useEffect(() => {
-    if (isSubmitting) {
+    else {
+      setIsSubmitting(true);
       createPost(API_PATHS.customer, formData)
-        .then(history.push('/'))
+        .then(() => history.push('/'))
         .catch(() => {
           setSubmissionError(true);
           setIsSubmitting(false);
         });
     }
-  }, [isSubmitting, formData, history]);
+  };
+
+  useEffect(() => {
+    setIsSubmitDisabled(false);
+    Object.entries(formErrors).forEach(([, error]) => {
+      if (error) setIsSubmitDisabled(true);
+    });
+
+    const { fname, lname, email, password } = formData;
+    if (!!!fname || !!!lname || !!!email || !!!password)
+      setIsSubmitDisabled(true);
+  }, [formData, formErrors, history]);
 
   return (
     <>
@@ -134,8 +203,8 @@ export const SignUpPage = () => {
               name="password"
               label="Password"
               type="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
+              onChange={handlePasswordChange}
+              onBlur={handlePasswordBlur}
               fullWidth
               required
               showError={formErrors.password}
@@ -143,17 +212,22 @@ export const SignUpPage = () => {
           </Row>
           <Row>
             <Input
-              name="phoneNumbers"
-              label="Phone Numbers"
+              name="phoneNumber"
+              label="Phone Number"
               type="text"
-              onChange={handlePhoneNumbersChange}
-              onBlur={handleBlur}
+              onChange={handlePhoneNumberChange}
+              onBlur={handlePhoneNumberBlur}
               optional
               fullWidth
+              showError={formErrors.phoneNumbers}
             />
           </Row>
           <Row>
-            <Submit form="signup" isSubmitting={isSubmitting}>
+            <Submit
+              form="signup"
+              isSubmitting={isSubmitting}
+              disabled={isSubmitDisabled}
+            >
               Sign Up
             </Submit>
           </Row>
@@ -177,4 +251,5 @@ const initialFormErrors = {
   lname: false,
   email: false,
   password: false,
+  phoneNumbers: false,
 };

@@ -18,7 +18,8 @@ export const formErrorMessages = {
     fname: 'This field is required',
     lname: 'This field is required',
     email: 'Please enter a valid email',
-    password: 'Please enter a password',
+    password: 'Password must be at least 6 characters',
+    phoneNumber: 'Phone number must be at least 10 numbers',
   },
 };
 
