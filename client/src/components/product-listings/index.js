@@ -1,2 +1,2 @@
-export { ListedProduct } from './ProductListing';
-export { CategoriesSideBar } from './CategoriesSideBar';
+export * from './ProductListing';
+export * from './CategoriesSideBar';

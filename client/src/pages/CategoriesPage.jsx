@@ -4,7 +4,7 @@ import {
   Header,
   Footer,
   Loading,
-  ListedProduct,
+  ProductListing,
   CategoriesSideBar,
 } from '@components';
 import { useFetch, useIsMobile } from '@hooks';
@@ -29,9 +29,9 @@ export const CategoriesPage = () => {
         </h2>
         <div className="flex w-full">
           {!isMobile && <CategoriesSideBar currentCategory={category} />}
-          <div className="md:flex md:flex-wrap w-full px-2">
+          <div className="md:flex md:flex-wrap w-full px-2 divide-y md:divide-y-0">
             {products.map((product) => (
-              <ListedProduct product={product} />
+              <ProductListing product={product} />
             ))}
           </div>
         </div>

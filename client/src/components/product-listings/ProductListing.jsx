@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, ProductImage } from '@components';
 
-export const ListedProduct = ({ product }) => {
+export const ProductListing = ({ product }) => {
   const { photoURL, name, price, category, bestSeller, productId } = product;
   const productUrl = `/products/${productId}`;
 
   return (
-    <div className="product-wrapper last:border-b-0">
+    <div className="product-wrapper">
       <Button link={productUrl} className="product-image">
         <ProductImage url={photoURL} alt={name} />
       </Button>
