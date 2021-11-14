@@ -19,10 +19,8 @@ export const ProductsPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer className="flex-center flex-col my-5">
-        <h2 className="header-md md:header-lg mb-7 md:mb-8">
-          All Products
-        </h2>
+      <PageContentContainer styles="flex-center flex-col my-5">
+        <h2 className="header-md md:header-lg mb-7 md:mb-8">All Products</h2>
         <div className="flex w-full">
           {!isMobile && <CategoriesSideBar />}
           <div className="md:flex md:flex-wrap w-full px-2 divide-y md:divide-y-0">

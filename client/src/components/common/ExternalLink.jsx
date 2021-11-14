@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const ExternalLink = ({ className, link, children }) => {
+export const ExternalLink = ({ styles, link, children }) => {
   return (
-    <a href={link} className={className} target="_blank" rel="noreferrer">
+    <a href={link} className={styles} target="_blank" rel="noreferrer">
       {children}
     </a>
   );

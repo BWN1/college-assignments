@@ -20,7 +20,7 @@ export const Header = () => {
             </Button>
             <Button
               link="/products"
-              className="text-xl mx-4 lg:mx-10 hover:text-accent-400 transition duration-75 ease-in-out"
+              styles="text-xl mx-4 lg:mx-10 hover:text-accent-400 transition duration-75 ease-in-out"
             >
               Products
             </Button>
@@ -28,7 +28,7 @@ export const Header = () => {
           <div id="search" className="max-w-lg flex-grow-0 lg:flex-grow">
             <SearchBar />
           </div>
-          <Button link="/signup" className="cta-button">
+          <Button link="/signup" styles="cta-button">
             Sign Up
           </Button>
         </nav>

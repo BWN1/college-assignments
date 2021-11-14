@@ -22,7 +22,7 @@ export const MobileHeader = () => {
   return (
     <nav className="grid grid-cols-mobile-menu items-center w-full px-8 my-7 md:hidden">
       <HamburgerMenuImg onClick={() => setShowMenu(true)} />
-      <Button link="/" className="justify-self-center">
+      <Button link="/" styles="justify-self-center">
         <FullLogo className="header-logo" />
       </Button>
       {showMenu && (

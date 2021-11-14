@@ -15,7 +15,7 @@ export const CategoriesSideBar = ({ currentCategory }) => {
         <Button
           key={display}
           link={link}
-          className={`my-1 hover:text-accent-400 ${
+          styles={`my-1 hover:text-accent-400 ${
             display.toLowerCase() === currentCategory && 'text-accent-300'
           }`}
         >

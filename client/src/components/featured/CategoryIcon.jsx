@@ -15,12 +15,12 @@ export const CategoryIcon = ({ category }) => {
   return (
     <Button
       link={categoryLink}
-      className="grid grid-cols-1 gap-y-4 text-accent-500 text-center hover:underline"
+      styles="grid grid-cols-1 gap-y-4 text-accent-500 text-center hover:underline"
     >
       <ProductImage
         url={product.photoURL}
         alt="category item"
-        className="category-image"
+        styles="category-image"
       />
       <span>{categoryName}</span>
     </Button>

@@ -29,7 +29,7 @@ export const HeroSlider = () => {
           <h3 className="header-lg-bold lg:header-xl-bold">
             Browse all of our products
           </h3>
-          <Button link="/products" className="cta-button flex justify-between">
+          <Button link="/products" styles="cta-button flex justify-between">
             Shop Products <Arrow className="inline" />
           </Button>
         </SwiperSlide>
@@ -45,7 +45,7 @@ export const HeroSlider = () => {
               <h3 className="header-lg">{item.name}</h3>
               <Button
                 link={`/products/${item.productId}`}
-                className="hover:underline"
+                styles="hover:underline"
               >
                 <span className="mr-2">View Product</span>
                 <Arrow className="inline" />

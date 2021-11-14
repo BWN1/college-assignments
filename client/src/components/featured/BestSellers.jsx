@@ -16,9 +16,7 @@ export const BestSellers = () => {
 
   return (
     <section className="homepage-featured-section w-full px-10">
-      <h3 className="header-sm md:header-md mb-4 self-start">
-        Best Sellers
-      </h3>
+      <h3 className="header-sm md:header-md mb-4 self-start">Best Sellers</h3>
       <Swiper
         navigation
         className="h-full w-full"
@@ -29,14 +27,14 @@ export const BestSellers = () => {
           <SwiperSlide>
             <Button
               link={`products/${item.productId}`}
-              className="h-full flex flex-col hover:underline"
+              styles="h-full flex flex-col hover:underline"
             >
               <div className="h-52">
                 <ProductImage
                   url={item.photoURL}
                   size={500}
                   alt="best seller item"
-                  className="h-full w-full"
+                  styles="h-full w-full"
                 />
               </div>
               <span className="mt-2">{item.name}</span>

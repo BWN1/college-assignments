@@ -23,7 +23,7 @@ export const CategoriesPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer className="flex flex-col my-5">
+      <PageContentContainer styles="flex flex-col my-5">
         <h2 className="header-md md:header-lg text-center mb-7 md:mb-8">
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </h2>

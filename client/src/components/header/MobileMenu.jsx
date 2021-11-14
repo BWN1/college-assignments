@@ -25,7 +25,7 @@ export const MobileMenu = ({ showMenu, categories }) => {
       <div id="mobile-menu" className="bg-white w-5/6 px-8 py-7 h-screen z-10">
         <div className="grid grid-cols-mobile-menu items-center mb-4">
           <CloseMenuImg className="w-8" onClick={handleClick} />
-          <Button link="/" className="justify-self-center">
+          <Button link="/" styles="justify-self-center">
             <FullLogo />
           </Button>
         </div>
