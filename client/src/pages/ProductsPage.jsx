@@ -19,7 +19,7 @@ export const ProductsPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer className="flex-center flex-col my-5 max-w-screen-xl m-auto">
+      <PageContentContainer className="flex-center flex-col my-5">
         <h2 className="header-md md:header-lg mb-7 md:mb-8">
           All Products
         </h2>

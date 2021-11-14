@@ -23,13 +23,13 @@ export const CategoriesPage = () => {
   return (
     <>
       <Header />
-      <PageContentContainer className="flex flex-col my-5 max-w-screen-xl m-auto">
-        <h2 className="header-md text-center mb-7 md:mb-8 md:header-lg">
+      <PageContentContainer className="flex flex-col my-5">
+        <h2 className="header-md md:header-lg text-center mb-7 md:mb-8">
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </h2>
         <div className="flex w-full">
           {!isMobile && <CategoriesSideBar currentCategory={category} />}
-          <div className="md:flex md:flex-wrap w-full px-2 divide-y md:divide-y-0">
+          <div className="w-full px-2 divide-y md:flex md:flex-wrap md:divide-y-0">
             {products.map((product) => (
               <ProductListing product={product} />
             ))}
