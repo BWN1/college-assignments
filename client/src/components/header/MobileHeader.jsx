@@ -3,16 +3,22 @@ import { ReactComponent as FullLogo } from '@images/logo-long.svg';
 import { ReactComponent as HamburgerMenuImg } from '@icons/menu.svg';
 import { ReactComponent as CloseMenuImg } from '@icons/cancel.svg';
 
-import { Button } from '@components';
+import { Button, Loading } from '@components';
 import { SearchBar } from './SearchBar';
+import { useCategories } from '@hooks';
 
 export const MobileHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const categories = useCategories();
 
   useEffect(() => {
-    const showOverflow = showMenu ? 'hidden' : 'auto';
-    document.body.style.overflow = showOverflow;
+    const bodyClasses = document.body.classList;
+    showMenu
+      ? bodyClasses.add('overflow-hidden')
+      : bodyClasses.remove('overflow-hidden');
   }, [showMenu]);
+
+  if (!categories) return <Loading container="my-4" size="50" />;
 
   return (
     <nav className="grid grid-cols-mobile-menu items-center w-full px-8 my-7 md:hidden">
@@ -32,14 +38,16 @@ export const MobileHeader = () => {
                 <FullLogo />
               </Button>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col space-y-4 text-lg">
               <SearchBar />
-              <Button link="/products" className="text-lg my-3">
-                Products
-              </Button>
-              <Button link="/signup" className="text-lg">
-                Sign Up
-              </Button>
+              <Button link="/signup">Sign Up</Button>
+              <Button link="/products">Products</Button>
+              <div className="flex flex-col space-y-3 pt-2">
+                <h3 className="font-bold">Categories</h3>
+                {categories.map(({ display, link }) => (
+                  <Button link={link}>{display}</Button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
