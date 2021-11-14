@@ -16,9 +16,9 @@ export const BestSellers = () => {
 
   return (
     <section className="homepage-featured-section w-full px-10">
-      <h4 className="text-2xl md:text-3xl mb-4 self-start flex items-center">
+      <h3 className="header-sm md:header-md mb-4 self-start">
         Best Sellers
-      </h4>
+      </h3>
       <Swiper
         navigation
         className="h-full w-full"
