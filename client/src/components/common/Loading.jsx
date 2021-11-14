@@ -4,7 +4,7 @@ import { ReactComponent as LoadingWhite } from '@icons/loading-white.svg';
 
 export const Loading = ({ size, container, fullscreen, white }) => {
   return (
-    <div className={`center ${container || (fullscreen && 'h-screen')}`}>
+    <div className={`flex-center ${container || (fullscreen && 'h-screen')}`}>
       {white ? (
         <LoadingWhite width={size || 50} height={size || 50} />
       ) : (

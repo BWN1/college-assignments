@@ -15,7 +15,7 @@ export const BestSellers = () => {
   if (loading) return <Loading container="h-72" />;
 
   return (
-    <section className="homepage-featured-section w-full px-10">
+    <section className="homepage-featured-section px-10">
       <h3 className="header-sm md:header-md mb-4 self-start">Best Sellers</h3>
       <Swiper
         navigation

@@ -38,7 +38,7 @@ export const HeroSlider = () => {
             <ProductImage
               url={item.photoURL}
               size={500}
-              className="h-full w-full"
+              styles="h-full w-full"
             />
             <div className="bg-gray-800 opacity-50 w-full h-full absolute top-0 left-0 transition-all"></div>
             <div className="hero-item">
