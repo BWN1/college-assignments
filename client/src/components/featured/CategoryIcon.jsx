@@ -3,9 +3,9 @@ import { useFetch } from '@hooks';
 import { Loading, Button, ProductImage } from '@components';
 
 export const CategoryIcon = ({ category }) => {
-  const { data, loading } = useFetch(`categories/${category}`);
   const { display: categoryName, link: categoryLink } = category;
-  const product = [data];
+  const { data, loading } = useFetch(categoryLink);
+  const [product] = data;
 
   if (loading) return <Loading />;
 
