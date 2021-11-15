@@ -24,7 +24,7 @@ export const BestSellers = () => {
         spaceBetween={10}
       >
         {products.slice(0, 10).map((item) => (
-          <SwiperSlide>
+          <SwiperSlide key={item.productId}>
             <Button
               link={`products/${item.productId}`}
               styles="h-full flex flex-col hover:underline"

@@ -154,7 +154,7 @@ export const SignUpPage = () => {
           isError={submissionError}
         />
       )}
-      <PageContentContainer styles="py-4 my-10">
+      <PageContentContainer styles="p-4 my-10">
         <Form id="signup" onSubmit={handleSubmit} styles="max-w-lg m-auto">
           <h2 className="header-md-bold mb-8">Create an account</h2>
           <Row>
