@@ -25,3 +25,7 @@ This workshop we used console IO to create `Student` objects and add it to an Ar
 # [Workshop 6](./workshop6)
 
 For this workshop we built upon what we created in workshop 5 by adding a graphical interface for serializing and deserializing students using Swing.
+
+# [Workshop 7](./workshop7)
+
+For this workshop we updated workshop 3 by implementing a functional interface called `ShapeArea`. The interface has a function called `calcArea` that is used to calculate the area of the shapes `Circle`, `Rectangle` and `Shape`.
