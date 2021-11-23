@@ -29,3 +29,7 @@ For this workshop we built upon what we created in workshop 5 by adding a graphi
 # [Workshop 7](./workshop7)
 
 For this workshop we updated workshop 3 by implementing a functional interface called `ShapeArea`. The interface has a function called `calcArea` that is used to calculate the area of the shapes `Circle`, `Rectangle` and `Shape`.
+
+# [Workshop 8](./workshop8)
+
+For this workshop we started using functional programming. A `Student` class was created and all tasks that use functional programming are executed inside the class `StudentProcess`.
