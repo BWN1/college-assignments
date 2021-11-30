@@ -33,3 +33,7 @@ For this workshop we updated workshop 3 by implementing a functional interface c
 # [Workshop 8](./workshop8)
 
 For this workshop we started using functional programming. A `Student` class was created and all tasks that use functional programming are executed inside the class `StudentProcess`.
+
+# [Workshop 9](./workshop9)
+
+For this workshop we just expanded on the work done in `workshop8`, completing five additional tasks. The tasks are in the `StudentProcess` file and have a description for what they are doing.
