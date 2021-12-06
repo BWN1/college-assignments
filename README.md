@@ -37,3 +37,7 @@ For this workshop we started using functional programming. A `Student` class was
 # [Workshop 9](./workshop9)
 
 For this workshop we just expanded on the work done in `workshop8`, completing five additional tasks. The tasks are in the `StudentProcess` file and have a description for what they are doing.
+
+# [Workshop 10](./workshop10)
+
+For this workshop we created a program that deposits and withdraws some money from an account. We created the `Account` class to store the balance and created `Deposit` and `Withdraw` thread classes to handle their respective actions.
