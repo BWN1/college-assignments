@@ -25,6 +25,12 @@
       font-size: 2.25rem;
       line-height: 2.5rem;
     }
+
+    .header-sm-bold {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 }
 
@@ -32,6 +38,13 @@
   .lotto-number {
     @apply font-bold text-3xl 
     w-16 h-16
+    border border-black rounded 
+    hover:scale-110 transition-all duration-100;
+  }
+
+  .bet-amount {
+    @apply font-bold text-3xl 
+    w-20 h-20
     border border-black rounded 
     hover:scale-110 transition-all duration-100;
   }

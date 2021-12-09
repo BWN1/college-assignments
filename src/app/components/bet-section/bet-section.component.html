@@ -1,0 +1,7 @@
+<h2 class="text-center header-sm-bold mb-5">Bet Amount</h2>
+<div class="grid grid-cols-2 gap-3">
+  <app-bet-amount
+    *ngFor="let amount of betAmounts"
+    [amount]="amount"
+  ></app-bet-amount>
+</div>
