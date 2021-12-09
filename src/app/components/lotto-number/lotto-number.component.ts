@@ -12,7 +12,7 @@ export class LottoNumberComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onClick(): void {
+  selectNumber(): void {
     this.isSelected = !this.isSelected;
   }
 }

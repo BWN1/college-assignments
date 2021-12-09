@@ -35,6 +35,10 @@
 }
 
 @layer components {
+  .section-header {
+    @apply text-center header-sm-bold mb-5;
+  }
+
   .lotto-number {
     @apply font-bold text-3xl 
     w-16 h-16
@@ -42,10 +46,18 @@
     hover:scale-110 transition-all duration-100;
   }
 
+  .lotto-action {
+    @apply border rounded 
+    py-3 px-7 mx-2 font-bold 
+    bg-gray-200 
+    hover:bg-gray-300 hover:border-gray-300 transition-colors;
+  }
+
   .bet-amount {
     @apply font-bold text-3xl 
     w-20 h-20
-    border border-black rounded 
+    border border-gray-200 hover:border-gray-300 rounded 
+    bg-gray-200 hover:bg-gray-300
     hover:scale-110 transition-all duration-100;
   }
 }
