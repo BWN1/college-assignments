@@ -1,0 +1,7 @@
+<button
+  class="lotto-number"
+  (click)="onClick()"
+  [ngClass]="isSelected ? 'bg-green-300 border-none' : ''"
+>
+  {{ ticketNumber + 1 }}
+</button>
