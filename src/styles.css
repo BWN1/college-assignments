@@ -19,18 +19,16 @@
     justify-content: center;
   }
 
-  @variants responsive {
-    .header-lg-bold {
-      font-weight: 700;
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
+  .header-lg-bold {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 
-    .header-sm-bold {
-      font-weight: 700;
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
+  .header-sm-bold {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
