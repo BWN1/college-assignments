@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +8,8 @@ export class TicketBetService {
 
   constructor() {}
 
-  getBet(): Observable<number> {
-    return of(this.betAmount);
+  getBet(): number {
+    return this.betAmount;
   }
 
   increaseBet(amount: number): void {

@@ -20,13 +20,9 @@ export class TicketInformationComponent implements OnInit {
 
   ngDoCheck() {
     // Get selected lotto tickets
-    this.lottoTicketService.getLottoNumbers().subscribe({
-      next: (numbers: LottoNumber[]) => (this.selectedNums = numbers),
-    });
+    this.selectedNums = this.lottoTicketService.getLottoNumbers();
 
     // Get bet amount
-    this.ticketBetService.getBet().subscribe({
-      next: (bet: number) => (this.totalBet = bet),
-    });
+    this.totalBet = this.ticketBetService.getBet();
   }
 }

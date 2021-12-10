@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { LottoNumber } from '../LottoNumber';
 
 @Injectable({
@@ -10,8 +9,8 @@ export class LottoTicketService {
 
   constructor() {}
 
-  getLottoNumbers(): Observable<LottoNumber[]> {
-    return of(this.selectedNumbers);
+  getLottoNumbers(): LottoNumber[] {
+    return this.selectedNumbers;
   }
 
   getTotalLottoNumbersSelected(): number {
