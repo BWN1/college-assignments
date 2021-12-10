@@ -7,6 +7,12 @@
   ></app-lotto-number>
 </div>
 <div class="flex-center mt-5">
-  <app-lotto-action [text]="'Cash'" [onClick]="cashAction"></app-lotto-action>
-  <app-lotto-action [text]="'Clear'" [onClick]="clearAction"></app-lotto-action>
+  <app-cash-action
+    [isActive]="isValidTicket"
+    (cashAction)="cashAction()"
+  ></app-cash-action>
+  <app-clear-action
+    [isActive]="isValidTicket"
+    (clearAction)="clearAction()"
+  ></app-clear-action>
 </div>

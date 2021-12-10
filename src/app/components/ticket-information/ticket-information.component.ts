@@ -26,7 +26,7 @@ export class TicketInformationComponent implements OnInit {
 
     // Get bet amount
     this.ticketBetService.getBet().subscribe({
-      next: (bet) => (this.totalBet = bet),
+      next: (bet: number) => (this.totalBet = bet),
     });
   }
 }

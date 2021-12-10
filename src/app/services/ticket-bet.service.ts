@@ -16,4 +16,8 @@ export class TicketBetService {
   increaseBet(amount: number): void {
     this.betAmount += amount;
   }
+
+  clearBet(): void {
+    this.betAmount = 0;
+  }
 }
