@@ -1,0 +1,21 @@
+<div class="fixed top-0 left-0 w-screen h-screen bg-gray-200 opacity-70"></div>
+<div class="fixed top-1/4 left-1/4 w-1/2 border-black">
+  <div class="bg-sky-500 px-4 py-2 text-xl flex justify-between text-white">
+    <h2 class="">Cash ticket</h2>
+    <button (click)="closeModal()">
+      <fa-icon class="text-red-600" [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
+  <div class="flex justify-between p-5 bg-white">
+    <div class="grid grid-flow-row grid-cols-2 gap-5 items-center">
+      <p class="cash-modal-info">Total Bet:</p>
+      <p class="cash-modal-info-amount">${{ totalBet }}</p>
+      <p class="cash-modal-info">Received:</p>
+      <p class="cash-modal-info-amount">${{ totalReceived }}</p>
+      <p class="cash-modal-info">Change:</p>
+      <p class="cash-modal-info-amount">${{ change }}</p>
+      <app-confirm-button></app-confirm-button>
+    </div>
+    <app-payment-section></app-payment-section>
+  </div>
+</div>

@@ -58,4 +58,16 @@
     bg-blue-200 hover:bg-blue-300
     hover:scale-110 transition-all duration-100;
   }
+
+  .payment-number-button {
+    @apply border p-4 text-center text-xl hover:bg-gray-300 transition-colors;
+  }
+
+  .cash-modal-info {
+    @apply text-xl;
+  }
+
+  .cash-modal-info-amount {
+    @apply text-xl underline underline-offset-4 decoration-sky-500 py-1 px-2;
+  }
 }
