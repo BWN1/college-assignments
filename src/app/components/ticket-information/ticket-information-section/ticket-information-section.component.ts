@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { LottoTicketService } from 'src/app/services/lotto-ticket.service';
 import { TicketBetService } from 'src/app/services/ticket-bet.service';
-import { LottoNumber } from 'src/app/LottoNumber';
+import { LottoNumber } from 'src/app/interfaces/LottoNumber';
 
 @Component({
-  selector: 'app-ticket-information',
-  templateUrl: './ticket-information.component.html',
+  selector: 'app-ticket-information-section',
+  templateUrl: './ticket-information-section.component.html',
 })
-export class TicketInformationComponent implements OnInit {
+export class TicketInformationSectionComponent implements OnInit {
   selectedNums: LottoNumber[] = [];
   totalBet: number = 0;
 

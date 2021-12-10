@@ -1,4 +1,4 @@
 export interface LottoNumber {
-  lottoNum: number;
+  number: number;
   isSelected: boolean;
 }

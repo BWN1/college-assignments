@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-cash-action',
-  templateUrl: './cash-action.component.html',
+  selector: 'app-cash-button',
+  templateUrl: './cash-button.component.html',
 })
-export class CashActionComponent implements OnInit {
+export class CashButtonComponent implements OnInit {
   @Input() isActive: boolean = false;
   @Output() cashAction: EventEmitter<void> = new EventEmitter();
   constructor() {}

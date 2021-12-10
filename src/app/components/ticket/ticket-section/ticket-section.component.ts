@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { LottoTicketService } from 'src/app/services/lotto-ticket.service';
 import { TicketBetService } from 'src/app/services/ticket-bet.service';
-import { LottoNumber } from 'src/app/LottoNumber';
+import { LottoNumber } from 'src/app/interfaces/LottoNumber';
 
 @Component({
-  selector: 'app-lotto-ticket',
-  templateUrl: './lotto-ticket.component.html',
+  selector: 'app-ticket-section',
+  templateUrl: './ticket-section.component.html',
 })
-export class TicketComponent implements OnInit {
+export class TicketSectionComponent implements OnInit {
   totalNumbers: number = 20;
   ticketNumbers: LottoNumber[] = [];
   isValidTicket: boolean = false;
@@ -20,7 +20,7 @@ export class TicketComponent implements OnInit {
   ngOnInit(): void {
     // Create empty lottery ticket board
     for (let i = 0; i < this.totalNumbers; i++) {
-      this.ticketNumbers.push({ lottoNum: i + 1, isSelected: false });
+      this.ticketNumbers.push({ number: i + 1, isSelected: false });
     }
   }
 

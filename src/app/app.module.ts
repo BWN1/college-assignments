@@ -3,27 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TicketComponent } from './components/lotto-ticket/lotto-ticket.component';
-import { LottoNumberComponent } from './components/lotto-number/lotto-number.component';
-import { BetAmountComponent } from './components/bet-amount/bet-amount.component';
-import { BetSectionComponent } from './components/bet-section/bet-section.component';
-import { TicketInformationComponent } from './components/ticket-information/ticket-information.component';
-import { SelectedNumberComponent } from './components/selected-number/selected-number.component';
-import { CashActionComponent } from './components/cash-action/cash-action.component';
-import { ClearActionComponent } from './components/clear-action/clear-action.component';
+import { TicketSectionComponent } from './components/ticket/ticket-section/ticket-section.component';
+import { LottoNumberComponent } from './components/ticket/lotto-number/lotto-number.component';
+import { BetAmountComponent } from './components/bet/bet-amount/bet-amount.component';
+import { BetSectionComponent } from './components/bet/bet-section/bet-section.component';
+import { TicketInformationSectionComponent } from './components/ticket-information/ticket-information-section/ticket-information-section.component';
+import { SelectedNumberComponent } from './components/ticket-information/selected-number/selected-number.component';
+import { CashButtonComponent } from './components/ticket/cash-button/cash-button.component';
+import { ClearButtonComponent } from './components/ticket/clear-button/clear-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TicketComponent,
+    TicketSectionComponent,
     LottoNumberComponent,
     BetAmountComponent,
     BetSectionComponent,
-    TicketInformationComponent,
+    TicketInformationSectionComponent,
     SelectedNumberComponent,
-    CashActionComponent,
-    ClearActionComponent,
+    CashButtonComponent,
+    ClearButtonComponent,
   ],
   imports: [BrowserModule],
   providers: [],

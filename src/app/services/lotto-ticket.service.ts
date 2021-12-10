@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LottoNumber } from '../LottoNumber';
+import { LottoNumber } from '../interfaces/LottoNumber';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,7 @@ export class LottoTicketService {
   deselectLottoNumber(number: LottoNumber): void {
     number.isSelected = false;
     this.selectedNumbers = this.selectedNumbers.filter(
-      (value: LottoNumber) => value.lottoNum !== number.lottoNum
+      (value: LottoNumber) => value.number !== number.number
     );
   }
 
