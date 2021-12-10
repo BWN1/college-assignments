@@ -54,8 +54,8 @@
   .bet-amount {
     @apply font-bold text-3xl 
     w-20 h-20
-    border border-gray-200 hover:border-gray-300 rounded 
-    bg-gray-200 hover:bg-gray-300
+    border-2 border-black rounded 
+    bg-blue-200 hover:bg-blue-300
     hover:scale-110 transition-all duration-100;
   }
 }
