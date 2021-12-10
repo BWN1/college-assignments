@@ -1,8 +1,9 @@
 <h2 class="section-header">Select Your Numbers:</h2>
 <div class="grid grid-cols-5 gap-3">
   <app-lotto-number
-    *ngFor="let ticketNumber of totalTicketNumbers; let ticketNum = index"
-    [ticketNumber]="ticketNum"
+    *ngFor="let ticketNumber of ticketNumbers"
+    [ticketNumber]="ticketNumber"
+    (clickLottoNumber)="clickLottoNumber(ticketNumber)"
   ></app-lotto-number>
 </div>
 <div class="flex-center mt-5">

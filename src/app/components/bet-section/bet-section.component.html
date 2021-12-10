@@ -3,5 +3,6 @@
   <app-bet-amount
     *ngFor="let amount of betAmounts"
     [amount]="amount"
+    (raiseBet)="raiseBet(amount)"
   ></app-bet-amount>
 </div>

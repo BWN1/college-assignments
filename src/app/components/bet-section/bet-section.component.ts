@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TicketBetService } from 'src/app/services/ticket-bet.service';
 
 @Component({
   selector: 'app-bet-section',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BetSectionComponent implements OnInit {
   betAmounts: number[] = [1, 5, 10, 20];
-  constructor() {}
+
+  constructor(private ticketBetService: TicketBetService) {}
 
   ngOnInit(): void {}
+
+  raiseBet(amount: number): void {
+    this.ticketBetService.increaseBet(amount);
+  }
 }

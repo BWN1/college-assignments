@@ -10,7 +10,6 @@ import { BetAmountComponent } from './components/bet-amount/bet-amount.component
 import { BetSectionComponent } from './components/bet-section/bet-section.component';
 import { TicketInformationComponent } from './components/ticket-information/ticket-information.component';
 import { SelectedNumberComponent } from './components/selected-number/selected-number.component';
-import { BetTotalComponent } from './components/bet-total/bet-total.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { BetTotalComponent } from './components/bet-total/bet-total.component';
     BetSectionComponent,
     TicketInformationComponent,
     SelectedNumberComponent,
-    BetTotalComponent,
   ],
   imports: [BrowserModule],
   providers: [],
