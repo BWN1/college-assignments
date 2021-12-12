@@ -22,8 +22,8 @@ export class CashModalService {
     return this.isModalShown;
   }
 
-  getTotalReceived(): string {
-    return this.totalReceived;
+  getTotalReceived(): number {
+    return Number(parseFloat(this.totalReceived).toFixed(2));
   }
 
   addDigit(digit: string): void {

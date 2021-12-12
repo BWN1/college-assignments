@@ -10,7 +10,7 @@ import { CashModalService } from 'src/app/services/cash-modal.service';
 export class CashModalComponent implements OnInit {
   faTimes: IconDefinition = faTimes;
   totalBet: number = 0;
-  totalReceived: string = '';
+  totalReceived: number = 0;
   change: number = 0;
 
   constructor(
