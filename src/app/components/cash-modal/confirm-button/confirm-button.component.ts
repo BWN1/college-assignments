@@ -19,7 +19,9 @@ export class ConfirmButtonComponent implements OnInit {
   }
 
   ngDoCheck(): void {
-    const totalReceived: number = this.cashModalService.getTotalReceived();
+    const totalReceived: number = Number(
+      this.cashModalService.getTotalReceived()
+    );
     this.isDisabled =
       this.totalBet === 0 ||
       totalReceived === 0 ||

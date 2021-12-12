@@ -22,15 +22,23 @@ export class CashModalService {
     return this.isModalShown;
   }
 
-  getTotalReceived(): number {
-    return Number(parseFloat(this.totalReceived).toFixed(2));
+  getTotalReceived(): string {
+    return this.totalReceived;
   }
 
   addDigit(digit: string): void {
-    if (this.totalReceived === '0' && digit !== '0') {
-      if (digit === '.') this.totalReceived += digit;
-      else this.totalReceived = digit;
-    } else if (this.totalReceived !== '0') {
+    const totalDecimals: number = this.totalReceived.substr(
+      this.totalReceived.indexOf('.') + 1
+    ).length;
+    if (digit === '.' && this.totalReceived.indexOf('.') < 0) {
+      this.totalReceived += digit;
+    } else if (this.totalReceived === '0') {
+      this.totalReceived = digit;
+    } else if (
+      this.totalReceived !== '0' &&
+      digit !== '.' &&
+      totalDecimals < 2
+    ) {
       this.totalReceived += digit;
     }
   }
@@ -47,13 +55,11 @@ export class CashModalService {
   }
 
   calculateChange(bet: number): void {
-    this.change =
-      parseFloat(this.totalReceived) >= bet && bet !== 0
-        ? parseFloat(this.totalReceived) - bet
-        : 0;
+    const changeAsNum = Number(parseFloat(this.totalReceived).toFixed(2));
+    this.change = changeAsNum >= bet && bet !== 0 ? changeAsNum - bet : 0;
   }
 
   getChange(): number {
-    return this.change;
+    return Number(this.change.toFixed(2));
   }
 }

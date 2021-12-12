@@ -53,8 +53,7 @@
 
   .bet-amount {
     @apply font-bold text-3xl 
-    w-20 h-20
-    border-2 border-black rounded 
+    w-20 h-20 rounded 
     bg-blue-200 hover:bg-blue-300
     hover:scale-110 transition-all duration-100;
   }
