@@ -4,20 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TicketSectionComponent } from './components/ticket/ticket-section/ticket-section.component';
-import { LottoNumberComponent } from './components/ticket/lotto-number/lotto-number.component';
+import { TicketSectionComponent } from './components/select-ticket/ticket-section/ticket-section.component';
+import { LottoNumberComponent } from './components/select-ticket/lotto-number/lotto-number.component';
 import { BetAmountComponent } from './components/bet/bet-amount/bet-amount.component';
 import { BetSectionComponent } from './components/bet/bet-section/bet-section.component';
 import { TicketInformationSectionComponent } from './components/ticket-information/ticket-information-section/ticket-information-section.component';
 import { SelectedNumberComponent } from './components/ticket-information/selected-number/selected-number.component';
-import { CashButtonComponent } from './components/ticket/cash-button/cash-button.component';
-import { ClearButtonComponent } from './components/ticket/clear-button/clear-button.component';
+import { CashButtonComponent } from './components/select-ticket/cash-button/cash-button.component';
+import { ClearButtonComponent } from './components/select-ticket/clear-button/clear-button.component';
 import { CashModalComponent } from './components/cash-modal/cash-modal/cash-modal.component';
 import { ConfirmButtonComponent } from './components/cash-modal/confirm-button/confirm-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaymentSectionComponent } from './components/cash-modal/payment-section/payment-section.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CreatedTicketComponent } from './components/created-ticket/created-ticket.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     PaymentSectionComponent,
     HomeComponent,
     CheckoutComponent,
+    CreatedTicketComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule, AppRoutingModule],
   providers: [],

@@ -9,7 +9,14 @@ export class LottoTicketService {
 
   constructor() {}
 
+  private sortSelectedNumbers(): void {
+    this.selectedNumbers.sort(
+      (num1: LottoNumber, num2: LottoNumber) => num1.number - num2.number
+    );
+  }
+
   getLottoNumbers(): LottoNumber[] {
+    this.sortSelectedNumbers();
     return this.selectedNumbers;
   }
 
@@ -18,6 +25,7 @@ export class LottoTicketService {
   }
 
   selectLottoNumber(number: LottoNumber): void {
+    this.sortSelectedNumbers();
     if (this.selectedNumbers.length < 5 && !number.isSelected) {
       number.isSelected = true;
       if (number.isSelected) this.selectedNumbers.push(number);

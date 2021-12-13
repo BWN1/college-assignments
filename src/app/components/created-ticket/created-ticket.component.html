@@ -1,0 +1,27 @@
+<div class="border border-black p-5 max-w-md m-auto mt-5 space-y-8">
+  <div>
+    <h4 class="text-lg font-bold mb-3">Selected Numbers:</h4>
+    <div class="flex-center space-x-4">
+      <app-selected-number
+        *ngFor="let ticketNum of ticketNumbers"
+        class="border-2 border-sky-400 py-3 px-5 rounded-full font-bold"
+        [number]="ticketNum.number"
+      >
+      </app-selected-number>
+    </div>
+  </div>
+  <div>
+    <h4 class="text-xl font-bold mb-2">Bet:</h4>
+    <p
+      class="
+        underline
+        decoration-4
+        underline-offset-4
+        decoration-sky-400
+        text-xl
+      "
+    >
+      ${{ totalBet }}
+    </p>
+  </div>
+</div>
