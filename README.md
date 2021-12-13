@@ -41,3 +41,7 @@ For this workshop we just expanded on the work done in `workshop8`, completing f
 # [Workshop 10](./workshop10)
 
 For this workshop we created a program that deposits and withdraws some money from an account. We created the `Account` class to store the balance and created `Deposit` and `Withdraw` thread classes to handle their respective actions.
+
+# [Workshop 11](./workshop11)
+
+For this workshop we created a local server to register a plate for the created `Car` object. The server returns the `hashCode` of the Car object and registers the hashCode as the plate of the Car.
