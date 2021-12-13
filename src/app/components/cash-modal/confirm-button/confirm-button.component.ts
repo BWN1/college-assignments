@@ -19,12 +19,16 @@ export class ConfirmButtonComponent implements OnInit {
   }
 
   ngDoCheck(): void {
-    const totalReceived: number = Number(
-      this.cashModalService.getTotalReceived()
-    );
+    const totalReceived: string = this.cashModalService.getTotalReceived();
+    const totalReceivedAsNumber: number = Number(totalReceived);
+    const totalDecimals: number = totalReceived.substr(
+      totalReceived.indexOf('.') + 1
+    ).length;
+
     this.isDisabled =
       this.totalBet === 0 ||
-      totalReceived === 0 ||
-      totalReceived < this.totalBet;
+      totalReceivedAsNumber === 0 ||
+      (totalReceived.indexOf('.') !== -1 && totalDecimals < 2) ||
+      totalReceivedAsNumber < this.totalBet;
   }
 }

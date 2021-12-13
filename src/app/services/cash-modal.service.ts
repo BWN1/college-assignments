@@ -27,9 +27,11 @@ export class CashModalService {
   }
 
   addDigit(digit: string): void {
-    const totalDecimals: number = this.totalReceived.substr(
-      this.totalReceived.indexOf('.') + 1
-    ).length;
+    const decimalExists: boolean = this.totalReceived.indexOf('.') !== -1;
+    const totalDecimals: number = decimalExists
+      ? this.totalReceived.substr(this.totalReceived.indexOf('.') + 1).length
+      : 0;
+
     if (digit === '.' && this.totalReceived.indexOf('.') < 0) {
       this.totalReceived += digit;
     } else if (this.totalReceived === '0') {
