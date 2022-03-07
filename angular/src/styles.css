@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-x-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-y-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-lg-bold {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .header-sm-bold {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@layer components {
+  .section-header {
+    @apply text-center header-sm-bold mb-5;
+  }
+
+  .lotto-number {
+    @apply font-bold text-3xl 
+    w-16 h-16
+    border border-black rounded 
+    hover:scale-110 transition-all duration-100;
+  }
+
+  .lotto-action {
+    @apply border rounded 
+    py-3 px-7 mx-2 font-bold 
+    disabled:bg-gray-300 disabled:border-gray-300
+    transition-colors;
+  }
+
+  .bet-amount {
+    @apply font-bold text-3xl 
+    w-20 h-20 rounded 
+    bg-blue-200 hover:bg-blue-300
+    hover:scale-110 transition-all duration-100;
+  }
+
+  .payment-number-button {
+    @apply border p-4 text-center text-xl hover:bg-gray-300 transition-colors;
+  }
+
+  .cash-modal-info {
+    @apply text-xl;
+  }
+
+  .cash-modal-info-amount {
+    @apply text-xl underline underline-offset-4 decoration-sky-500 py-1 px-2;
+  }
+}

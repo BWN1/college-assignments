@@ -1,0 +1,9 @@
+<button
+  class="lotto-number"
+  (click)="clickNumber(ticketNumber)"
+  [ngClass]="
+    ticketNumber.isSelected ? 'bg-yellow-400 border-yellow-400 scale-110' : ''
+  "
+>
+  {{ ticketNumber.number }}
+</button>

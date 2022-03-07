@@ -1,0 +1,22 @@
+<h2 class="section-header">Select Your Numbers:</h2>
+<div class="bg-gray-100 p-5 rounded shadow-2xl">
+  <div class="grid grid-cols-5 gap-3">
+    <app-lotto-number
+      *ngFor="let ticketNumber of ticketNumbers"
+      [ticketNumber]="ticketNumber"
+      (clickLottoNumber)="clickLottoNumber(ticketNumber)"
+    ></app-lotto-number>
+  </div>
+  <div class="flex-center mt-5">
+    <app-cash-button
+      [isActive]="isValidTicket"
+      (cashAction)="cashAction()"
+    ></app-cash-button>
+    <app-clear-button
+      [isActive]="isValidTicket"
+      (clearAction)="clearAction()"
+    ></app-clear-button>
+  </div>
+</div>
+
+<app-cash-modal *ngIf="showCashModal"></app-cash-modal>

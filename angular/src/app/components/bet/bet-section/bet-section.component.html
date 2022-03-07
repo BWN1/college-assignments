@@ -1,0 +1,14 @@
+<h2 class="section-header">Bet Amount</h2>
+<div class="grid grid-cols-2 gap-3 bg-gray-100 p-5 rounded shadow-2xl">
+  <app-bet-amount
+    *ngFor="let amount of betAmounts"
+    [amount]="amount"
+    (raiseBet)="raiseBet(amount)"
+  ></app-bet-amount>
+</div>
+<div class="flex-center space-x-5 mt-16 text-2xl">
+  <p class="font-bold">Total Bet:</p>
+  <p class="underline underline-offset-8 decoration-sky-500 decoration-2">
+    ${{ totalBet }}
+  </p>
+</div>

@@ -1,0 +1,12 @@
+<div class="grid grid-cols-3 grid-rows-3 gap-1">
+  <button
+    class="payment-number-button"
+    *ngFor="let digit of numPad"
+    (click)="addDigit(digit)"
+  >
+    {{ digit }}
+  </button>
+  <button class="payment-number-button" (click)="removeDigit()">
+    <fa-icon [icon]="faBackspace"></fa-icon>
+  </button>
+</div>

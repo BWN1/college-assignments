@@ -1,0 +1,8 @@
+<button
+  class="lotto-action"
+  [disabled]="!isActive"
+  [ngClass]="isActive ? 'bg-red-400 border-red-400 hover:bg-red-500' : ''"
+  (click)="onClick()"
+>
+  Clear
+</button>
