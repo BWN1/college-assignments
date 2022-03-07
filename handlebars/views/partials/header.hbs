@@ -1,0 +1,26 @@
+<header>
+        <div class="header-left">
+            <img src="../images/icons/hamburger-menu.svg" alt="" class="hamburger-menu">
+            <a href="/" class="site-logo hyperlink">
+                <img src="../images/logo.svg" alt="Icon">
+                <span>AIRBNB</span>
+            </a>
+        </div>
+        {{> mobileMenu}}
+        <nav class="header-center">
+            <ul>
+                <li><a href="/listings" class="hyperlink">Room Listings</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="header-account-actions">
+                {{#if session}}
+                    <a href="/dashboard" class="hyperlink">Dashboard</a>
+                    <a href="/logout" class="hyperlink action-link">Logout</a>
+                {{else}}
+                    <a href="/login" class="hyperlink">Login</a>
+                    <a href="/register" class="hyperlink action-link">Sign Up</a>
+                {{/if}}
+            </div>
+        </div>
+</header>

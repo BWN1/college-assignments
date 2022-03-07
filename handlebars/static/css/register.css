@@ -1,0 +1,35 @@
+/** USER NAME */
+.user-name {
+    display: flex;
+}
+
+.user-name .form-input {
+    width: 100%;
+}
+
+/** USER BIRTHDAY */
+.user-name .form-input:first-child {
+    margin-right: 0.5em;
+}
+
+.user-birthday-header * {
+    margin: 0;
+}
+
+.user-birthday-header h2 {
+    font-size: 1.25rem;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+}
+
+.user-birthday {
+    display: flex;
+}
+
+.user-birthday > *:first-child {
+    margin-right: 0.5em;
+}
+
+.user-birthday > *:last-child {
+    margin-left: 0.5em;
+}

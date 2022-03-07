@@ -1,0 +1,11 @@
+/** REGISTER ACCOUNT ACTION */
+#register-account p {
+    text-align: center;
+}
+
+#register-account a {
+    color: #3434ff;
+    text-decoration: none;
+    margin: 0 auto;
+    font-weight: 700;
+}

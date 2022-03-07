@@ -1,0 +1,94 @@
+<main class="user-form-page-main">
+    <div class="user-form-page-form-wrapper">
+        {{#if message}}
+            {{> errorMessage}}
+        {{/if}}
+        <div class="form-card">
+            <h1 class="form-title">Register</h1>
+            <form action="/register" method="POST">
+                <div class="form-row">
+                    <div class="user-name">
+                        <div class="form-input" id="register-fname">
+                            <label for="fname">First Name<span class="required">*</span></label>
+                            <input type="text" name="fname" class="input-box" placeholder="First Name">
+                        </div>
+                        <div class="form-input" id="register-lname">
+                            <label for="lname">Last Name<span class="required">*</span></label>
+                            <input type="text" name="lname" class="input-box"  placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input" id="register-email">
+                        <label for="email">Email Address<span class="required">*</span></label>
+                        <input type="text" name="email" class="input-box" placeholder="Email Address">
+                    </div>
+                    {{> warning id="register-email"}}
+                </div>
+                <div class="form-row">
+                    <div class="form-input" id="register-password">
+                        <label for="password">Password<span class="required">*</span></label>
+                        <input type="password" name="password" class="input-box" placeholder="Password">
+                        <div class="password-constraints">
+                            <div id="password-length">
+                                <img src="images/icons/invalid.svg" alt="" class="password-constraint-image">
+                                <span class="password-constraint-text constraint-invalid">Between 6 and 15 characters</span>
+                            </div>
+                            <div id="password-uppercase">
+                                <img src="images/icons/invalid.svg" alt="" class="password-constraint-image">
+                                <span class="password-constraint-text constraint-invalid">Contains at least one uppercase letter (A-Z)</span>
+                            </div>
+                            <div id="password-lowercase">
+                                <img src="images/icons/invalid.svg" alt="" class="password-constraint-image">
+                                <span class="password-constraint-text constraint-invalid">Contains at least one lowercase letter (a-z)</span>
+                                
+                            </div>
+                            <div id="password-number">
+                                <img src="images/icons/invalid.svg" alt="" class="password-constraint-image">
+                                <span class="password-constraint-text constraint-invalid">Contains at least one number (0-9)</span>
+                            </div>
+                            <div id="password-special-characters">
+                                <img src="images/icons/invalid.svg" alt="" class="password-constraint-image">
+                                <span class="password-constraint-text constraint-invalid">Contains at least one special character (eg. !, @, #, $)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="user-birthday-header">
+                        <h2>Birthday</h2>
+                        <p>You must be at least 18 or older to sign up</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="user-birthday">
+                        <div class="form-input" id="register-birthday-day">
+                            <label for="day">Day<span class="required">*</span></label>
+                            <input id="user-birthday-day" class="input-box" type="text" name="day" placeholder="DD" maxlength="2">
+                        </div>
+                        <div class="form-input" id="register-birthday-month">
+                            <label for="month">Month<span class="required">*</span></label>
+                            <input id="user-birthday-month" class="input-box" type="text" name="month" placeholder="MM" maxlength="2">
+                        </div>
+                        <div class="form-input" id="register-birthday-year">
+                            <label for="year">Year<span class="required">*</span></label>
+                            <input id="user-birthday-year" class="input-box" type="text" name="year" placeholder="YYYY" maxlength="4">
+                        </div>
+                    </div>
+                    {{> warning id="register-birthday"}}
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-input">
+                        <input type="submit" value="Sign up" class="submit-form">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="user-form-page-cta">
+            <p>Have an account? <span><a href="/login">Login</a></span></p>
+        </div>
+    </div>
+</main>

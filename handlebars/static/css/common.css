@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.toggle-hide {
+    display: none;
+}
+
+/** LINKS */
+.hyperlink {
+    color: black;
+    text-decoration: none;
+}
+
+.hyperlink:hover {
+    text-decoration: underline;
+}
+
+.action-link {
+    padding: 0.75em;
+    color: white;
+    background-color: #ff385c;
+    border-radius: 0.5em;
+    text-align: center;
+    transition: background-color .15s ease-in-out;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.action-link:hover {
+    text-decoration: none;
+    background-color: #cf2f4c;
+}
+
+/** PROMO BANNER */
+.promo-banner {
+    display: flex;
+    justify-content: center;
+    background-color: #ff385c;
+    color: white;
+    font-weight: 600;
+    padding: 0.8em 0;
+}
+
+.promo-banner p {
+    margin: 0;
+    padding: 0;
+}
+
+.discount-code {
+    background-color: black;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-left: 0.1em;
+}
+
+/** HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em 0;
+    background-color: white;
+    font-size: 1rem;
+}
+
+header > * {
+    margin: 0 5vw;
+}
+
+/** LOGO */
+.site-logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.05em;
+}
+
+.site-logo > img {
+    width: 45px;
+    margin-right: 0.5em;
+}
+
+.site-logo:hover {
+    text-decoration: none;
+}
+
+/** HEADER NAV */
+.header-center ul, .mobile-menu-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header-center ul li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.header-account-actions *:first-child {
+    margin-right: 1.25em;
+}
+
+.hamburger-menu {
+    display: none;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+
+.hamburger-menu-close {
+    cursor: pointer;
+}
+
+.mobile-menu-nav-wrapper {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    margin: 0;
+}
+
+.mobile-menu-nav-shade {
+    height: 100vh;
+    background-color: rgb(46, 46, 46);
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}
+
+.mobile-menu-nav {
+    position: fixed;
+    padding-top: 11px;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transition: left 200ms ease-in;
+}
+
+.mobile-menu-nav-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+    padding-bottom: 1em;
+}
+
+.mobile-menu-nav > ul li:hover {
+    background-color: #ff385c;
+}
+
+.mobile-menu-nav > ul li a {
+    display: block;
+    padding: 1em 1.5em;
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-menu-nav > ul li:hover a {
+    color: white;
+    text-decoration: none;
+}
+
+/** FORMS CARDS */
+.server-error-message {
+    background-color: rgb(253, 46, 46);
+    color: white;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 700;
+}
+
+.required {
+    color: red;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.warning {
+    font-size: 0.85rem;
+    color: red;
+}
+
+.password-constraints {
+    margin-top: 1em;
+}
+
+.password-constraint-image {
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.password-constraint-text {
+    font-size: 0.9rem;
+    color: rgb(23, 197, 23);
+}
+
+.constraint-invalid {
+    color: red;
+}
+
+.user-form-page-main {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+    font-size: 1.1rem;
+}
+
+.user-form-page-form-wrapper {
+    max-width: 475px;
+    width: 100%;
+    margin: auto 0;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    margin: 2em auto;
+}
+
+.form-card .form-title {
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.form-row {
+    margin: 1em 0;
+}
+
+.form-input :is(.input-box, .submit-form) {
+    display: block;
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+.form-input label {
+    font-weight: 600;
+}
+
+.input-box {
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: outline 0.05s;
+    font-size: 1rem;
+}
+
+.input-box:focus {
+    outline: none;
+    border: 1px solid #ff385c;
+    outline: 2px solid #ff385c;
+}
+
+.form-input .submit-form {
+    margin-top: 2rem;
+    padding: 1em;
+    background-color: #ff385c;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/** USER CALL TO ACTION (footer to create/login to account)*/
+.user-form-page-cta p {
+    text-align: center;
+}
+
+.user-form-page-cta a {
+    color: #3434ff;
+    text-decoration: none;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+/** ROOM LISTINGS */
+.room-listings {
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.room-image {
+    width: 100%;
+    border-radius: 1em;
+}
+
+.room-location {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #464646;
+    margin-bottom: 0.5em;
+}
+
+.room-title {
+    margin: 0.3em 0;
+}
+
+.room-price {
+    margin: 0.5em 0;
+}
+
+/** FOOTER NAV */
+footer {
+    margin-top: 2em;
+    border-top: 1px solid black;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-main {
+    display: flex;
+    margin-bottom: 1.5em;
+}
+
+.footer-main > * {
+    margin: 0 1em;
+}
+
+.footer-section-header {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5em;
+}
+
+.footer-socials > * {
+    margin: 0 0.5em;
+}
+
+@media only screen and (max-width: 1140px) {
+    .room-listings {
+        margin: 1em;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .promo-banner {
+        font-size: 0.85rem;
+    }
+    
+    header {
+        font-size: 1rem;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .header-left .site-logo img {
+        width: 35px;
+        margin: 0;
+    }
+
+    .header-left .site-logo > span {
+        display: none;
+    }
+
+    .header-left {
+        display: flex;
+        margin: 0;
+        margin-left: 0.75em;
+    }
+
+    .header-center {
+        display: none;
+    }
+
+    .user-form-page-body {
+        min-height: 100vh;
+    }
+
+    .user-form-page-main {
+        min-height: auto;
+    }
+    
+    .user-form-page-form-wrapper {
+        margin: 0 auto;
+    }
+    
+    .form-card {
+        box-shadow: none;
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .room-listings {
+        grid-template-columns: 1fr;
+    }
+}

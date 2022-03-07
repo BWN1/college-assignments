@@ -1,0 +1,80 @@
+<main>
+    {{#if message}}
+        <div class="update-{{messageType}}-message">
+            <p class="update-message">{{message}}</p>
+        </div>
+    {{/if}}
+
+    <div class="admin-dashboard-head">
+        <h1 class="welcome-user">Welcome {{user.name}}!</h1>
+        <span>
+            <a class="hyperlink action-link" href="/dashboard/create-room">Create a room</a>
+             or select a room below to edit it
+        </span>
+    </div>
+    <div class="content-wrapper">
+        <div class="edit-room toggle-hide">
+            <div class="edit-room-head">
+                <h1 class="form-title">Update room</h1>
+                <img src="./images/icons/close.svg" alt="">
+            </div>
+            <form action="/dashboard/edit-room" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" class="input-box" placeholder="Title">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="price">Price</label>
+                        <input type="text" name="price" class="input-box" placeholder="Price">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="description">Description</label>
+                        <textarea name="description" class="input-box"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="location">Location</label>
+                        <select name="location" class="input-box">
+                            <option value="toronto">Toronto, ON</option>
+                            <option value="vancouver">Vancouver, BC</option>
+                            <option value="edmonton">Edmonton, AB</option>
+                            <option value="montreal">Montreal, QC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" class="input-box" accept="image/png, image/jpg, image/jpeg">
+                    </div>
+                    <div class="image-upload-warning">Supported file types are .png, .jpg, .jpeg</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input">
+                        <input type="submit" value="Update room" class="submit-form">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="room-listings">
+            {{#if rooms}}
+                {{#each rooms}}
+                    <section id="{{_id}}" class="room-card">
+                        <img src="{{image}}" alt="Room 1" loading="lazy" class="room-image">
+                        <p class="room-location">{{location}}</p>
+                        <h3 class="room-title">{{title}}</h3>
+                        <p class="room-price">${{price}} CAD/night</p>
+                    </section>
+                {{/each}}
+            {{else}}
+                <h1>There are no rooms listed</h1>
+            {{/if}}
+        </div>
+    </div>
+</main>
